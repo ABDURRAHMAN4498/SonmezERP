@@ -1,0 +1,49 @@
+/* _content/SonmezERP/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-ijdzntp6vs] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-ijdzntp6vs] {
+  color: #0077cc;
+}
+
+.btn-primary[b-ijdzntp6vs] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-ijdzntp6vs], .nav-pills .show > .nav-link[b-ijdzntp6vs] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-ijdzntp6vs] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-ijdzntp6vs] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-ijdzntp6vs] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-ijdzntp6vs] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-ijdzntp6vs] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
