@@ -7,13 +7,27 @@ namespace SonmezERP.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using(var context = new SonmezERPContext(serviceProvider.GetRequiredKeyedService<
-                DbContextOptions<SonmezERPContext>>)))
+           using (var context = new SonmezERPContext(
+            serviceProvider.GetRequiredService<
+                DbContextOptions<SonmezERPContext>>()))
             {
-                if ()
+                if (context.Products.Any())
                 {
-                    
+                    return;
                 }
+                context.Products.AddRange(
+                    new Products{
+                        Id  =1,
+                        ProductCode = "0202",
+                        Barcode = "4546464850202",
+                        ProductNameTr = "Loft koltuk",
+                        ProductNameEn = "Loft Armchair",
+                        PriceTl =  35.5f,
+                        PriceUSD = 35.5f,
+                       
+                    }
+                );
+                context.SaveChanges();
             }
         }
     }
