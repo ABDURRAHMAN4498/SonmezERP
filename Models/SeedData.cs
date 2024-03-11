@@ -27,6 +27,12 @@ namespace SonmezERP.Models
                        
                     }
                 );
+                context.Categoreis.AddRange(
+                    new Categoreis
+                    {
+                        Id =1,
+                        Category = "Sandalye"
+                    });
                 context.SaveChanges();
             }
         }
