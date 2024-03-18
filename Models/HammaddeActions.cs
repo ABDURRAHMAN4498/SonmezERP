@@ -7,9 +7,11 @@ namespace SonmezERP.Models
     public class HammaddeActions
     {
         public int Id { get; set; }
+
         [ForeignKey("Hammadde")]
         public int HammaddeId { get; set; }
         public Hammadde Hammmadde{ get; set; }
+        public bool HammaddeAction { get; set; }
         public int  HammaddeKG { get; set; }
         public DateTime ActionDate{ get; set; }
     }

@@ -1,106 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\visual studio\\SonmezERP\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\visual studio\\sonmezerp\\models\\kdvs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:models\\kdvs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\visual studio\\sonmezerp\\models\\invoicetitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:models\\invoicetitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\visual studio\\sonmezerp\\models\\invicebody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:models\\invicebody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\visual studio\\sonmezerp\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\visual studio\\sonmezerp\\data\\sonmezerpcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:data\\sonmezerpcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SonmezERPContext.cs",
-              "DocumentMoniker": "C:\\visual studio\\SonmezERP\\Data\\SonmezERPContext.cs",
-              "RelativeDocumentMoniker": "Data\\SonmezERPContext.cs",
-              "ToolTip": "C:\\visual studio\\SonmezERP\\Data\\SonmezERPContext.cs",
-              "RelativeToolTip": "Data\\SonmezERPContext.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAwB8AAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T12:04:29.089Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Kdvs.cs",
-              "DocumentMoniker": "C:\\visual studio\\SonmezERP\\Models\\Kdvs.cs",
-              "RelativeDocumentMoniker": "Models\\Kdvs.cs",
-              "ToolTip": "C:\\visual studio\\SonmezERP\\Models\\Kdvs.cs",
-              "RelativeToolTip": "Models\\Kdvs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T10:36:13.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Products.cs",
-              "DocumentMoniker": "C:\\visual studio\\SonmezERP\\Models\\Products.cs",
-              "RelativeDocumentMoniker": "Models\\Products.cs",
-              "ToolTip": "C:\\visual studio\\SonmezERP\\Models\\Products.cs",
-              "RelativeToolTip": "Models\\Products.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T10:15:03.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InviceBody.cs",
-              "DocumentMoniker": "C:\\visual studio\\SonmezERP\\Models\\InviceBody.cs",
-              "RelativeDocumentMoniker": "Models\\InviceBody.cs",
-              "ToolTip": "C:\\visual studio\\SonmezERP\\Models\\InviceBody.cs",
-              "RelativeToolTip": "Models\\InviceBody.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T10:13:13.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InvoiceTitle.cs",
-              "DocumentMoniker": "C:\\visual studio\\SonmezERP\\Models\\InvoiceTitle.cs",
-              "RelativeDocumentMoniker": "Models\\InvoiceTitle.cs",
-              "ToolTip": "C:\\visual studio\\SonmezERP\\Models\\InvoiceTitle.cs",
-              "RelativeToolTip": "Models\\InvoiceTitle.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAIwBYAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T10:12:08.642Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

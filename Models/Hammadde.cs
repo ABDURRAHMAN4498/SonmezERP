@@ -7,7 +7,6 @@ namespace SonmezERP.Models
     {
         [Key]
         public int Id { get; set; }
-        
         public string HammaddeName { get; set; }
         [ForeignKey("Suplier")]
         public int SuplierId { get; set; }

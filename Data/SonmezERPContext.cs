@@ -30,9 +30,5 @@ namespace SonmezERP.Data
         public DbSet<SonmezERP.Models.User> Users { get; set; }
         public DbSet<SonmezERP.Models.HammaddeActions> HammaddeActions { get; set; }
         public DbSet<SonmezERP.Models.Customer> Customers { get; set; }
-
-
-
-
     }
 }

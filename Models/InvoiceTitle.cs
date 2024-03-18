@@ -16,10 +16,15 @@ namespace SonmezERP.Models
         [DataType(DataType.DateTime)]
         public DateTime CreateDate{ get; set; }
         public string Seris { get; set; }
+        //kdv hariç toplam
         public float TotalWithoutTax { get; set; }
+        //kdv toplamı
         public float TotalTax { get; set; }
+        //indirimsiz toplam
         public float TotalWithoutDiscount { get; set; }
+        //indirimli toplam
         public float TotalWithDiscount { get; set; }
+        //Metreküp toplamı
         public float TotalCubicMeters { get; set; }
 
 
