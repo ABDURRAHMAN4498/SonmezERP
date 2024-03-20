@@ -4,7 +4,7 @@ using System.Runtime.Intrinsics.Wasm;
 
 namespace SonmezERP.Models
 {
-    public class Products
+    public class Product
     {
         [Key]
         public int Id { get; set; }

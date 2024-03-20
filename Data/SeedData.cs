@@ -16,7 +16,7 @@ namespace SonmezERP.Data
                     return;
                 }
                 context.Products.AddRange(
-                    new Products
+                    new Product
                     {
                         Id = 1,
                         ProductCode = "0202",
@@ -28,11 +28,10 @@ namespace SonmezERP.Data
 
                     }
                 );
-                context.Categoreis.AddRange(
-                    new Categoreis
+                context.ProductDetails.AddRange(
+                    new ProductDetails
                     {
-                        Id = 1,
-                        Category = "Sandalye"
+                        
                     });
                 context.SaveChanges();
             }

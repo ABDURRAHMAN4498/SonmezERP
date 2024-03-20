@@ -7,6 +7,6 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         public string Color { get; set; }
-        public ICollection<Products> Products { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

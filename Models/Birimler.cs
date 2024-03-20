@@ -7,5 +7,6 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         public string Birim { get; set; } = string.Empty;
+        public ICollection<Product> Products { get; set; }
     }
 }
