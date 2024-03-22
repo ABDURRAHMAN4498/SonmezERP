@@ -18,20 +18,16 @@ namespace SonmezERP.Data
 
         public DbSet<SonmezERP.Models.Product> Products { get; set; }
         public DbSet<SonmezERP.Models.ProductDetails> ProductDetails { get; set; }
-        public DbSet<SonmezERP.Models.Birimler> Birimler { get; set; }
-        public DbSet<SonmezERP.Models.Brands> Brands { get; set; }
-        public DbSet<SonmezERP.Models.Categoreis> Categoreis { get; set; }
-        public DbSet<SonmezERP.Models.Colors> Colors { get; set; }
-        public DbSet<SonmezERP.Models.Hammadde> Hammadde { get; set; }
-        public DbSet<SonmezERP.Models.Kdvs> Kdv { get; set; }
-        public DbSet<SonmezERP.Models.User> Users { get; set; }
-        public DbSet<SonmezERP.Models.HammaddeActions> HammaddeActions { get; set; }
-        public DbSet<SonmezERP.Models.Customer> Customers { get; set; }
+        public DbSet<SonmezERP.Models.UnitsOfMeasurement> UnitsOfMeasurementName { get; set; }
+        public DbSet<SonmezERP.Models.Brand> Brands { get; set; }
+        public DbSet<SonmezERP.Models.Category> Categoreis { get; set; }
+        public DbSet<SonmezERP.Models.Color> Colors { get; set; }
+        public DbSet<SonmezERP.Models.Kdv> Kdv { get; set; }
+        //public DbSet<SonmezERP.Models.RawMaterials> Hammadde { get; set; }
+        //public DbSet<SonmezERP.Models.User> Users { get; set; }
+        //public DbSet<SonmezERP.Models.RawMaterialsActions> HammaddeActions { get; set; }
+        //public DbSet<SonmezERP.Models.Customer> Customers { get; set; }
 
-        protected override void OnModelCreateing(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
 
-        }
     }
 }

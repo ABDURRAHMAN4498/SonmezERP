@@ -3,9 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using SonmezERP.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SonmezERPContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("SonmezERPContext")
+    builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'SonmezERPContext' not found.")));
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

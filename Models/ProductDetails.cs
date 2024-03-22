@@ -2,6 +2,7 @@
 {
     public class ProductDetails
     {
+        public int Id { get; set; }
         public int ProductWidth { get; set; }
         public int ProductHight { get; set; }
         public int ProductSize { get; set; }
@@ -14,7 +15,7 @@
         public int Tir { get; set; }
         public int Container { get; set; }
         public string? Coordinate { get; set; }
-
+        public string Note { get; set; }
         public ICollection<Product> Products { get; set; }
     }
 }

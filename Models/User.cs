@@ -1,4 +1,4 @@
-﻿using Humanizer;
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace SonmezERP.Models
@@ -14,6 +14,7 @@ namespace SonmezERP.Models
         public string? Foto { get; set; }
         [DataType(DataType.Date)]
         public DateTime CreateDate { get; set; }
+        [DataType(DataType.PhoneNumber)]
         public string PhoneNo { get; set; }
     }
 }
