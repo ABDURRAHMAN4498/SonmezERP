@@ -9,10 +9,8 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         public string CustomerName { get; set; }
-        [ForeignKey("Address")]
-        public int CustomerAddressId  { get; set; }
         public Addresses Address { get; set; }
-        public string CompanyName { get; set; }
+        public string CompanyName { get; set;}
         public string Email { get; set; }
         public string Phone { get; set; }
         public string? Fax { get; set; }

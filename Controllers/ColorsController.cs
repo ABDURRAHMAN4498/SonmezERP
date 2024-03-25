@@ -54,15 +54,16 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ColorName")] Color color)
+        public async Task<IActionResult> Create([Bind("Id,ColorName,Note")] Color color)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Add(color);
+                _context.Colors.Add(color);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(color);
+
         }
 
         // GET: Colors/Edit/5
@@ -86,18 +87,17 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ColorName")] Color color)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ColorName,Note")] Color color)
         {
-            if (id != color.Id)
+            if (id !=color.Id)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(color);
+                    _context.Colors.Update(color);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -111,7 +111,7 @@ namespace SonmezERP.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+               return RedirectToAction(nameof(Index));
             }
             return View(color);
         }

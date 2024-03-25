@@ -11,7 +11,6 @@ namespace SonmezERP.Models
         public bool Visiblity { get; set; } 
         public string ProductCode { get; set; }
         public string Barcode { get; set; }
-        public int BrandsId { get; set; }
         public Brand Brand { get; set; }
         public Category Category { get; set; }
         public string ProductNameTr { get; set; }

@@ -15,7 +15,7 @@
         public int Tir { get; set; }
         public int Container { get; set; }
         public string? Coordinate { get; set; }
-        public string Note { get; set; }
+        public string Descreption { get; set; }
         public ICollection<Product> Products { get; set; }
     }
 }

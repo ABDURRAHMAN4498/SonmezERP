@@ -54,9 +54,9 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,BrandName")] Brand brand)
+        public async Task<IActionResult> Create([Bind("Id,BrandName,Descraption")] Brand brand)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(brand);
                 await _context.SaveChangesAsync();
@@ -86,7 +86,7 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,BrandName")] Brand brand)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,BrandName,Descraption")] Brand brand)
         {
             if (id != brand.Id)
             {
