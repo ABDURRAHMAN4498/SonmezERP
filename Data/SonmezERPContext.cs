@@ -24,6 +24,7 @@ namespace SonmezERP.Data
         public DbSet<SonmezERP.Models.Color> Colors { get; set; }
         public DbSet<SonmezERP.Models.Kdv> Kdv { get; set; }
         public DbSet<SonmezERP.Models.ProductLog> ProductLogs { get; set; }
+        public DbSet<SonmezERP.Models.DashboardSettings> DashboardSettingsItems { get; set; }
         //public DbSet<SonmezERP.Models.RawMaterials> Hammadde { get; set; }
         //public DbSet<SonmezERP.Models.User> Users { get; set; }
         //public DbSet<SonmezERP.Models.RawMaterialsActions> HammaddeActions { get; set; }

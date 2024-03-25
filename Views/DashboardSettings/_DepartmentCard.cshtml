@@ -1,0 +1,14 @@
+@model DashboardSettings
+
+ </a>
+ <a class="btn" asp-controller="@Model.ControllerName" asp-action="index">
+ <div class="card" style="width: 10rem;">
+        <img src="~/Uploads/Logo/@Model.IconePath" class="card-img-top" alt="...">
+     <div class="card-body">
+         <h5 class="card-title text-center">@Model.DepartmentName</h5>
+         <p class=" text-center">
+             @Model.Description
+         </p>
+     </div>
+ </div>
+ </a>
