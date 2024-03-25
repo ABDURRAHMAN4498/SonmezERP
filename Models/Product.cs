@@ -13,7 +13,9 @@ namespace SonmezERP.Models
         public string Barcode { get; set; }
         public Brand Brand { get; set; }
         public Category Category { get; set; }
+        [Display(Name ="Ürün Adı")]
         public string ProductNameTr { get; set; }
+        [Display(Name ="Product Name")]
         public string ProductNameEn { get; set; }
         public Color Color { get; set; }
         public float PriceTl { get; set; }

@@ -1,0 +1,85 @@
+﻿
+@model SonmezERP.Models.Product
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Visiblity" /> @Html.DisplayNameFor(model => model.Visiblity)
+                </label>
+            </div>
+            @* productCode *@
+            <div class="form-group">
+                <label asp-for="ProductCode" class="control-label"></label>
+                <input asp-for="ProductCode" class="form-control" />
+                <span asp-validation-for="ProductCode" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="@Context"></label>
+                <select class="form-control" asp-items="@ViewBag.Brands" asp-for="Brand.Id">
+                </select>
+             </div>
+
+
+
+            @* Barcode *@
+            <div class="form-group">
+                <label asp-for="Barcode" class="control-label"></label>
+                <input asp-for="Barcode" class="form-control" />
+                <span asp-validation-for="Barcode" class="text-danger"></span>
+            </div>
+            @* ProducttrName *@
+            <div class="form-group">
+                <label asp-for="ProductNameTr" class="control-label"></label>
+                <input asp-for="ProductNameTr" class="form-control" />
+                <span asp-validation-for="ProductNameTr" class="text-danger"></span>
+            </div>
+            @* ProductNameEn *@
+            <div class="form-group">
+                <label asp-for="ProductNameEn" class="control-label"></label>
+                <input asp-for="ProductNameEn" class="form-control" />
+                <span asp-validation-for="ProductNameEn" class="text-danger"></span>
+            </div>
+            @* pricetl *@
+            <div class="form-group">
+                <label asp-for="PriceTl" class="control-label"></label>
+                <input asp-for="PriceTl" class="form-control" />
+                <span asp-validation-for="PriceTl" class="text-danger"></span>
+            </div>
+            @* priceUSD *@
+            <div class="form-group">
+                <label asp-for="PriceUSD" class="control-label"></label>
+                <input asp-for="PriceUSD" class="form-control" />
+                <span asp-validation-for="PriceUSD" class="text-danger"></span>
+            </div>
+            @* createDate *@
+            <div class="form-group">
+                <label asp-for="CeateDate" class="control-label"></label>
+                <input asp-for="CeateDate" class="form-control" />
+                <span asp-validation-for="CeateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary my-3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

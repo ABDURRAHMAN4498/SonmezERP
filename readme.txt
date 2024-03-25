@@ -44,3 +44,7 @@ HTML kodu
     <option value="IL">Illinois</option>
     <option value="IN">Indiana</option>
   </select>
+
+
+///////////////////////////////////////////////
+Data Source=sql.bsite.net\MSSQL2016;Initial Catalog=abdurrahman4498_;User ID=abdurrahman4498_;Password=********;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False
