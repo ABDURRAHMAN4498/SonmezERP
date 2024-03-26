@@ -25,14 +25,36 @@
                 <input asp-for="ProductCode" class="form-control" />
                 <span asp-validation-for="ProductCode" class="text-danger"></span>
             </div>
+            @* Brands *@
             <div class="form-group my-3">
-                <label asp-for="@Context"></label>
+                <label asp-for="@ViewBag"></label>
                 <select class="form-control" asp-items="@ViewBag.Brands" asp-for="Brand.Id">
                 </select>
              </div>
-
-
-
+             @* Category *@
+            <div class="form-group my-3">
+                <label asp-for="@ViewBag"></label>
+                <select class="form-control" asp-items="@ViewBag.Categoreis" asp-for="Category.Id">
+                </select>
+            </div>
+            @* Color *@
+            <div class="form-group my-3">
+                <label asp-for="@ViewBag"></label>
+                <select class="form-control" asp-items="@ViewBag.Color" asp-for="Color.Id">
+                </select>
+            </div>
+            @* KDV *@
+            <div class="form-group my-3">
+                <label asp-for="@ViewBag"></label>
+                <select class="form-control" asp-items="@ViewBag.Uom" asp-for="UnitsOfMeasurementName.Id">
+                </select>
+            </div>
+            @* Unit Of Measurement *@
+            <div class="form-group my-3">
+                <label asp-for="@ViewBag"></label>
+                <select class="form-control" asp-items="@ViewBag.Kdv" asp-for="Kdv.Id">
+                </select>
+            </div>
             @* Barcode *@
             <div class="form-group">
                 <label asp-for="Barcode" class="control-label"></label>
@@ -51,7 +73,7 @@
                 <input asp-for="ProductNameEn" class="form-control" />
                 <span asp-validation-for="ProductNameEn" class="text-danger"></span>
             </div>
-            @* pricetl *@
+            @* priceTL *@
             <div class="form-group">
                 <label asp-for="PriceTl" class="control-label"></label>
                 <input asp-for="PriceTl" class="form-control" />
@@ -63,11 +85,85 @@
                 <input asp-for="PriceUSD" class="form-control" />
                 <span asp-validation-for="PriceUSD" class="text-danger"></span>
             </div>
-            @* createDate *@
+            <div class="row">
+                @* productWith *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.PackageWidth" class="control-label"></label>
+                    <input asp-for="ProductDetails.ProductWidth" class="form-control" />
+                    <span asp-validation-for="ProductDetails.ProductWidth" class="text-danger"></span>
+                </div>
+                @* ProductHight *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.ProductHight" class="control-label"></label>
+                    <input asp-for="ProductDetails.ProductHight" class="form-control" />
+                    <span asp-validation-for="ProductDetails.ProductHight" class="text-danger"></span>
+                </div>
+                @* productSize *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.ProductSize" class="control-label"></label>
+                    <input asp-for="ProductDetails.ProductSize" class="form-control" />
+                    <span asp-validation-for="ProductDetails.ProductSize" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                @* PackageWith *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.PackageWidth" class="control-label"></label>
+                    <input asp-for="ProductDetails.PackageWidth" class="form-control" />
+                    <span asp-validation-for="ProductDetails.PackageWidth" class="text-danger"></span>
+                </div>
+                @* PackageHight *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.PackageHight" class="control-label"></label>
+                    <input asp-for="ProductDetails.PackageHight" class="form-control" />
+                    <span asp-validation-for="ProductDetails.PackageHight" class="text-danger"></span>
+                </div>
+                @* PackageSize *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.PackageSize" class="control-label"></label>
+                    <input asp-for="ProductDetails.PackageSize" class="form-control" />
+                    <span asp-validation-for="ProductDetails.PackageSize" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                @* CubicMetre *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.CubicMeter" class="control-label"></label>
+                    <input asp-for="ProductDetails.CubicMeter" class="form-control" />
+                    <span asp-validation-for="ProductDetails.CubicMeter" class="text-danger"></span>
+                </div>
+                @* Tir *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.Tir" class="control-label"></label>
+                    <input asp-for="ProductDetails.Tir" class="form-control" />
+                    <span asp-validation-for="ProductDetails.Tir" class="text-danger"></span>
+                </div>
+                @* Container *@
+                <div class="form-group">
+                    <label asp-for="ProductDetails.Container" class="control-label"></label>
+                    <input asp-for="Barcode" class="form-control" />
+                    <span asp-validation-for="Barcode" class="text-danger"></span>
+                </div>
+            </div>
+            @* Cordinate *@
             <div class="form-group">
-                <label asp-for="CeateDate" class="control-label"></label>
-                <input asp-for="CeateDate" class="form-control" />
-                <span asp-validation-for="CeateDate" class="text-danger"></span>
+                <label asp-for="ProductDetails.Coordinate" class="control-label"></label>
+                <input asp-for="ProductDetails.Coordinate" class="form-control" />
+                <span asp-validation-for="ProductDetails.Coordinate" class="text-danger"></span>
+            </div>
+            @* Description *@
+           @*  <div class="form-group">
+                <label asp-for="ProductDetails.Descreption" class="control-label"></label>
+                <input asp-for="ProductDetails.Descreption" class="form-control" />
+                <span asp-validation-for="ProductDetails.Descreption" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="ProductDetails.Descreption"></label>
+                <div class="input-group">
+                    <span class="input-group-text">Descreption</span>
+                    <textarea class="form-control" aria-label="Descreption"></textarea>
+                </div>
+                <span asp-validation-for="ProductDetails.Descreption" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary my-3" />

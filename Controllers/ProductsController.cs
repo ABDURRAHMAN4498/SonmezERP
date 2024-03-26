@@ -48,6 +48,9 @@ namespace SonmezERP.Controllers
         {
             ViewBag.Brands = _context.Brands.ToListAsync();
             ViewBag.Categoreis = _context.Categoreis.ToListAsync();
+            ViewBag.Kdv = _context.Kdv.ToListAsync();
+            ViewBag.Color = _context.Colors.ToListAsync();
+            ViewBag.Uom = _context.UnitsOfMeasurements.ToListAsync();
             return View();
         }
 
@@ -55,11 +58,15 @@ namespace SonmezERP.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Visiblity,ProductCode,Barcode,ProductNameTr,ProductNameEn,PriceTl,PriceUSD,CeateDate")] Product product)
+        public async Task<IActionResult> Create([Bind(
+            "Id,Visiblity,Brand,Category,ProductCode,Barcode,ProductNameTr,ProductNameEn,Color,PriceTl,PriceUSD,Kdv,UnitsOfMeasurement,ProductDetails"
+            )] Product product)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
+                product.CeateDate = DateTime.Now;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

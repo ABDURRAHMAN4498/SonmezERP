@@ -22,7 +22,7 @@ namespace SonmezERP.Controllers
         // GET: UnitsOfMeasurements
         public async Task<IActionResult> Index()
         {
-            return View(await _context.UnitsOfMeasurementName.ToListAsync());
+            return View(await _context.UnitsOfMeasurements.ToListAsync());
         }
 
         // GET: UnitsOfMeasurements/Details/5
@@ -33,7 +33,7 @@ namespace SonmezERP.Controllers
                 return NotFound();
             }
 
-            var unitsOfMeasurement = await _context.UnitsOfMeasurementName
+            var unitsOfMeasurement = await _context.UnitsOfMeasurements
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (unitsOfMeasurement == null)
             {
@@ -56,7 +56,7 @@ namespace SonmezERP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UnitsOfMeasurementName")] UnitsOfMeasurement unitsOfMeasurement)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(unitsOfMeasurement);
                 await _context.SaveChangesAsync();
@@ -73,7 +73,7 @@ namespace SonmezERP.Controllers
                 return NotFound();
             }
 
-            var unitsOfMeasurement = await _context.UnitsOfMeasurementName.FindAsync(id);
+            var unitsOfMeasurement = await _context.UnitsOfMeasurements.FindAsync(id);
             if (unitsOfMeasurement == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace SonmezERP.Controllers
                 return NotFound();
             }
 
-            var unitsOfMeasurement = await _context.UnitsOfMeasurementName
+            var unitsOfMeasurement = await _context.UnitsOfMeasurements
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (unitsOfMeasurement == null)
             {
@@ -139,10 +139,10 @@ namespace SonmezERP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var unitsOfMeasurement = await _context.UnitsOfMeasurementName.FindAsync(id);
+            var unitsOfMeasurement = await _context.UnitsOfMeasurements.FindAsync(id);
             if (unitsOfMeasurement != null)
             {
-                _context.UnitsOfMeasurementName.Remove(unitsOfMeasurement);
+                _context.UnitsOfMeasurements.Remove(unitsOfMeasurement);
             }
 
             await _context.SaveChangesAsync();
@@ -151,7 +151,7 @@ namespace SonmezERP.Controllers
 
         private bool UnitsOfMeasurementExists(int id)
         {
-            return _context.UnitsOfMeasurementName.Any(e => e.Id == id);
+            return _context.UnitsOfMeasurements.Any(e => e.Id == id);
         }
     }
 }

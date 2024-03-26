@@ -7,24 +7,16 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Visiblity)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.ProductCode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Barcode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductNameTr)
-            </th>
-            <th>
+                @Html.DisplayNameFor(model => model.ProductNameTr)<br />
                 @Html.DisplayNameFor(model => model.ProductNameEn)
             </th>
             <th>
@@ -33,9 +25,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.PriceUSD)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CeateDate)
-            </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -43,18 +33,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Visiblity)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.ProductCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Barcode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductNameTr)
-            </td>
-            <td>
+                @Html.DisplayFor(modelItem => item.ProductNameTr)<br />
                 @Html.DisplayFor(modelItem => item.ProductNameEn)
             </td>
             <td>
@@ -62,9 +44,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PriceUSD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CeateDate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

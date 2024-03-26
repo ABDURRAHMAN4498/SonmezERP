@@ -18,7 +18,7 @@ namespace SonmezERP.Data
 
         public DbSet<SonmezERP.Models.Product> Products { get; set; }
         public DbSet<SonmezERP.Models.ProductDetails> ProductDetails { get; set; }
-        public DbSet<SonmezERP.Models.UnitsOfMeasurement> UnitsOfMeasurementName { get; set; }
+        public DbSet<SonmezERP.Models.UnitsOfMeasurement> UnitsOfMeasurements { get; set; }
         public DbSet<SonmezERP.Models.Brand> Brands { get; set; }
         public DbSet<SonmezERP.Models.Category> Categoreis { get; set; }
         public DbSet<SonmezERP.Models.Color> Colors { get; set; }
