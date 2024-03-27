@@ -1,4 +1,6 @@
-﻿namespace SonmezERP.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SonmezERP.Models
 {
     public class ProductDetails
     {

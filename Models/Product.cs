@@ -8,9 +8,11 @@ namespace SonmezERP.Models
     {
         [Key]
         public int Id { get; set; }
-        public bool Visiblity { get; set; } 
+        public bool Visiblity { get; set; }
+        [Display(Name ="Kod")]
         public string ProductCode { get; set; }
         public string Barcode { get; set; }
+        [Display(Name ="Marka")]
         public int BrandId { get; set; }
         public Brand? Brand { get; set; }
         public int CategoryId { get; set; }
@@ -32,6 +34,7 @@ namespace SonmezERP.Models
         public UnitsOfMeasurement? UnitsOfMeasurement { get; set; }
         public int ProductDetailsId { get; set; }
         public ProductDetails? ProductDetails { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime CeateDate { get; set; }
         
     }

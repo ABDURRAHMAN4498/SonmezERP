@@ -59,7 +59,6 @@ namespace SonmezERP.Controllers
             ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "KdvName");
             ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id");
             ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "UnitsOfMeasurementName");
-            ViewBag.Brands = new SelectList( _context.Brands,"Id","");
             return View();
         }
 
@@ -68,44 +67,23 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(
-            //[FromForm]
-            [Bind("Id,Visiblity,ProductCode,Barcode,BrandId,CategoryId,ProductNameTr,ProductNameEn,ColorId,PriceTl,PriceUSD,KdvId,UnitsOfMeasurementId")]
-                Product product)
+        public async Task<IActionResult> Create([FromForm]
+            //[Bind("Id,Visiblity,ProductCode,Barcode,BrandId,CategoryId,ProductNameTr,ProductNameEn,ColorId,PriceTl,PriceUSD,KdvId,UnitsOfMeasurementId,ProductDetailsId")]
+        Product product)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var prd = new Product()
-                {
-                    Visiblity = product.Visiblity,
-                    ProductCode = product.ProductCode,
-                    Barcode = product.Barcode,
-                    ProductNameTr = product.ProductNameTr,
-                    ProductNameEn = product.ProductNameEn,
-                    PriceTl = product.PriceTl,
-                    PriceUSD = product.PriceUSD,
-                    BrandId = product.BrandId,
-                    CategoryId = product.CategoryId,
-                    ColorId = product.ColorId,
-                    KdvId = product.KdvId,
-                    UnitsOfMeasurementId = product.UnitsOfMeasurementId,
-                    CeateDate = DateTime.Now
-                };
-                var prdDtls = new ProductDetails()
-                {
-
-                };
-
-                _context.Products.Add(prd);
+                product.CeateDate  =DateTime.Now;
+                _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "BrandName");
-            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "CategoryName");
-            ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName");
-            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "KdvName");
-            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id");
-            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "UnitsOfMeasurementName");
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id", product.BrandId);
+            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "Id", product.CategoryId);
+            ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName", product.ColorId);
+            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "Id", product.KdvId);
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id", product.ProductDetailsId);
+            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "Id", product.UnitsOfMeasurementId);
             return View(product);
         }
 
@@ -122,12 +100,13 @@ namespace SonmezERP.Controllers
             {
                 return NotFound();
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id", product.BrandId);
-            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "Id", product.CategoryId);
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "BrandName", product.BrandId);
+            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "CategoryName", product.CategoryId);
             ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName", product.ColorId);
-            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "Id", product.KdvId);
+            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "KdvName", product.KdvId);
             ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id", product.ProductDetailsId);
-            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "Id", product.UnitsOfMeasurementId);
+            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "UnitsOfMeasurementName", product.UnitsOfMeasurementId);
+            
             return View(product);
         }
 

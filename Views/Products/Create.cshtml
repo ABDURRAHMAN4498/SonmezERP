@@ -4,12 +4,12 @@
     ViewData["Title"] = "Create";
 }
 
-<h1 class="text-center">Create Product <br />Ürün oluştur</h1>
+<h1>Create</h1>
 
-<h4 class="text-center">Product <br />Ürün</h4>
+<h4>Product</h4>
 <hr />
 <div class="row">
-    <div class="">
+    <div class="text-center">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group form-check">
@@ -18,8 +18,8 @@
                 </label>
             </div>
             <hr />
-            <div class="row>
-                <div class="form-group col-auto">
+            <div class="row">
+                <div class="form-group col-auto text-md-center">
                     <label asp-for="ProductCode" class="control-label"></label>
                     <input asp-for="ProductCode" class="form-control" />
                     <span asp-validation-for="ProductCode" class="text-danger"></span>
@@ -43,6 +43,33 @@
             <hr />
             <div class="row">
                 <div class="form-group col-auto">
+                    <label asp-for="BrandId" class="control-label"></label>
+                    <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
+                </div>
+                <div class="form-group col-auto">
+                    <label asp-for="CategoryId" class="control-label"></label>
+                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                </div>
+                <div class="form-group col-auto">
+                    <label asp-for="ColorId" class="control-label"></label>
+                    <select asp-for="ColorId" class="form-control" asp-items="ViewBag.ColorId"></select>
+                </div>
+                <div class="form-group col-auto">
+                    <label asp-for="KdvId" class="control-label"></label>
+                    <select asp-for="KdvId" class="form-control" asp-items="ViewBag.KdvId"></select>
+                </div>
+                <div class="form-group col-auto">
+                    <label asp-for="UnitsOfMeasurementId" class="control-label"></label>
+                    <select asp-for="UnitsOfMeasurementId" class="form-control" asp-items="ViewBag.UnitsOfMeasurementId"></select>
+                </div>
+                <div class="form-group col-auto">
+                    <label asp-for="ProductDetailsId" class="control-label"></label>
+                    <select asp-for="ProductDetailsId" class="form-control" asp-items="ViewBag.ProductDetailsId"></select>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="form-group col-auto">
                     <label asp-for="PriceTl" class="control-label"></label>
                     <input asp-for="PriceTl" class="form-control" />
                     <span asp-validation-for="PriceTl" class="text-danger"></span>
@@ -53,107 +80,8 @@
                     <span asp-validation-for="PriceUSD" class="text-danger"></span>
                 </div>
             </div>
-            <hr />
-            <div class="row">
-                <div class="form-group col-auto">
-                    <label asp-for="BrandId" class="control-label"></label>
-                    <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="CategoryId" class="control-label"></label>
-                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
-                </div>
-
-                <div class="form-group col-auto">
-                    <label asp-for="ColorId" class="control-label"></label>
-                    <select asp-for="ColorId" class="form-control" asp-items="ViewBag.ColorId"></select>
-                </div>
-
-                <div class="form-group col-auto">
-                    <label asp-for="KdvId" clsass="control-label"></label>
-                    <select asp-for="KdvId" class="form-control" asp-items="ViewBag.KdvId"></select>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="UnitsOfMeasurementId" class="control-label"></label>
-                    <select asp-for="UnitsOfMeasurementId" class="form-control" asp-items="ViewBag.UnitsOfMeasurementId"></select>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.ProductWidth" class="control-label"></label>
-                    <input asp-for="ProductDetails.ProductWidth" class="form-control" />
-                    <span asp-validation-for="ProductDetails.ProductWidth" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.ProductHight" class="control-label"></label>
-                    <input asp-for="ProductDetails.ProductHight" class="form-control" />
-                    <span asp-validation-for="ProductDetails.ProductHight" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.ProductSize" class="control-label"></label>
-                    <input asp-for="ProductDetails.ProductSize" class="form-control" />
-                    <span asp-validation-for="ProductDetails.ProductSize" class="text-danger"></span>
-                </div>
-
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.ProductWeight" class="control-label"></label>
-                    <input asp-for="ProductDetails.ProductWeight" class="form-control" />
-                    <span asp-validation-for="ProductDetails.ProductWeight" class="text-danger"></span>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.PackageWidth" class="control-label"></label>
-                    <input asp-for="ProductDetails.PackageWidth" class="form-control" />
-                    <span asp-validation-for="ProductDetails.PackageWidth" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.PackageSize" class="control-label"></label>
-                    <input asp-for="ProductDetails.PackageSize" class="form-control" />
-                    <span asp-validation-for="ProductDetails.PackageSize" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.PackageHight" class="control-label"></label>
-                    <input asp-for="ProductDetails.PackageHight" class="form-control" />
-                    <span asp-validation-for="ProductDetails.PackageHight" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.PackagePices" class="control-label"></label>
-                    <input asp-for="ProductDetails.PackagePices" class="form-control" />
-                    <span asp-validation-for="ProductDetails.PackagePices" class="text-danger"></span>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.CubicMeter" class="control-label"></label>
-                    <input asp-for="ProductDetails.CubicMeter" class="form-control" />
-                    <span asp-validation-for="ProductDetails.CubicMeter" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.Tir" class="control-label"></label>
-                    <input asp-for="ProductDetails.Tir" class="form-control" />
-                    <span asp-validation-for="ProductDetails.Tir" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.Container" class="control-label"></label>
-                    <input asp-for="ProductDetails.Container" class="form-control" />
-                    <span asp-validation-for="ProductDetails.Container" class="text-danger"></span>
-                </div>
-                <div class="form-group col-auto">
-                    <label asp-for="ProductDetails.Coordinate" class="control-label"></label>
-                    <input asp-for="ProductDetails.Coordinate" class="form-control" />
-                    <span asp-validation-for="ProductDetails.Coordinate" class="text-danger"></span>
-                </div>
-            </div>
-            <hr />
-            <div class="form-group col-auto">
-                <label asp-for="ProductDetails.Descreption" class="control-label"></label>
-                <input asp-for="ProductDetails.Descreption" class="form-control" />
-                <span asp-validation-for="ProductDetails.Descreption" class="text-danger"></span>
-            </div>
+           
+            
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary my-3" />
             </div>
@@ -162,7 +90,7 @@
 </div>
 
 <div>
-    <a class="btn btn-dark" asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
