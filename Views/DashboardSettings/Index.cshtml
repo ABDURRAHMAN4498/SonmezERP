@@ -7,17 +7,22 @@
 <h1>Index</h1>
 
 <p>
-    <a class="btn btn-success" asp-action="Create">Create New</a>
+    <a class="btn btn-success d-xl-block" asp-action="Create">Create New</a>
 </p>
 
 
-@foreach (var item in Model)
-{
-    <partial name="_DepartmentCard" model="@item" />
-}
-<table class="table table-hover">
+<div class="text-md-center">
+    @foreach (var item in Model)
+    {
+        <partial name="_DepartmentCard" model="@item" />
+    }
+</div>
+<table class="table table-hover table-dark table-striped-columns text-md-center">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.DepartmentName)
             </th>
@@ -42,6 +47,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DepartmentName)
                 </td>

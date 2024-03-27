@@ -333,7 +333,7 @@ namespace SonmezERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SonmezERP.Models.UnitsOfMeasurement", "UnitsOfMeasurementName")
+                    b.HasOne("SonmezERP.Models.UnitsOfMeasurement", "UnitsOfMeasurement")
                         .WithMany("Products")
                         .HasForeignKey("UnitsOfMeasurementId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -349,7 +349,7 @@ namespace SonmezERP.Migrations
 
                     b.Navigation("ProductDetails");
 
-                    b.Navigation("UnitsOfMeasurementName");
+                    b.Navigation("UnitsOfMeasurement");
                 });
 
             modelBuilder.Entity("SonmezERP.Models.ProductLog", b =>

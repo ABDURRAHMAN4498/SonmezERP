@@ -84,10 +84,12 @@
             <hr />
             <div class="form-group col-auto">
                 <label asp-for="Descreption" class="control-label"></label>
-                <textarea  asp-for="Descreption" placeholder="Write the Description" class="form-control" style="height: 100px"/>
+                <input asp-for="Descreption" class="form-control" />
+
+                @* <textarea  asp-for="Descreption" placeholder="Write the Description" class="form-control" style="height: 100px"/> *@
                 <span asp-validation-for="Descreption" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group my-3">
                 <input type="submit" value="Create" class="btn btn-primary my-3" />
             </div>
         </form>

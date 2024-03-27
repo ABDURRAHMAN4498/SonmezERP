@@ -22,7 +22,8 @@ namespace SonmezERP.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+            var sonmezERPContext = _context.Products.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Color).Include(p => p.Kdv).Include(p => p.ProductDetails).Include(p => p.UnitsOfMeasurement);
+            return View(await sonmezERPContext.ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -34,6 +35,12 @@ namespace SonmezERP.Controllers
             }
 
             var product = await _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Color)
+                .Include(p => p.Kdv)
+                .Include(p => p.ProductDetails)
+                .Include(p => p.UnitsOfMeasurement)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
@@ -46,11 +53,13 @@ namespace SonmezERP.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewBag.Brands = _context.Brands.ToListAsync();
-            ViewBag.Categoreis = _context.Categoreis.ToListAsync();
-            ViewBag.Kdv = _context.Kdv.ToListAsync();
-            ViewBag.Color = _context.Colors.ToListAsync();
-            ViewBag.Uom = _context.UnitsOfMeasurements.ToListAsync();
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "BrandName");
+            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "CategoryName");
+            ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName");
+            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "KdvName");
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id");
+            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "UnitsOfMeasurementName");
+            ViewBag.Brands = new SelectList( _context.Brands,"Id","");
             return View();
         }
 
@@ -58,52 +67,45 @@ namespace SonmezERP.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([FromForm] Product product)
+        public async Task<IActionResult> Create(
+            //[FromForm]
+            [Bind("Id,Visiblity,ProductCode,Barcode,BrandId,CategoryId,ProductNameTr,ProductNameEn,ColorId,PriceTl,PriceUSD,KdvId,UnitsOfMeasurementId")]
+                Product product)
         {
             if (!ModelState.IsValid)
             {
-                var prdDtls = new ProductDetails()
-                {
-                    ProductWidth = product.ProductDetails.ProductWidth,
-                    ProductHight = product.ProductDetails.ProductHight,
-                    ProductSize = product.ProductDetails.ProductSize,
-                    ProductWeight = product.ProductDetails.ProductWeight,
-                    PackageWidth = product.ProductDetails.PackageWidth,
-                    PackageSize = product.ProductDetails.PackageSize,
-                    PackageHight = product.ProductDetails.PackageHight,
-                    PackagePices = product.ProductDetails.PackagePices,
-                    CubicMeter = product.ProductDetails.CubicMeter,
-                    Tir = product.ProductDetails.Tir,
-                    Container = product.ProductDetails.Container,
-                    Coordinate = product.ProductDetails.Coordinate,
-                    Descreption = product.ProductDetails.Descreption
-
-                };
-                
-                _context.ProductDetails.Add(prdDtls);
                 var prd = new Product()
                 {
                     Visiblity = product.Visiblity,
                     ProductCode = product.ProductCode,
                     Barcode = product.Barcode,
-                    BrandId = product.Brand.Id,
-                    CategoryId = product.CategoryId,
                     ProductNameTr = product.ProductNameTr,
                     ProductNameEn = product.ProductNameEn,
-                    ColorId = product.Color.Id,
                     PriceTl = product.PriceTl,
                     PriceUSD = product.PriceUSD,
-                    KdvId = product.Kdv.Id,
-                    UnitsOfMeasurementId = product.UnitsOfMeasurementName.Id,
-                    ProductDetailsId = product.ProductDetails.Id,
+                    BrandId = product.BrandId,
+                    CategoryId = product.CategoryId,
+                    ColorId = product.ColorId,
+                    KdvId = product.KdvId,
+                    UnitsOfMeasurementId = product.UnitsOfMeasurementId,
                     CeateDate = DateTime.Now
                 };
+                var prdDtls = new ProductDetails()
+                {
+
+                };
+
                 _context.Products.Add(prd);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "BrandName");
+            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "CategoryName");
+            ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName");
+            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "KdvName");
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id");
+            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "UnitsOfMeasurementName");
             return View(product);
         }
 
@@ -120,6 +122,12 @@ namespace SonmezERP.Controllers
             {
                 return NotFound();
             }
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id", product.BrandId);
+            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "Id", product.CategoryId);
+            ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName", product.ColorId);
+            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "Id", product.KdvId);
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id", product.ProductDetailsId);
+            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "Id", product.UnitsOfMeasurementId);
             return View(product);
         }
 
@@ -128,7 +136,7 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Visiblity,ProductCode,Barcode,ProductNameTr,ProductNameEn,PriceTl,PriceUSD,CeateDate")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Visiblity,ProductCode,Barcode,BrandId,CategoryId,ProductNameTr,ProductNameEn,ColorId,PriceTl,PriceUSD,KdvId,UnitsOfMeasurementId,ProductDetailsId,CeateDate")] Product product)
         {
             if (id != product.Id)
             {
@@ -155,6 +163,12 @@ namespace SonmezERP.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Id", product.BrandId);
+            ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "Id", product.CategoryId);
+            ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName", product.ColorId);
+            ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "Id", product.KdvId);
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id", product.ProductDetailsId);
+            ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "Id", product.UnitsOfMeasurementId);
             return View(product);
         }
 
@@ -167,6 +181,12 @@ namespace SonmezERP.Controllers
             }
 
             var product = await _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Color)
+                .Include(p => p.Kdv)
+                .Include(p => p.ProductDetails)
+                .Include(p => p.UnitsOfMeasurement)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {

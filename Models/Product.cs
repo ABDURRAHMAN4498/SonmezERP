@@ -21,15 +21,19 @@ namespace SonmezERP.Models
         public string ProductNameEn { get; set; }
         public int ColorId { get; set; }
         public Color? Color { get; set; }
+        [Display(Name ="Fiyat ₺")]
         public float PriceTl { get; set; }
+        [Display(Name ="Fiyat $")]
         public float PriceUSD { get; set; }
         public int KdvId { get; set; }
         public Kdv? Kdv { get; set; }
+        [Display(Name = "Unit Of Measurement")]
         public int UnitsOfMeasurementId { get; set; }
-        public UnitsOfMeasurement? UnitsOfMeasurementName { get; set; }
+        public UnitsOfMeasurement? UnitsOfMeasurement { get; set; }
         public int ProductDetailsId { get; set; }
         public ProductDetails? ProductDetails { get; set; }
         public DateTime CeateDate { get; set; }
+        
     }
 }
 

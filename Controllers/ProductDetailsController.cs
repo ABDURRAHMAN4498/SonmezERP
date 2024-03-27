@@ -56,7 +56,7 @@ namespace SonmezERP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ProductWidth,ProductHight,ProductSize,ProductWeight,PackageWidth,PackageSize,PackageHight,PackagePices,CubicMeter,Tir,Container,Coordinate,Descreption")] ProductDetails productDetails)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(productDetails);
                 await _context.SaveChangesAsync();
