@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gm8PJOyj/v5I7R9YfEJU3uZQP7rqjENXQ3p8HKpzqmA=",
+  "Hash": "0eEppAf0mPx3qA5rhWvN+K6b2NGZ4TvkTJ53m7Q3UYs=",
   "Source": "SonmezERP",
   "BasePath": "_content/SonmezERP",
   "Mode": "Default",
@@ -3720,6 +3720,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Logo\\product.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\ProductDetails.png",
+      "SourceId": "SonmezERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\SonmezERP\\wwwroot\\",
+      "BasePath": "_content/SonmezERP",
+      "RelativePath": "Uploads/Logo/ProductDetails.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Logo\\ProductDetails.png"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\Producticon.jpg",

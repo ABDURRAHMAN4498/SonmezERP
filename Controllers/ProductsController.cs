@@ -60,14 +60,47 @@ namespace SonmezERP.Controllers
         [HttpPost]
 
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind(
-            "Id,Visiblity,Brand,Category,ProductCode,Barcode,ProductNameTr,ProductNameEn,Color,PriceTl,PriceUSD,Kdv,UnitsOfMeasurement,ProductDetails"
-            )] Product product)
+        public async Task<IActionResult> Create([FromForm] Product product)
         {
             if (!ModelState.IsValid)
             {
-                product.CeateDate = DateTime.Now;
-                _context.Add(product);
+                var prdDtls = new ProductDetails()
+                {
+                    ProductWidth = product.ProductDetails.ProductWidth,
+                    ProductHight = product.ProductDetails.ProductHight,
+                    ProductSize = product.ProductDetails.ProductSize,
+                    ProductWeight = product.ProductDetails.ProductWeight,
+                    PackageWidth = product.ProductDetails.PackageWidth,
+                    PackageSize = product.ProductDetails.PackageSize,
+                    PackageHight = product.ProductDetails.PackageHight,
+                    PackagePices = product.ProductDetails.PackagePices,
+                    CubicMeter = product.ProductDetails.CubicMeter,
+                    Tir = product.ProductDetails.Tir,
+                    Container = product.ProductDetails.Container,
+                    Coordinate = product.ProductDetails.Coordinate,
+                    Descreption = product.ProductDetails.Descreption
+
+                };
+                
+                _context.ProductDetails.Add(prdDtls);
+                var prd = new Product()
+                {
+                    Visiblity = product.Visiblity,
+                    ProductCode = product.ProductCode,
+                    Barcode = product.Barcode,
+                    BrandId = product.Brand.Id,
+                    CategoryId = product.CategoryId,
+                    ProductNameTr = product.ProductNameTr,
+                    ProductNameEn = product.ProductNameEn,
+                    ColorId = product.Color.Id,
+                    PriceTl = product.PriceTl,
+                    PriceUSD = product.PriceUSD,
+                    KdvId = product.Kdv.Id,
+                    UnitsOfMeasurementId = product.UnitsOfMeasurementName.Id,
+                    ProductDetailsId = product.ProductDetails.Id,
+                    CeateDate = DateTime.Now
+                };
+                _context.Products.Add(prd);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

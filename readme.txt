@@ -16,7 +16,7 @@
 
 
 
-açýlabilir liste (arama kutulu)
+aï¿½ï¿½labilir liste (arama kutulu)
 *****************************
 javascript kodu
  $(document).ready(function () {
@@ -48,3 +48,29 @@ HTML kodu
 
 ///////////////////////////////////////////////
 Data Source=sql.bsite.net\MSSQL2016;Initial Catalog=abdurrahman4498_;User ID=abdurrahman4498_;Password=********;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False
+
+
+
+
+
+
+
+@* <div class="input-group mb-3">
+<span class="input-group-text w-25" style="font-size: 12px" id="basic-addon1">YarÄ±mamul Kdv</span>
+<select class="form-control form-select form-select-sm js-example-basic-single" id="Kdv" name="tax">
+<option value="">Kdv SeÃ§iniz</option>
+<option value=""></option>
+</select>
+</div> *@
+
+@* <div class="input-group mb-3">
+
+<select class="form-control form-select form-select-sm js-example-basic-single" name="category">
+<option value="">Grup SeÃ§iniz</option>
+@foreach (var item in Model)
+{
+<option value="@item.Id">@item.DepartmentName</option>
+}
+</select>
+
+</div> *@

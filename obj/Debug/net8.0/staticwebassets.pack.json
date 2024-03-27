@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Error.HTML"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\ProductDetails.png",
+      "PackagePath": "staticwebassets\\Uploads\\Logo\\ProductDetails.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\Producticon.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Logo\\Producticon.jpg"
     },

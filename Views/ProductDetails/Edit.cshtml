@@ -1,0 +1,94 @@
+﻿@model SonmezERP.Models.ProductDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ProductDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ProductWidth" class="control-label"></label>
+                <input asp-for="ProductWidth" class="form-control" />
+                <span asp-validation-for="ProductWidth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductHight" class="control-label"></label>
+                <input asp-for="ProductHight" class="form-control" />
+                <span asp-validation-for="ProductHight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductSize" class="control-label"></label>
+                <input asp-for="ProductSize" class="form-control" />
+                <span asp-validation-for="ProductSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductWeight" class="control-label"></label>
+                <input asp-for="ProductWeight" class="form-control" />
+                <span asp-validation-for="ProductWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackageWidth" class="control-label"></label>
+                <input asp-for="PackageWidth" class="form-control" />
+                <span asp-validation-for="PackageWidth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackageSize" class="control-label"></label>
+                <input asp-for="PackageSize" class="form-control" />
+                <span asp-validation-for="PackageSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackageHight" class="control-label"></label>
+                <input asp-for="PackageHight" class="form-control" />
+                <span asp-validation-for="PackageHight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackagePices" class="control-label"></label>
+                <input asp-for="PackagePices" class="form-control" />
+                <span asp-validation-for="PackagePices" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CubicMeter" class="control-label"></label>
+                <input asp-for="CubicMeter" class="form-control" />
+                <span asp-validation-for="CubicMeter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tir" class="control-label"></label>
+                <input asp-for="Tir" class="form-control" />
+                <span asp-validation-for="Tir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Container" class="control-label"></label>
+                <input asp-for="Container" class="form-control" />
+                <span asp-validation-for="Container" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coordinate" class="control-label"></label>
+                <input asp-for="Coordinate" class="form-control" />
+                <span asp-validation-for="Coordinate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descreption" class="control-label"></label>
+                <input asp-for="Descreption" class="form-control" />
+                <span asp-validation-for="Descreption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

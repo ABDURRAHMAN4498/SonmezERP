@@ -11,45 +11,10 @@
 </p>
 
 
-@foreach(var item in Model)
+@foreach (var item in Model)
 {
-@*       <p>@item.IconePath</p>
- *@      <partial name="_DepartmentCard" model="@item"/>
-
+    <partial name="_DepartmentCard" model="@item" />
 }
-
-
-
-<div class="input-group mb-3">
-    <span class="input-group-text w-25" style="font-size: 12px"
-          id="basic-addon1">Yarımamul Kdv</span>
-    <select class="form-control   form-select form-select-sm js-example-basic-single" id="Kdv" name="tax">
-        <option value="">Kdv Seçiniz</option>
-        <option value=""></option>
-    </select>
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="input-group mb-3">
-    
-    <select class="form-control form-select form-select-sm js-example-basic-single" name="category" >
-        <option value="">Grup Seçiniz</option>
-        @foreach (var item in Model ){
-            <option value="@item.Id">@item.DepartmentName</option>
-        }
-    </select>
-
-</div>
-
 <table class="table table-hover">
     <thead>
         <tr>
@@ -69,32 +34,39 @@
                 @Html.DisplayNameFor(model => model.IconePath)
             </th>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ControllerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActionName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IconePath)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ControllerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IconePath)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
+                <td>
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+                <td>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
