@@ -6,6 +6,7 @@ namespace SonmezERP.Models
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name ="Vergi")]
         public float KdvName { get; set; }
 
         public ICollection<Product> Products { get; set; }

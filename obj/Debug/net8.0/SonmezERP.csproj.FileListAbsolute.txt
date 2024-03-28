@@ -1519,3 +1519,4 @@ C:\Users\User\Desktop\SonmezERP\obj\Debug\net8.0\refint\SonmezERP.dll
 C:\Users\User\Desktop\SonmezERP\obj\Debug\net8.0\SonmezERP.pdb
 C:\Users\User\Desktop\SonmezERP\obj\Debug\net8.0\SonmezERP.genruntimeconfig.cache
 C:\Users\User\Desktop\SonmezERP\obj\Debug\net8.0\ref\SonmezERP.dll
+C:\Users\asus\Desktop\SonmezERP\obj\Debug\net8.0\SonmezERP.MvcApplicationPartsAssemblyInfo.cs

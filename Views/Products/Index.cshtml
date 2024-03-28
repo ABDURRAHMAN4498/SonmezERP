@@ -6,11 +6,13 @@
 
 <h1>Index</h1>
 
-<p>
-    <a class="btn btn-success d-xl-block" asp-action="Create">Create New</a>
-</p>
-<span class="badge text-bg-warning">Tanımlı Ürün Sayısı : @Model.Count()</span>
-<table class="table table-hover">
+<div class="row d-flex justify-content-center">
+    <a class="btn btn-success col-4 my-3" asp-action="Create">Create New</a>
+    <div class="col-2"></div>
+    <a class="btn btn-info col-4 my-3" asp-controller="home" asp-action="index">Ana Sayfaya Dön</a>
+</div>
+<span class="badge text-bg-warning my-3">Tanımlı Ürün Sayısı : @Model.Count()</span>
+<table class="table table-hover table-dark">
     <thead>
         <tr>
             <th>
@@ -24,9 +26,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ProductNameTr)
-            </th>y
+            </th>
             <th>
-                Renk
+                @Html.DisplayNameFor(model=>model.Color.ColorName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PriceTl)
@@ -35,10 +37,10 @@
                 @Html.DisplayNameFor(model => model.PriceUSD)
             </th>
             <th>
-                Vergi
+                @Html.DisplayNameFor(model=>model.Kdv.KdvName)
             </th>
             <th>
-                Birim
+                @Html.DisplayNameFor(model=>model.UnitsOfMeasurement.UnitsOfMeasurementName)
             </th>
             <th></th>
         </tr>
@@ -77,13 +79,13 @@
                         %@Html.DisplayFor(modelItem => item.Kdv.KdvName)
                     </td>
                     <td>
-
+                        @Html.DisplayFor(modelItem=>item.ProductDetails.PackagePices)
                         @Html.DisplayFor(modelItem => item.UnitsOfMeasurement.UnitsOfMeasurementName)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     </td>
                 </tr>
             }
