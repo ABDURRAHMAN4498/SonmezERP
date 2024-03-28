@@ -54,7 +54,9 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductWidth,ProductHight,ProductSize,ProductWeight,PackageWidth,PackageSize,PackageHight,PackagePices,CubicMeter,Tir,Container,Coordinate,Descreption")] ProductDetails productDetails)
+        public async Task<IActionResult> Create([FromForm]
+            //[Bind("Id,ProductWidth,ProductHight,ProductSize,ProductWeight,PackageWidth,PackageSize,PackageHight,PackagePices,CubicMeter,Tir,Container,Coordinate,Descreption")] 
+        ProductDetails productDetails)
         {
             if (!ModelState.IsValid)
             {
@@ -86,14 +88,14 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductWidth,ProductHight,ProductSize,ProductWeight,PackageWidth,PackageSize,PackageHight,PackagePices,CubicMeter,Tir,Container,Coordinate,Descreption")] ProductDetails productDetails)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductCode,ProductWidth,ProductHight,ProductSize,ProductWeight,PackageWidth,PackageSize,PackageHight,PackagePices,CubicMeter,Tir,Container,Coordinate,Descreption")] ProductDetails productDetails)
         {
             if (id != productDetails.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

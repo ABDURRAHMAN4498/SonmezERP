@@ -56,7 +56,7 @@ namespace SonmezERP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UnitsOfMeasurementName")] UnitsOfMeasurement unitsOfMeasurement)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(unitsOfMeasurement);
                 await _context.SaveChangesAsync();

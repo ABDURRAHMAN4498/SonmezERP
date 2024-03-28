@@ -184,6 +184,10 @@ namespace SonmezERP.Migrations
                     b.Property<bool>("Visiblity")
                         .HasColumnType("bit");
 
+                    b.Property<string>("ımagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
@@ -233,6 +237,10 @@ namespace SonmezERP.Migrations
 
                     b.Property<int>("PackageWidth")
                         .HasColumnType("int");
+
+                    b.Property<string>("ProductCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductHight")
                         .HasColumnType("int");

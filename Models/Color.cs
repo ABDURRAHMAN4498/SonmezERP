@@ -6,9 +6,9 @@ namespace SonmezERP.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Display(Name ="Renk")]
         public string ColorName { get; set; }
-        [Required]
+        [Display(Name ="Açıklama")]
         public string Note { get; set; }
         public ICollection<Product> Products { get; set; }
     }

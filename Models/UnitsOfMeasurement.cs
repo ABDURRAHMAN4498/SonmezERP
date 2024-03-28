@@ -7,6 +7,7 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         //ölçü birimi
+        [Display(Name ="Ölçü Birimi")]
         public string UnitsOfMeasurementName { get; set; }
         public ICollection<Product> Products { get; set; }
     }

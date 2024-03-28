@@ -57,7 +57,7 @@ namespace SonmezERP.Controllers
             ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "CategoryName");
             ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName");
             ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "KdvName");
-            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id");
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "ProductCode");
             ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "UnitsOfMeasurementName");
             return View();
         }
@@ -74,6 +74,7 @@ namespace SonmezERP.Controllers
             if (ModelState.IsValid)
             {
                 product.CeateDate  =DateTime.Now;
+                product.ımagePath = "ABDSOFT";
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -82,7 +83,7 @@ namespace SonmezERP.Controllers
             ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "Id", product.CategoryId);
             ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName", product.ColorId);
             ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "Id", product.KdvId);
-            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id", product.ProductDetailsId);
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "ProductCode", product.ProductDetailsId);
             ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "Id", product.UnitsOfMeasurementId);
             return View(product);
         }
@@ -104,7 +105,7 @@ namespace SonmezERP.Controllers
             ViewData["CategoryId"] = new SelectList(_context.Categoreis, "Id", "CategoryName", product.CategoryId);
             ViewData["ColorId"] = new SelectList(_context.Colors, "Id", "ColorName", product.ColorId);
             ViewData["KdvId"] = new SelectList(_context.Kdv, "Id", "KdvName", product.KdvId);
-            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "Id", product.ProductDetailsId);
+            ViewData["ProductDetailsId"] = new SelectList(_context.ProductDetails, "Id", "ProductCode", product.ProductDetailsId);
             ViewData["UnitsOfMeasurementId"] = new SelectList(_context.UnitsOfMeasurements, "Id", "UnitsOfMeasurementName", product.UnitsOfMeasurementId);
             
             return View(product);
@@ -115,7 +116,9 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Visiblity,ProductCode,Barcode,BrandId,CategoryId,ProductNameTr,ProductNameEn,ColorId,PriceTl,PriceUSD,KdvId,UnitsOfMeasurementId,ProductDetailsId,CeateDate")] Product product)
+        public async Task<IActionResult> Edit(int id,
+            //[Bind("Id,Visiblity,ProductCode,Barcode,BrandId,CategoryId,ProductNameTr,ProductNameEn,ColorId,PriceTl,PriceUSD,KdvId,UnitsOfMeasurementId,ProductDetailsId,CeateDate")]
+        Product product)
         {
             if (id != product.Id)
             {
@@ -126,6 +129,7 @@ namespace SonmezERP.Controllers
             {
                 try
                 {
+                    product.ımagePath = "ABDSOFT";
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }

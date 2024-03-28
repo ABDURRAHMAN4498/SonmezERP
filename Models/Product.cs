@@ -12,9 +12,11 @@ namespace SonmezERP.Models
         [Display(Name ="Kod")]
         public string ProductCode { get; set; }
         public string Barcode { get; set; }
+        public string? ımagePath { get; set; }
         [Display(Name ="Marka")]
         public int BrandId { get; set; }
         public Brand? Brand { get; set; }
+        [Display(Name ="Katregory")]
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
         [Display(Name ="Ürün Adı")]
@@ -32,6 +34,7 @@ namespace SonmezERP.Models
         [Display(Name = "Unit Of Measurement")]
         public int UnitsOfMeasurementId { get; set; }
         public UnitsOfMeasurement? UnitsOfMeasurement { get; set; }
+        [Display(Name ="Ürün Detayları")]
         public int ProductDetailsId { get; set; }
         public ProductDetails? ProductDetails { get; set; }
         [DataType(DataType.DateTime)]
