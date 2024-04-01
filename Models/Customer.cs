@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection.Metadata.Ecma335;
 
 namespace SonmezERP.Models
 {
@@ -9,6 +10,7 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         public string CustomerName { get; set; }
+        public int AddressId { get; set; }
         public Addresses Address { get; set; }
         public string CompanyName { get; set;}
         public string Email { get; set; }
@@ -22,7 +24,8 @@ namespace SonmezERP.Models
         public int CreaterUser { get; set; }
         public bool Active { get; set; }
         public int CreaterUserId { get; set; }
-        public User User { get; set; }
+        public AppUser AppUser { get; set; }
+
 
 
 

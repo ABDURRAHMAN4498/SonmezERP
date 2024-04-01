@@ -3,11 +3,10 @@
 }
 
 <h1 class="text-center">Dashboard</h1>
-<div class="row">
+<div class="row text-center">
     <div>
         <a class="btn" asp-controller="Products" asp-action="index">
             <div class="card" style="width: 10rem;">
-                
                 <img src="~/Uploads/Logo/product.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center">Products</h5>
@@ -25,6 +24,18 @@
                     <h5 class="card-title text-center">Settings</h5>
                     <p class=" text-center">
                         Ayarlar
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a class="btn" asp-controller="Products" asp-action="Stock">
+            <div class="card" style="width: 10rem;">
+
+                <img src="~/Uploads/Logo/Stock.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Stock</h5>
+                    <p class=" text-center">
+                        Stok İşlemleri
                     </p>
                 </div>
             </div>

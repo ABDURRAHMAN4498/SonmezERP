@@ -178,6 +178,9 @@ namespace SonmezERP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
                     b.Property<int>("UnitsOfMeasurementId")
                         .HasColumnType("int");
 
@@ -185,7 +188,6 @@ namespace SonmezERP.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ımagePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

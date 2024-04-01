@@ -29,6 +29,8 @@ namespace SonmezERP.Models
         public float PriceTl { get; set; }
         [Display(Name ="Fiyat $")]
         public float PriceUSD { get; set; }
+        [Display(Name ="Stok")]
+        public int Stock { get; set; }
         public int KdvId { get; set; }
         public Kdv? Kdv { get; set; }
         [Display(Name = "Unit Of Measurement")]

@@ -1,0 +1,67 @@
+﻿@model SonmezERP.Models.Product
+@{
+    ViewData["Title"] = "View";
+}
+<div class="text-center">
+    <h1>Stok Kontrolu</h1>
+</div>
+<br />
+<div class="text-center">
+    <a class="btn" asp-controller="Products" asp-action="StockIncreas">
+        <div class="card bg-success" style="width: 10rem;">
+            <img src="~/Uploads/Logo/Product_Add_Stock.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Giriş</h5>
+                <p class=" text-center">
+                    Stok Girişi
+                </p>
+            </div>
+        </div>
+    </a>
+    <a class="btn" asp-controller="DashboardSettings" asp-action="index">
+        <div class="card bg-danger" style="width: 10rem;">
+            <img src="~/Uploads/Logo/settings.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Çıkıiş</h5>
+                <p class=" text-center">
+                    Stok Çıkışı
+                </p>
+            </div>
+        </div>
+    </a><br />
+    <hr />
+    <div class="text-center">
+        <p>
+            Hareket Kayıtları
+        </p>
+    </div>
+    <hr />
+    <a class="btn" asp-controller="Products" asp-action="Stock">
+        <div class="card" style="width: 10rem;">
+
+            <img src="~/Uploads/Logo/Stock.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Giriş Hareketleri</h5>
+                <p class=" text-center">
+                    Stok Giriş Hareketleri
+                </p>
+            </div>
+        </div>
+    </a>
+    <a class="btn" asp-controller="Products" asp-action="Stock">
+        <div class="card" style="width: 10rem;">
+
+            <img src="~/Uploads/Logo/Product_Add_Stock.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Çıkış Hareketleri</h5>
+                <p class=" text-center">
+                    Stok Çıkış Hareketleri
+                </p>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+
+

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -192,9 +193,17 @@ namespace SonmezERP.Controllers
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+		}
+        [HttpGet]
+        public IActionResult Stock()
+        {
+            
+            return View();
+
         }
 
-        private bool ProductExists(int id)
+
+		private bool ProductExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);
         }

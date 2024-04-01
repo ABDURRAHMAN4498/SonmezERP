@@ -13,8 +13,16 @@
       "PackagePath": "staticwebassets\\Uploads\\Logo\\ProductDetails.png"
     },
     {
+      "Id": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\Product_Add_Stock.png",
+      "PackagePath": "staticwebassets\\Uploads\\Logo\\Product_Add_Stock.png"
+    },
+    {
       "Id": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\Producticon.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Logo\\Producticon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\Stock.png",
+      "PackagePath": "staticwebassets\\Uploads\\Logo\\Stock.png"
     },
     {
       "Id": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\SÖNMEZ_GLOBAL_PLASTİK.png",
