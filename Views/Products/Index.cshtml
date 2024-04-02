@@ -4,13 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="text-center">Ürünler Sayfası</h1>
 
 <div class="row d-flex justify-content-center">
     <a class="btn btn-success col-4 my-3" asp-action="Create">Create New</a>
     <div class="col-2"></div>
     <a class="btn btn-info col-4 my-3" asp-controller="home" asp-action="index">Ana Sayfaya Dön</a>
 </div>
+<hr />
+<div class="row d-flex justify-content-evenly">
+    <h6 class="text-center">MARKALARIMIZ</h6>
+    <a class="btn btn-primary col-2 my-3" asp-action="">MANDELLA</a>
+    <a class="btn btn-secondary col-2 my-3" asp-action="">LUCAS</a>
+    <a class="btn btn-success col-2 my-3" asp-action="">SAĞLAM EV GEREÇLERİ</a>
+    <a class="btn btn-info col-2 my-3" asp-action="">SAĞLAM ENDÜSTRİYEL</a>
+    <a class="btn btn-dark col-2 my-3" asp-action="">DELLA</a>
+</div>
+<hr />
 <span class="badge text-bg-warning my-3">Tanımlı Ürün Sayısı : @Model.Count()</span>
 <table class="table table-hover table-dark">
     <thead>
@@ -22,7 +32,7 @@
                 @Html.DisplayNameFor(model => model.Brand.BrandName)
             </th>
             <th>
-                Kategory
+                @Html.DisplayNameFor(model=>model.Category.CategoryName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ProductNameTr)

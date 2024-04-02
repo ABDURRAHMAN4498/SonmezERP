@@ -6,3 +6,7 @@ $(document).ready(function () {
     });
 });
 // Write your JavaScript code.
+
+$(document).ready(fanction(){
+    $('search_select_boxselect').selectpicker();
+})

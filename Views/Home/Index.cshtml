@@ -2,7 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1 class="text-center">Dashboard</h1>
+<h1 class="text-center">Kontrol Paneli</h1>
+<br><br>
 <div class="row text-center">
     <div>
         <a class="btn" asp-controller="Products" asp-action="index">
@@ -36,6 +37,18 @@
                     <h5 class="card-title text-center">Stock</h5>
                     <p class=" text-center">
                         Stok İşlemleri
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a class="btn" asp-controller="Products" asp-action="Stock">
+            <div class="card" style="width: 10rem;">
+
+                <img src="~/Uploads/Logo/" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Row Materials</h5>
+                    <p class=" text-center">
+                        Hammdde İşlemleri
                     </p>
                 </div>
             </div>
