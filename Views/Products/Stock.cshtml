@@ -12,8 +12,9 @@
         <h4 class="text-center">
             GirişÇıkış işlemleri
         </h4>
+        @* Stok girşi *@
         <div class="col-auto">
-            <a class="btn" asp-controller="Products" asp-action="StockIncreas">
+            <a class="btn" asp-controller="Products" asp-action="StockIncrease">
                 <div class="card bg-success" style="width: 10rem;">
                     <img src="~/Uploads/Logo/Product_Add_Stock.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -25,6 +26,7 @@
                 </div>
             </a>
         </div>
+        @* stok Çıkışı *@
         <div class="col-auto">
             <a class="btn" asp-controller="DashboardSettings" asp-action="index">
                 <div class="card bg-danger" style="width: 10rem;">
@@ -42,6 +44,7 @@
     <div class="row col-5 border-2 d-flex justify-content-evenly border border-secondary rounded-end">
         <h4 class="text-center">Giriş Çıkış Hareketleri</h4>
         <div class="col-auto">
+            @* Giriş hareketleri *@
             <a class="btn" asp-controller="Products" asp-action="Stock">
                 <div class="card" style="width: 10rem;">
 
@@ -55,6 +58,7 @@
                 </div>
             </a>
         </div>
+        @* çıkış hareketleri *@
         <div class="col-auto">
             <a class="btn" asp-controller="Products" asp-action="Stock">
                 <div class="card" style="width: 10rem;">

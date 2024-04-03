@@ -197,13 +197,40 @@ namespace SonmezERP.Controllers
         [HttpGet]
         public IActionResult Stock()
         {
-            
             return View();
-
+        }
+        public async Task<IActionResult> StockIncrease()
+        {
+           
+            var prdList = _context.ProductLogs.Include(p => p.Product).Include(p=>p.Product.Color);
+            ViewData["Products"] = new SelectList(await prdList.ToListAsync());
+            return View();
         }
 
 
-		private bool ProductExists(int id)
+
+
+
+
+
+
+
+
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> StockIncrease(int id, [FromForm] ProductLog productLog)
+        {
+            var ProductIncrease = _context.ProductLogs.Include(p => p.Product).Include(p=>p.Product.Color);
+            var product = await ProductIncrease.ToListAsync();
+            return View();
+        }
+
+
+
+        private bool ProductExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);
         }
