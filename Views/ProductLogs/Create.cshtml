@@ -1,0 +1,47 @@
+﻿@model SonmezERP.Models.ProductLog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProductLog</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ProductId" class="control-label fs-5"></label>
+                    <select asp-for="ProductId" class="js-example-placeholder-single js-states form-control" name="state" id="DokumDropDown" asp-items="ViewBag.Products">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input" class="control-label fs-5"></label>
+                    <input asp-for="Input" class="form-control" />
+                    <span asp-validation-for="Input" class="text-danger"></span>
+                </div>
+               
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary my-3" />
+            </div>
+           
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    $(".js-example-placeholder-single").select2({
+        placeholder: "Select a state",
+        allowClear: true
+    });
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

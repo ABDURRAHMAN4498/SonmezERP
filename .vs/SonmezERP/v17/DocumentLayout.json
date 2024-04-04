@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\SonmezERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\products\\stockincrease.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\products\\stockincrease.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\productlogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\productlogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\controllers\\productlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:controllers\\productlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\products\\stock.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\products\\stock.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\models\\productlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,65 +46,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StockIncrease.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Products\\StockIncrease.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\StockIncrease.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Products\\StockIncrease.cshtml",
-              "RelativeToolTip": "Views\\Products\\StockIncrease.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAZAAAA",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-03T07:33:41.43Z",
+              "WhenOpened": "2024-04-04T13:19:51.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Products\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\Create.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Products\\Create.cshtml",
-              "RelativeToolTip": "Views\\Products\\Create.cshtml",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAFwAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-03T06:37:50.277Z",
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "wwwroot\\js\\site.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-04T13:19:04.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductLogs\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProductLogs\\Create.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductLogs\\Create.cshtml",
+              "RelativeToolTip": "Views\\ProductLogs\\Create.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB4AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-04T12:44:54.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductLogsController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Controllers\\ProductLogsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductLogsController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Controllers\\ProductLogsController.cs",
+              "RelativeToolTip": "Controllers\\ProductLogsController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBgAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T12:34:42.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ProductLog.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Models\\ProductLog.cs",
               "RelativeDocumentMoniker": "Models\\ProductLog.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Models\\ProductLog.cs",
               "RelativeToolTip": "Models\\ProductLog.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T06:02:12.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AQIAAJ8AAAAAAAAAAAAuwM0AAABEAAAA",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAcwHUAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T05:41:20.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Stock.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Products\\Stock.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Stock.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\Products\\Stock.cshtml",
               "RelativeToolTip": "Views\\Products\\Stock.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAxAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-03T05:36:46.549Z",
               "EditorCaption": ""

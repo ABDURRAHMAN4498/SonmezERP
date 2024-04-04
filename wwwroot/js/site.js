@@ -10,3 +10,9 @@ $(document).ready(function () {
 $(document).ready(fanction(){
     $('search_select_boxselect').selectpicker();
 })
+
+
+$(".js-example-placeholder-single").select2({
+    placeholder: "Select a state",
+    allowClear: true
+});
