@@ -63,15 +63,21 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductId,Input,Output,LogType,ActionDate")] ProductLog productLog)
+        public async Task<IActionResult> Create([FromForm] List<ProductLog> productLog)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Add(productLog);
+                foreach (var item in productLog)
+                {
+                    Product? product = await _context.Products.FindAsync(item.Id);
+                    product.Stock = 0;
+                    product.Stock += item.Input;
+                    _context.ProductLogs.Add(item);
+                }
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", productLog.ProductId);
+            ViewData["ProductId"] = new SelectList(productLog);
             return View(productLog);
         }
 

@@ -52,6 +52,9 @@
             <th>
                 @Html.DisplayNameFor(model=>model.UnitsOfMeasurement.UnitsOfMeasurementName)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -91,6 +94,9 @@
                     <td>
                         @Html.DisplayFor(modelItem=>item.ProductDetails.PackagePices)
                         @Html.DisplayFor(modelItem => item.UnitsOfMeasurement.UnitsOfMeasurementName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stock)
                     </td>
                     <td>
                         <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

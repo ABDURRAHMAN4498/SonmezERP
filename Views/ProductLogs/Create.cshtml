@@ -8,27 +8,41 @@
 
 <h4>ProductLog</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row align-content-center">
+    <div class="">
         <form asp-action="Create">
-            <div class="row">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="ProductId" class="control-label fs-5"></label>
-                    <select asp-for="ProductId" class="js-example-placeholder-single js-states form-control" name="state" id="DokumDropDown" asp-items="ViewBag.Products">
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input" class="control-label fs-5"></label>
-                    <input asp-for="Input" class="form-control" />
-                    <span asp-validation-for="Input" class="text-danger"></span>
-                </div>
-               
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div id="stokGirisiContainer">
+                @for (int i = 0; i < 5; i++)
+                {
+                    <div class="row" id="stokGirisiRow">
+                        <div class="form-group col-auto">
+                            <label asp-for="ProductId" class="control-label fs-5"></label>
+                            <select asp-for="ProductId" class="form-control " name="state" id="DokumDropDown"
+                                asp-items="ViewBag.Products">
+                                <option>--- Select ---</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-auto">
+                            <label asp-for="Input" class="control-label fs-5"></label>
+                            <input asp-for="Input" class="form-control " />
+                            <span asp-validation-for="Input" class="text-danger"></span>
+                        </div>
+
+                        <div class="col align-self-end">
+                            <button type="button" class="btn btn-danger" onclick="removeStokGirisi(this)">Sil</button>
+                        </div>
+                    </div>
+                    <hr>
+                }
             </div>
+
+            <button class="btn btn-outline-info" type="button" onclick="addStokGirisi(@ViewBag.Products)">Yeni Stok Girişi
+                Ekle</button>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary my-3" />
             </div>
-           
         </form>
     </div>
 </div>
@@ -36,12 +50,41 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-<script>
-    $(".js-example-placeholder-single").select2({
-        placeholder: "Select a state",
-        allowClear: true
-    });
-</script>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    {
+    <script>
+        function addStokGirisi(products) {
+            var container = document.getElementById('stokGirisiContainer');
+            var index = container.querySelectorAll('stokGirisiRow').length;
+            var html =
+                '<div class="row" id="stokGirisiRow">' +
+                '<div class="form-group col-auto">' +
+                '<label asp-for="ProductId" class="control-label fs-5"></label>' +
+                '<select asp-for="ProductId" class="form-control" asp-items="$[products]">' +
+                '</select>' +
+                '</div>' +
+                '<div class="form-group col-auto">' +
+                '<label asp-for="Input" class="control-label fs-5"></label>' +
+                '<input asp-for="Input" class="form-control" />' +
+                '<span asp-validation-for="Input" class="text-danger"></span>' +
+                '</div>' +
+
+                '<div class="col align-self-end" >' +
+                '<button type="button" class="btn btn-danger" onclick="removeStokGirisi()" >Sil</button>' +
+                '</div>' +
+                '</div>'+
+                '<hr>'
+                ;
+            container.insertAdjacentHTML('beforeend', html)
+        }
+        function removeStokGirisi(element) {
+            var row = element.closest('stokGirisiRow');
+            row.remove();
+        }
+    </script>
+}
 }

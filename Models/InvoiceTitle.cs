@@ -26,6 +26,7 @@ namespace SonmezERP.Models
         public float TotalWithDiscount { get; set; }
         //Metreküp toplamı
         public float TotalCubicMeters { get; set; }
+        public List<InviceBody> InviceBodyList { get; set; }
 
 
     }
