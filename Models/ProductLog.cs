@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata.Ecma335;
 
 namespace SonmezERP.Models
 {
@@ -13,8 +14,11 @@ namespace SonmezERP.Models
         [Display(Name ="Çıkılacak Miktar")]
         public int Output { get; set; }
         public bool LogType { get; set; }
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ActionDate { get; set; }
+        
+            
+            
 
 
     }

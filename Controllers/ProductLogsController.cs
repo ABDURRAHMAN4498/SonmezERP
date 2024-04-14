@@ -22,7 +22,7 @@ namespace SonmezERP.Controllers
         // GET: ProductLogs
         public async Task<IActionResult> Index()
         {
-            var sonmezERPContext = _context.ProductLogs.Include(p => p.Product);
+            var sonmezERPContext = _context.ProductLogs.Include(p => p.Product).Include(p => p.Product.Color);
             return View(await sonmezERPContext.ToListAsync());
         }
 
@@ -46,16 +46,18 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductLogs/Create
+        [HttpGet]
         public IActionResult Create()
         {
             //var product = _context.Products.Include(p => p.Color);
-            ViewData["ProductId"] = new SelectList(_context.Products.Include(p=>p.Color), "Id", "ProductAndColor");
-            ViewBag.Products = new SelectList((from m in _context.Products.Include(p=>p.Color) select new
-            {
-                Id = m.Id,
-                ProductAndColor = m.ProductNameTr + " - " + m.Color.ColorName
-            }), "Id", "ProductAndColor",null);
-            return View(); 
+            ViewData["ProductId"] = new SelectList(_context.Products.Include(p => p.Color), "Id", "ProductAndColor");
+            ViewBag.Products = new SelectList((from m in _context.Products.Include(p => p.Color)
+                                               select new
+                                               {
+                                                   Id = m.Id,
+                                                   ProductAndColor = m.ProductNameTr + " - " + m.Color.ColorName
+                                               }), "Id", "ProductAndColor", null);
+            return View();
         }
 
         // POST: ProductLogs/Create
@@ -63,22 +65,33 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([FromForm] List<ProductLog> productLog)
+        public async Task<IActionResult> Create([FromForm] ProductLog productLog)
         {
-            if (!ModelState.IsValid)
+
+
+            productLog.LogType = true;
+            productLog.Output = 0;
+            productLog.ActionDate = DateTime.Now;
+            if (productLog.ProductId == null)
             {
-                foreach (var item in productLog)
-                {
-                    Product? product = await _context.Products.FindAsync(item.Id);
-                    product.Stock = 0;
-                    product.Stock += item.Input;
-                    _context.ProductLogs.Add(item);
-                }
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                var product = await _context.Products.FindAsync(productLog.ProductId);
+                product.Stock += Convert.ToInt32(productLog.Input);
+                _context.Products.Update(product);
+                _context.ProductLogs.Add(productLog);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(productLog);
-            return View(productLog);
+            ViewBag.Products = new SelectList((from m in _context.Products.Include(p => p.Color)
+                                               select new
+                                               {
+                                                   Id = m.Id,
+                                                   ProductAndColor = m.ProductNameTr + " - " + m.Color.ColorName
+                                               }), "Id", "ProductAndColor", null);
+            return View();
         }
 
         // GET: ProductLogs/Edit/5

@@ -96,7 +96,8 @@
                         @Html.DisplayFor(modelItem => item.UnitsOfMeasurement.UnitsOfMeasurementName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Stock)
+                        @Html.DisplayFor(modelItem => item.Stock) 
+                        @Html.DisplayFor(modelItem=>item.UnitsOfMeasurement.UnitsOfMeasurementName)
                     </td>
                     <td>
                         <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

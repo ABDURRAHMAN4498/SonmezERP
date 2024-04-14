@@ -31,15 +31,20 @@
                         </div>
 
                         <div class="col align-self-end">
-                            <button type="button" class="btn btn-danger" onclick="removeStokGirisi(this)">Sil</button>
+                            <button type="button" class="btn btn-danger" onclick="removeStokGirisi()">Sil</button>
                         </div>
                     </div>
                     <hr>
                 }
             </div>
-
-            <button class="btn btn-outline-info" type="button" onclick="addStokGirisi(@ViewBag.Products)">Yeni Stok Girişi
-                Ekle</button>
+            <button class="btn btn-outline-info" type="button" onclick="addStokGirisi(@ViewBag.Products)">
+                Yeni Stok Girişi
+                Ekle
+            </button>
+            <button class="btn btn-outline-info" type="button" onclick="addStokGirisi(@ViewBag.Products)">
+                Yeni Stok Girişi
+                Ekle
+            </button>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary my-3" />
             </div>
@@ -76,7 +81,7 @@
                 '<div class="col align-self-end" >' +
                 '<button type="button" class="btn btn-danger" onclick="removeStokGirisi()" >Sil</button>' +
                 '</div>' +
-                '</div>'+
+                '</div>' +
                 '<hr>'
                 ;
             container.insertAdjacentHTML('beforeend', html)
