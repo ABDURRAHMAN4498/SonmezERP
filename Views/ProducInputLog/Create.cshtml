@@ -1,0 +1,183 @@
+﻿@model SonmezERP.Models.ProducInputLog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProductLog</h4>
+<hr />
+<div class="row align-content-center">
+    <div class="">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-12">
+                <table id="CodesTable" class="table table-hover table-dark ">
+                    <thead>
+                        <tr>
+                            <th>Ürün Adı</th>
+                            <th>
+
+                            </th>
+                            <th>Girilecek Miktar</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="form-group col-auto">
+                                        <label asp-for="ProductId" class="control-label fs-5"></label>
+                                        <select asp-for="ProductId" class="form-control " name="state" id="DokumDropDown"
+                                            asp-items="ViewBag.Products">
+                                            <option>--- Select ---</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <div class="form-group col-auto">
+                                        <label asp-for="Input" class="control-label fs-5"></label>
+                                        <input asp-for="Input" class="form-control " />
+                                        <span asp-validation-for="Input" class="text-danger"></span>
+                                    </div>
+                                </td>
+                                <td class="align-self-end">
+
+                                    <button id="btnremove-" type="button" class="btn btn-danger"
+                                        onclick="removeStokGirisi()">Sil</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+            <button id="AddRow" type="button" class="btn btn-secondary visible" onclick="AddItem(this)">
+                Add
+            </button>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary my-3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function AddItem(btn) {
+            var table;
+            table = document.getElementById('CodesTable');
+            var rows = table.getElementsByTagName('tr');
+            var rowOuterHtml = rows.[rows.length - 1].rowOuterHtml;
+            var lastRowIdx = rows.length - 2;
+            var nextrowId = eval(lastRowIdx) + 1;
+
+            rowOuterHtml = rowOuterHtml.replaceAll('_' + lastRowIdx + '_', '_' + nextrowId + '_');
+            rowOuterHtml = rowOuterHtml.replaceAll('[' + lastRowIdx + ']', '[' + nextrowId + ']');
+            rowOuterHtml = rowOuterHtml.replaceAll('-' + lastRowIdx, '-' + nextrowId);
+            var newRow = table.insertRow();
+            newRow.innerHtml = rowOuterHtml;
+
+            var x = document.getElementsByTagName("INPUT");
+            for (var cnt = 0; x.length; ctn++) {
+                if (x[ctn].type == "text" && x[ctn].id.indexOf('_' + nextrowId + '_') > 0)
+                    x[ctn].value = '';
+                else if (x[ctn].type == "number" && x[ctn].id.indexOf('_' + nextrowId + '_') > 0)
+                    x.[ctn].value = 0;
+            }
+
+        }
+
+        function Deleteitem(btn) {
+            var table = document.getElementById('CodesTable');
+            var rows = document.getElementsByTagName('tr');
+            var visibleRowsCount = 0;
+
+            var x = document.querySelectorAll("[id*='Quantity']");
+            for (i = 0; i < x.length; i++) {
+                if (x[i].value > 0)
+                    visibleRowsCount++;
+            }
+            if (visibleRowsCount <= 1) {
+                alert("This Row cannot be Deleted")
+                return;
+            }
+            var btnIdx = btn.id.replaceAll('btnremove-', '');
+            var idOfQuantity = btnIdx + "__Quantity";
+            txtQuantity = document.querySelector("[id$='" + idOfQuantity + "']");
+            txtQuantity.value = 0;
+            $(btn).closest('tr').hide();
+        }
+
+        function rebindvalidators() {
+            var $from = $("#CodeSbyAnizForm");
+            $form.unbind();
+            $form.data("validator", null);
+            $.validate($form.data("unobtrusiveValidation").option);
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @* {<script>
+function addStokGirisi(products) {
+var container = document.getElementById('stokGirisiContainer');
+var index = container.querySelectorAll('stokGirisiRow').length;
+var html =
+'<div class="row" id="stokGirisiRow">' +
+'<div class="form-group col-auto">' +
+'<label asp-for="ProductId" class="control-label fs-5"></label>' +
+'<select asp-for="ProductId" class="form-control" asp-items="$[products]">' +
+'</select>' +
+'</div>' +
+'<div class="form-group col-auto">' +
+'<label asp-for="Input" class="control-label fs-5"></label>' +
+'<input asp-for="Input" class="form-control" />' +
+'<span asp-validation-for="Input" class="text-danger"></span>' +
+'</div>' +
+
+'<div class="col align-self-end" >' +
+'<button type="button" class="btn btn-danger" onclick="removeStokGirisi()" >Sil</button>' +
+'</div>' +
+'</div>' +
+'<hr>'
+;
+container.insertAdjacentHTML('beforeend', html)
+} *@
+    @* function removeStokGirisi(element) {
+var row = element.closest('stokGirisiRow');
+row.remove();
+}
+</script> *@
+}
