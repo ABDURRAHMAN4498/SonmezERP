@@ -57,6 +57,10 @@ namespace SonmezERP.Controllers
                                                    Id = m.Id,
                                                    ProductAndColor = m.ProductNameTr + " - " + m.Color.ColorName
                                                }), "Id", "ProductAndColor", null);
+            List<ProductLog> prdLog =  new List<ProductLog>();
+            prdLog.Add(new ProductLog() { Input=0,
+            LogType = true});
+            var model = prdLog;
             return View();
         }
 

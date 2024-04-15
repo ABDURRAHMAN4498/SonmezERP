@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\SonmezERP\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\SonmezERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\views\\productlogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\productlogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\controllers\\productlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\controllers\\productlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:controllers\\productlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\views\\productlogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\productlogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\productlogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\productlogs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\models\\productlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\models\\productlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:models\\productlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\productlogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\productlogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,60 +30,59 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ProductLog.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Models\\ProductLog.cs",
-              "RelativeDocumentMoniker": "Models\\ProductLog.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Models\\ProductLog.cs",
-              "RelativeToolTip": "Models\\ProductLog.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T22:38:00.462Z"
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductLogs\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProductLogs\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductLogs\\Index.cshtml",
+              "RelativeToolTip": "Views\\ProductLogs\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-15T13:36:20.418Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\ProductLogs\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\ProductLogs\\Index.cshtml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\ProductLogs\\Index.cshtml",
-              "RelativeToolTip": "Views\\ProductLogs\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-11T22:27:43.17Z"
+              "Title": "ProductLog.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Models\\ProductLog.cs",
+              "RelativeDocumentMoniker": "Models\\ProductLog.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Models\\ProductLog.cs",
+              "RelativeToolTip": "Models\\ProductLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T22:38:00.462Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\ProductLogs\\Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductLogs\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\ProductLogs\\Create.cshtml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\ProductLogs\\Create.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductLogs\\Create.cshtml",
               "RelativeToolTip": "Views\\ProductLogs\\Create.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAiwCEAAABjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-08T06:28:49.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ProductLogsController.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Controllers\\ProductLogsController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Controllers\\ProductLogsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductLogsController.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Controllers\\ProductLogsController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Controllers\\ProductLogsController.cs",
               "RelativeToolTip": "Controllers\\ProductLogsController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAvwFEAAAAwAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAnwDEAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:34:42.393Z"
+              "WhenOpened": "2024-04-04T12:34:42.393Z",
+              "EditorCaption": ""
             }
           ]
         }

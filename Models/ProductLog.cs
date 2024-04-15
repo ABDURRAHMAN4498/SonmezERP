@@ -3,13 +3,13 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace SonmezERP.Models
 {
-    public class ProductLog
+    public class ProductInputLog
     {
         public int Id { get; set; }
         [Display(Name = "Ürün")]
         public int ProductId { get; set; }
         public Product Product { get; set; }
-        [Display(Name ="Girilecek Miktar")]
+        [Display(Name ="Girilen Miktar Miktar")]
         public int Input { get; set; }
         [Display(Name ="Çıkılacak Miktar")]
         public int Output { get; set; }
