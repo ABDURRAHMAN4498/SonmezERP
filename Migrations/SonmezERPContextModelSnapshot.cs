@@ -264,7 +264,7 @@ namespace SonmezERP.Migrations
                     b.ToTable("ProductDetails");
                 });
 
-            modelBuilder.Entity("SonmezERP.Models.ProductLog", b =>
+            modelBuilder.Entity("SonmezERP.Models.ProductInputLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -275,23 +275,38 @@ namespace SonmezERP.Migrations
                     b.Property<DateTime>("ActionDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Input")
+                    b.HasKey("Id");
+
+                    b.ToTable("ProducInputLogs");
+                });
+
+            modelBuilder.Entity("SonmezERP.Models.ProductInputLogList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<bool>("LogType")
-                        .HasColumnType("bit");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Output")
+                    b.Property<int>("InputQuantity")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductInputId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductInputLogId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductLogs");
+                    b.HasIndex("ProductInputLogId");
+
+                    b.ToTable("ProductInputLogList");
                 });
 
             modelBuilder.Entity("SonmezERP.Models.UnitsOfMeasurement", b =>
@@ -362,13 +377,17 @@ namespace SonmezERP.Migrations
                     b.Navigation("UnitsOfMeasurement");
                 });
 
-            modelBuilder.Entity("SonmezERP.Models.ProductLog", b =>
+            modelBuilder.Entity("SonmezERP.Models.ProductInputLogList", b =>
                 {
                     b.HasOne("SonmezERP.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("SonmezERP.Models.ProductInputLog", null)
+                        .WithMany("Inputs")
+                        .HasForeignKey("ProductInputLogId");
 
                     b.Navigation("Product");
                 });
@@ -396,6 +415,11 @@ namespace SonmezERP.Migrations
             modelBuilder.Entity("SonmezERP.Models.ProductDetails", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("SonmezERP.Models.ProductInputLog", b =>
+                {
+                    b.Navigation("Inputs");
                 });
 
             modelBuilder.Entity("SonmezERP.Models.UnitsOfMeasurement", b =>

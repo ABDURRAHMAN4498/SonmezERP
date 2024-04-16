@@ -7,9 +7,7 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         public int ProductId { get; set; }
-        public Product Product { get; set; }
         public int ProductOutputLogId { get; set; }
-        public ProductOutputLog ProductOutputLog { get; set; }
         public int OutputQuantity { get; set; }
     }
 }

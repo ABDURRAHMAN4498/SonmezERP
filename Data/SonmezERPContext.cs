@@ -26,8 +26,6 @@ namespace SonmezERP.Data
         public DbSet<SonmezERP.Models.Kdv> Kdv { get; set; }
         public DbSet<SonmezERP.Models.ProductInputLog> ProducInputLogs { get; set; }
         public DbSet<SonmezERP.Models.ProductInputLogList> ProductInputLogList { get; set; }
-        public DbSet<SonmezERP.Models.ProductOutputLog> ProductOutputLog { get; set; }
-        public DbSet<SonmezERP.Models.ProductOutputLogList> ProductOutputLogList { get; set; }
         public DbSet<SonmezERP.Models.DashboardSettings> DashboardSettingsItems { get; set; }
         //public DbSet<SonmezERP.Models.RawMaterials> Hammadde { get; set; }
         //public DbSet<SonmezERP.Models.User> Users { get; set; }
