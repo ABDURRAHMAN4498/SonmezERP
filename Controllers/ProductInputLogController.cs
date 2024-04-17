@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SonmezERP.Data;
 using SonmezERP.Models;
@@ -33,23 +34,40 @@ namespace SonmezERP.Controllers
         public ActionResult Create()
         {
             var ProductInputLog = new ProductInputLog();
-
+            ProductInputLog.Inputs.Add(new ProductInputLogList() { Id=1});
+            //ViewData["ProductsList"] = new SelectList(_context.Products.Include(p=>p.Color), "Id", "ProductAndColor");
+            ViewData["ProductsList"] = new SelectList((from m in _context.Products.Include(p => p.Color)
+                                                       select new
+                                                       {
+                                                           Id = m.Id,
+                                                           PorductAndColor = m.ProductNameTr + " - " + m.Color.ColorName
+                                                       }), "Id", "PorductAndColor");
             return View(ProductInputLog);
         }
 
         // POST: ProductInputLogController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(
+        public async Task<ActionResult> Create(
             //IFormCollection collection
             [FromForm] ProductInputLog prdLog
             )
         {
             foreach (var item in prdLog.Inputs)
             {
-                var 
-                _context.ProductInputLogList.Add(item);
+                if (item.ProductId!=null&&item.InputQuantity!=null)
+                {
+                    Product? product = await _context.Products.FindAsync(item.ProductId);
+                    product.Stock += item.InputQuantity;
+                    _context.Products.Update(product);
+                    item.ProductInputId = prdLog.Id;
+                    item.dateTime = DateTime.Now;
+                    _context.ProductInputLogList.AddAsync(item);
+                }
             }
+            _context.ProducInputLogs.AddAsync(prdLog);
+            await _context.SaveChangesAsync();
+
             try
             {
                 return RedirectToAction(nameof(Index));

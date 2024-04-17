@@ -10,5 +10,6 @@ namespace SonmezERP.Models
         public Product Product{ get; set; }
         public int ProductInputId { get; set; }
         public int InputQuantity { get; set; }
+        public DateTime dateTime { get; set; }
     }
 }

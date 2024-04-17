@@ -1,0 +1,60 @@
+﻿@model SonmezERP.Models.ProductInputLog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProductInputLog</h4>
+<hr />
+<div class="row">
+    <div class="">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group border">
+                <label asp-for="ActionDate" class="control-label" ></label>
+                <input asp-for="ActionDate" class="form-control" />
+                <span asp-validation-for="ActionDate" class="text-danger"></span>
+            </div>
+            @for(int i = 0; i < Model.Inputs.Count; i++)
+            {
+                <div class="row my-3">
+                    <div class="form-group col-auto">
+                        <select asp-for="@Model.Inputs[i].ProductId" class="form-control" asp-items="ViewBag.ProductsList"></select>
+                    </div>
+                    <div class="form-group col-auto">
+                        <input asp-for="@Model.Inputs[i].InputQuantity" class="form-control" />
+                        <span asp-validation-for="@Model.Inputs[i].InputQuantity" class="text-danger"></span>
+                    </div>
+                </div>
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary my-3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="my-3" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
