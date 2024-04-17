@@ -300,6 +300,9 @@ namespace SonmezERP.Migrations
                     b.Property<int?>("ProductInputLogId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("dateTime")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
