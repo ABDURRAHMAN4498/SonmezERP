@@ -14,6 +14,7 @@ namespace SonmezERP.Data
         public SonmezERPContext (DbContextOptions<SonmezERPContext> options)
             : base(options)
         {
+            
         }
 
 
@@ -24,7 +25,6 @@ namespace SonmezERP.Data
         public DbSet<SonmezERP.Models.Category> Categoreis { get; set; }
         public DbSet<SonmezERP.Models.Color> Colors { get; set; }
         public DbSet<SonmezERP.Models.Kdv> Kdv { get; set; }
-        public DbSet<SonmezERP.Models.ProductInputLog> ProducInputLogs { get; set; }
         public DbSet<SonmezERP.Models.ProductInputLogList> ProductInputLogList { get; set; }
         public DbSet<SonmezERP.Models.DashboardSettings> DashboardSettingsItems { get; set; }
         //public DbSet<SonmezERP.Models.RawMaterials> Hammadde { get; set; }
@@ -32,6 +32,9 @@ namespace SonmezERP.Data
         //public DbSet<SonmezERP.Models.RawMaterialsActions> HammaddeActions { get; set; }
         //public DbSet<SonmezERP.Models.Customer> Customers { get; set; }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductInputLog>().HasNoKey();
+        }
     }
 }

@@ -1,35 +1,48 @@
-﻿@model IEnumerable<SonmezERP.Models.ProductInputLog>
+﻿@model IEnumerable<SonmezERP.Models.ProductInputLogList>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="my-3">
+    <a class="btn btn-primary d-xl-block my-3" asp-action="Create">Stok Girişi Yap</a>
 
-<p>
-    <a class="btn btn-success " asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Grişi Tarihi
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Inputs)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+</div>
+<hr />
+<div class="border rounded ">
+    <div class="text-center my-3">
+    <h4  class="bold">Stok Giriş Kayıtları</h4>
+
+    </div>
+    <table class="table table-hover table-dark rounded">
+        <thead>
+            <tr>
+                <th>
+                    Grişi Tarihi
+                </th>
+                <th>Ürün Adı</th>
+                <th>Ürün Rengi</th>
+                <th>Girilen Miktar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductNameTr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.Color.ColorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InputQuantity) @Html.DisplayFor(modelItem=>item.Product.UnitsOfMeasurement.UnitsOfMeasurementName)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -266,17 +266,6 @@ namespace SonmezERP.Migrations
 
             modelBuilder.Entity("SonmezERP.Models.ProductInputLog", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("ActionDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
                     b.ToTable("ProducInputLogs");
                 });
 
@@ -294,20 +283,12 @@ namespace SonmezERP.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductInputId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProductInputLogId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("dateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("ProductInputLogId");
 
                     b.ToTable("ProductInputLogList");
                 });
@@ -388,10 +369,6 @@ namespace SonmezERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SonmezERP.Models.ProductInputLog", null)
-                        .WithMany("Inputs")
-                        .HasForeignKey("ProductInputLogId");
-
                     b.Navigation("Product");
                 });
 
@@ -418,11 +395,6 @@ namespace SonmezERP.Migrations
             modelBuilder.Entity("SonmezERP.Models.ProductDetails", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("SonmezERP.Models.ProductInputLog", b =>
-                {
-                    b.Navigation("Inputs");
                 });
 
             modelBuilder.Entity("SonmezERP.Models.UnitsOfMeasurement", b =>

@@ -3,26 +3,23 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<h1>Create</h1>
-
-<h4>ProductInputLog</h4>
-<hr />
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<h4 class="text-center my-3">Stok Giriş Ekranı</h4>
+<hr class="border border-light"/>
 <div class="row">
-    <div class="">
+    <div class="justify-content-center text-center">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group border my-3">
-                <label asp-for="ActionDate" class="control-label"></label>
-                <input asp-for="ActionDate" class="form-control" disabled />
-                <span asp-validation-for="ActionDate" class="text-danger"></span>
+            <div class="row my-3 text-center text-light border rounded ">
+                    <h5 class="col-6">İşlem Tarih: </h5>
+                    <h5 class="col-6">@DateTime.Now</h5>
             </div>
             <table id="ExpTable" class="table table-sm table-dark CodesTable">
                 <thead>
                     <tr>
-                        <th>Ürün</th>
-                        <th>Girilen Sayı</th>
-                        <th>
+                        <th class="col-7">Ürün</th>
+                        <th class="col-4">Girilen Sayı</th>
+                        <th class="col-1 text-center">
                             <button type="button" id="btnAddRow" class="btn btn-sm btn-secondary visible"
                                 onclick="AddItem(this)">Add</button>
                         </th>
@@ -32,124 +29,143 @@
                     @for (int i = 0; i < Model.Inputs.Count; i++)
                     {
                         <tr>
-                            <td class="col-8">
-                                <select asp-for="@Model.Inputs[i].ProductId" class="form-control"
-                                    asp-items="ViewBag.ProductsList"></select>
+                            <td class="col-7">
+                                <select asp-for="@Model.Inputs[i].ProductId js-example-basic-multiple" class="form-control"
+                                    name="state" asp-items="ViewBag.ProductsList"></select>
                             </td>
                             <td class="col-4">
-                                <input asp-for="@Model.Inputs[i].InputQuantity" class="form-control" />
-                                <span placeholder="0" asp-validation-for="@Model.Inputs[i].InputQuantity"
-                                    class="text-danger"></span>
+                                <input asp-for="@Model.Inputs[i].InputQuantity" class="form-control" required/>
+                                <span asp-validation-for="@Model.Inputs[i].InputQuantity" class="text-danger"></span>
                             </td>
-                            <td>
+                            <td class="col-1 text-center">
                                 <input type="hidden">
-                                <button id="btnremove-@i" type="button" class="btn btn-sm btn-danger visible"
+                                <button id="btnremove-@i" type="button" class="btn btn-sm btn-danger visible col-12"
                                     onclick="deleteItem(this)">Delete</button>
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary my-3" />
+            <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn btn-primary fw-bold my-3" />
+                <a class=" btn btn-info fw-bold my-3" asp-action="Index">Back to List</a>
+
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a class="my-3" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    <script>
-        function AddItem(btn) {
-            var table = document.getElementById("ExpTable");
-            var rows = table.getElementsByTagName("tr");
-
-            var lastrowIdx = rows.length - 2;
-
-            var rowOuterHtml = rows[lastrowIdx].outerHTML;
-
-            lastrowIdx = lastrowIdx - 1;
-            var nextrowIdx = eval(lastrowIdx) + 1;
-
-            console.log('Last Row Idx = ' + lastrowIdx);
-            console.log('Next Row Idx = ' + nextrowIdx);
-
-            rowOuterHtml = rowOuterHtml.replaceAll('_' + lastrowIdx + '_', '_' + nextrowIdx + '_')
-            rowOuterHtml = rowOuterHtml.replaceAll('[' + lastrowIdx + ']', '[' + nextrowIdx + ']')
-            rowOuterHtml = rowOuterHtml.replaceAll('-' + lastrowIdx + '-', '-' + nextrowIdx + '-')
-
-            var newRow = table.insertRow();
-            newRow.innerHtml = rowOuterHtml;
-
-        }
-
-        function DeleteItem(btn) {
-            var table = document.getElementById('ExpTable');
-            var rows = table.getElementsByTagName('tr');
-
-            if (rows.length == 2) {
-                alert("This Row Cannot Be Deleted");
-                return;
-            }
-            var btn = btn.id.replaceAll('btnremove-', '');
-            var idOfIsDeleted = btnIdx + "__IsDeleted";
-            var hidIsDelId = document.querySelector("$[id='" + idOfIsDeleted + "']").id;
-            document.getElementById(hidIsDelId).value = true;
-            $(btn).closest('tr').hide();
-            CalcTotalExperiences();
-        }
-
-    </script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     @* <script>
-function AddItem(button) {
-var table = document.getElementById("ExpTable").getElementsByTagName('tbody')[0];
-var newRow = table.insertRow(table.rows.length);
-var rowIndex = table.rows.length - 1; // Yeni satırın indeksi
+function AddItem(btn) {
+var table = document.getElementById("ExpTable");
+var rows = table.getElementsByTagName("tr");
 
-var cell1 = newRow.insertCell(0);
-var cell2 = newRow.insertCell(1);
-var cell3 = newRow.insertCell(2);
+var lastrowIdx = rows.length - 2;
 
-// Ürün seçimi için select elementi
-var newSelect = document.createElement('select');
-newSelect.name = 'Inputs[' + rowIndex + '].ProductId'; // Benzersiz indeksle güncelle
-newSelect.className = 'form-control';
-var existingSelect = document.querySelector('.CodesTable select');
-if (existingSelect) { // Mevcut bir select varsa, onun içeriğini kopyala
-newSelect.innerHTML = existingSelect.innerHTML;
+var rowOuterHtml = rows[lastrowIdx].outerHTML;
+
+lastrowIdx = lastrowIdx - 1;
+var nextrowIdx = eval(lastrowIdx) + 1;
+
+console.log('Last Row Idx = ' + lastrowIdx);
+console.log('Next Row Idx = ' + nextrowIdx);
+
+rowOuterHtml = rowOuterHtml.replaceAll('_' + lastrowIdx + '_', '_' + nextrowIdx + '_')
+rowOuterHtml = rowOuterHtml.replaceAll('[' + lastrowIdx + ']', '[' + nextrowIdx + ']')
+rowOuterHtml = rowOuterHtml.replaceAll('-' + lastrowIdx + '-', '-' + nextrowIdx + '-')
+
+var newRow = table.insertRow();
+newRow.innerHtml = rowOuterHtml;
+
 }
-cell1.appendChild(newSelect);
 
-// Girilen sayı için input elementi
-var newInputQty = document.createElement('input');
-newInputQty.type = 'text';
-newInputQty.name = 'Inputs[' + rowIndex + '].InputQuantity'; // Benzersiz indeksle güncelle
-newInputQty.className = 'form-control';
-newInputQty.placeholder = '0'
-cell2.appendChild(newInputQty);
+function DeleteItem(btn) {
+var table = document.getElementById('ExpTable');
+var rows = table.getElementsByTagName('tr');
 
-// Sil butonu
-var removeButton = document.createElement('button');
-removeButton.type = 'button';
-removeButton.textContent = 'Delete';
-removeButton.className = 'btn btn-sm btn-danger visible';
-removeButton.onclick = function () { deleteItem(this); };
-cell3.appendChild(removeButton);
+if (rows.length == 2) {
+alert("This Row Cannot Be Deleted");
+return;
 }
-</script>
-<script>
-function deleteItem(button) {
-var row = button.parentNode.parentNode;
-row.parentNode.removeChild(row);
+var btn = btn.id.replaceAll('btnremove-', '');
+var idOfIsDeleted = btnIdx + "__IsDeleted";
+var hidIsDelId = document.querySelector("$[id='" + idOfIsDeleted + "']").id;
+document.getElementById(hidIsDelId).value = true;
+$(btn).closest('tr').hide();
+CalcTotalExperiences();
 }
+
+</script> *@
+
+
+    <script>
+        function AddItem(button) {
+            var table = document.getElementById("ExpTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            var rowIndex = table.rows.length - 1; // Yeni satırın indeksi
+
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+
+            // Ürün seçimi için select elementi
+            var newSelect = document.createElement('select');
+            newSelect.name = 'Inputs[' + rowIndex + '].ProductId'; // Benzersiz indeksle güncelle
+            newSelect.className = 'form-control col-7';
+            var existingSelect = document.querySelector('.CodesTable select');
+            if (existingSelect) { // Mevcut bir select varsa, onun içeriğini kopyala
+                newSelect.innerHTML = existingSelect.innerHTML;
+            }
+            cell1.appendChild(newSelect);
+
+            // Girilen sayı için input elementi
+            var newInputQty = document.createElement('input');
+            newInputQty.type = 'number';
+            newInputQty.name = 'Inputs[' + rowIndex + '].InputQuantity'; // Benzersiz indeksle güncelle
+            newInputQty.className = 'form-control col-4';
+            newInputQty.placeholder = '0'
+            newInputQty.required = true;
+            cell2.appendChild(newInputQty);
+
+            // Sil butonu
+            var removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.textContent = 'Delete';
+            removeButton.className = 'btn btn-sm btn-danger visible col-12';
+            removeButton.onclick = function () { deleteItem(this); };
+            cell3.appendChild(removeButton);
+        }
+    </script>
+    <script>
+        function deleteItem(button) {
+            var row = button.parentNode.parentNode;
+            var tbody = row.parentNode;
+
+            // Tabloda birden fazla satır varsa sil, değilse uyarı ver
+            if (tbody.rows.length > 1) {
+                tbody.removeChild(row);
+            } else {
+                alert("Bu satır silinemez.");
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+    @* <script>
+$(document).ready(function () {
+$('.js-example-basic-multiple').select2();
+});
 </script> *@
 
 

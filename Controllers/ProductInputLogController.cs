@@ -20,7 +20,7 @@ namespace SonmezERP.Controllers
         public async Task<ActionResult> Index()
         {
 
-            var sonmezERPContext = _context.ProducInputLogs;
+            var sonmezERPContext = _context.ProductInputLogList.Include(p=>p.Product).Include(p=>p.Product.Color).Include(p=>p.Product.UnitsOfMeasurement);
             return View(await sonmezERPContext.ToListAsync());
         }
 
@@ -50,32 +50,23 @@ namespace SonmezERP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(
             //IFormCollection collection
-            [FromForm] ProductInputLog prdLog
+            [FromForm] ProductInputLog productInput
             )
         {
-            foreach (var item in prdLog.Inputs)
-            {
-                if (item.ProductId!=null&&item.InputQuantity!=null)
+            
+                foreach (var item in productInput.Inputs)
                 {
-                    Product? product = await _context.Products.FindAsync(item.ProductId);
-                    product.Stock += item.InputQuantity;
-                    _context.Products.Update(product);
-                    item.ProductInputId = prdLog.Id;
-                    item.dateTime = DateTime.Now;
-                    _context.ProductInputLogList.AddAsync(item);
+                    if (item.ProductId != null && item.InputQuantity != null)
+                    {
+                        Product? product = await _context.Products.FindAsync(item.ProductId);
+                        product.Stock += item.InputQuantity;
+                        _context.Products.Update(product);
+                        item.dateTime = DateTime.Now;
+                        _context.ProductInputLogList.AddAsync(item);
+                    }
                 }
-            }
-            _context.ProducInputLogs.AddAsync(prdLog);
-            await _context.SaveChangesAsync();
-
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
         }
 
         // GET: ProductInputLogController/Edit/5

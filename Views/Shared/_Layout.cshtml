@@ -13,12 +13,12 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container-sm my-3 rounded Gradiant align-middle ">
         <partial name="_Navbar"/>
         @RenderSection("Header",false)
         </div>
     </header>
-    <div class="container">
+    <div class="container-sm rounded Gradiant border">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -28,13 +28,7 @@
     <script src="~/js/site.js"></script>
     <script src="~/lib/font-awesome/js/all.min.js"></>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
-
-
 
     @await RenderSectionAsync("Scripts", required: false)
-    <script>
-       
-    </script>
 </body>
 </html>
