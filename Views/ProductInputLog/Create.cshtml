@@ -30,8 +30,10 @@
                     {
                         <tr>
                             <td class="col-7">
-                                <select asp-for="@Model.Inputs[i].ProductId js-example-basic-multiple" class="form-control"
-                                    name="state" asp-items="ViewBag.ProductsList"></select>
+                                <select asp-for="@Model.Inputs[i].ProductId" class="form-control" asp-items="ViewBag.ProductsList">
+
+                                </select>
+                                <span asp-validation-for="@Model.Inputs[i].ProductId" class="text-danger"></span>
                             </td>
                             <td class="col-4">
                                 <input asp-for="@Model.Inputs[i].InputQuantity" class="form-control" required/>

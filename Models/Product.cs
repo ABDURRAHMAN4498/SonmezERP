@@ -41,12 +41,12 @@ namespace SonmezERP.Models
         public ProductDetails? ProductDetails { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime CeateDate { get; set; }
-        public string ProductAndColor { 
-            get
-            {
-                return string.Format($"{ProductNameTr} - {Color.ColorName}"); 
-            }
-        }
+        //public string ProductAndColor { 
+        //    get
+        //    {
+        //        return string.Format($"{ProductNameTr} - {Color.ColorName}"); 
+        //    }
+        //}
 
     }
 }

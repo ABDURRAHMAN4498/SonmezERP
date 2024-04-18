@@ -19,8 +19,8 @@ namespace SonmezERP.Controllers
         // GET: ProductInputLogController
         public async Task<ActionResult> Index()
         {
-
-            var sonmezERPContext = _context.ProductInputLogList.Include(p=>p.Product).Include(p=>p.Product.Color).Include(p=>p.Product.UnitsOfMeasurement);
+            
+            var sonmezERPContext = _context.ProductInputLogList.Include(p=>p.Product).Include(p=>p.Product.Color).Include(p=>p.Product.UnitsOfMeasurement).Take(1500);
             return View(await sonmezERPContext.ToListAsync());
         }
 
@@ -34,7 +34,7 @@ namespace SonmezERP.Controllers
         public ActionResult Create()
         {
             var ProductInputLog = new ProductInputLog();
-            ProductInputLog.Inputs.Add(new ProductInputLogList() { Id=1});
+            ProductInputLog.Inputs.Add(new ProductInputLogList() { dateTime=DateTime.Now});
             //ViewData["ProductsList"] = new SelectList(_context.Products.Include(p=>p.Color), "Id", "ProductAndColor");
             ViewData["ProductsList"] = new SelectList((from m in _context.Products.Include(p => p.Color)
                                                        select new
@@ -56,10 +56,10 @@ namespace SonmezERP.Controllers
             
                 foreach (var item in productInput.Inputs)
                 {
-                    if (item.ProductId != null && item.InputQuantity != null)
+                    if (item.ProductId != null && item.ProductId>0 && item.InputQuantity != null)
                     {
                         Product? product = await _context.Products.FindAsync(item.ProductId);
-                        product.Stock += item.InputQuantity;
+                        product.Stock =product.Stock+ item.InputQuantity;
                         _context.Products.Update(product);
                         item.dateTime = DateTime.Now;
                         _context.ProductInputLogList.AddAsync(item);

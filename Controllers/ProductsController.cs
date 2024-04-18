@@ -21,9 +21,16 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
-            var sonmezERPContext = _context.Products.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Color).Include(p => p.Kdv).Include(p => p.ProductDetails).Include(p => p.UnitsOfMeasurement);
+            //(_context.Brands, "Id", "BrandName");
+            var sonmezERPContext = _context.Products.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Color).Include(p => p.Kdv).Include(p => p.ProductDetails).Include(p => p.UnitsOfMeasurement).OrderBy(item => item.ProductNameTr);
+
+            // if (id != null)
+            // {
+            //     sonmezERPContext = await _context.Products.Where(p=>p.BrandId == id).ToListAsync();
+            // }
+            // sonmezERPContext.OrderBy(p=>p.ProductNameTr).ToListAsync();
             return View(await sonmezERPContext.ToListAsync());
         }
 
