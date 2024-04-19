@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using SonmezERP.Data;
 using SonmezERP.Models;
 
@@ -21,16 +22,29 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index(int id=0)
         {
+            
             //(_context.Brands, "Id", "BrandName");
-            var sonmezERPContext = _context.Products.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Color).Include(p => p.Kdv).Include(p => p.ProductDetails).Include(p => p.UnitsOfMeasurement).OrderBy(item => item.ProductNameTr);
-
-            // if (id != null)
-            // {
-            //     sonmezERPContext = await _context.Products.Where(p=>p.BrandId == id).ToListAsync();
-            // }
-            // sonmezERPContext.OrderBy(p=>p.ProductNameTr).ToListAsync();
+            var sonmezERPContext = _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Color)
+                .Include(p => p.Kdv)
+                .Include(p => p.ProductDetails)
+                .Include(p => p.UnitsOfMeasurement)
+                .OrderBy(item => item.ProductNameTr);
+            List<Brand> Brands = new List<Brand>();
+            foreach (var item in  _context.Brands)
+            {
+                Brands.Add(item);
+            }
+            ViewData["Brands"] = Brands;
+            if (id>0)
+            {
+                sonmezERPContext.Where(p => p.BrandId == id);
+            }
+           
             return View(await sonmezERPContext.ToListAsync());
         }
 

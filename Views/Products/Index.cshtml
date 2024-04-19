@@ -14,10 +14,19 @@
 <hr />
 <div class="row d-flex justify-content-evenly">
     <h6 class="text-center">MARKALARIMIZ</h6>
-    @* @foreach (var item in ViewBag.Brands)
-    {
-        <a id="@item" class="btn btn-primary col-2 my-3"  asp-action="index">@item</a>
-    } *@
+   @*  <div class="row justify-content-center ">
+       <div class="col-auto">
+            <form class="col-auto" asp-action="Index">
+                @foreach (var item in (List<Brand>)ViewBag.Brands)
+                {
+
+                    <input asp-rout-id="@item.Id" value="@item.BrandName" type="submit" class="btn btn-primary col-2 my-3 flex-fill" asp-action="index">
+
+                }
+            </form>
+       </div>
+
+    </div> *@
     <a class="btn btn-primary col-2 my-3" asp-action="">MANDELLA</a>
     <a class="btn btn-secondary col-2 my-3" asp-action="">LUCAS</a>
     <a class="btn btn-success col-2 my-3" asp-action="">SAĞLAM EV GEREÇLERİ</a>
