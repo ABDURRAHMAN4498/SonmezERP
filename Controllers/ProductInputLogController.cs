@@ -27,6 +27,7 @@ namespace SonmezERP.Controllers
         // GET: ProductInputLogController/Details/5
         public ActionResult Details(int id)
         {
+
             return View();
         }
 
@@ -56,7 +57,7 @@ namespace SonmezERP.Controllers
             
                 foreach (var item in productInput.Inputs)
                 {
-                    if (item.ProductId != null && item.ProductId>0 && item.InputQuantity != null)
+                    if (item.ProductId !=null && item.ProductId>0 && item.InputQuantity != null)
                     {
                         Product? product = await _context.Products.FindAsync(item.ProductId);
                         product.Stock =product.Stock+ item.InputQuantity;
@@ -91,24 +92,48 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductInputLogController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
+            if (id<=0)
+            {
+                return NotFound();
+            }
+            var ProductLog = await _context.ProductInputLogList.Include(p=>p.Product).FirstOrDefaultAsync(p=>p.Id==id);
+            var product = await _context.Products.Include(p => p.Color).FirstOrDefaultAsync(p => p.Id == ProductLog.ProductId);
+            ProductLog.Product.Color.ColorName = product.Color.ColorName;
+            return View(ProductLog);
         }
 
         // POST: ProductInputLogController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Delete(int id,[FromForm] ProductInputLogList productInputLogList)
         {
-            try
+            if (id <=0 && productInputLogList.Id<=0)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
+
+            var productLog = await _context.ProductInputLogList
+                .Include(p=>p.Product)
+                .FirstOrDefaultAsync(p=>p.Id == productInputLogList.Id);
+            if (productLog==null)
             {
-                return View();
+                return Problem("Silmek istetdiğiniz kaydı bulamadı");
             }
+            var product = await _context.Products                
+                .FindAsync(productLog.ProductId);
+           
+            if (productInputLogList.InputQuantity>0)
+            {
+                product.Stock-=productInputLogList.InputQuantity;
+                _context.Remove(productLog);
+                _context.Update(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(productLog);
+            
         }
     }
 }
