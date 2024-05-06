@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SonmezERP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1d4ac1283bdf094d4bfc035aa25bab0988700bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26cfb6c5cc7e988d8fb350fe38032d372ee5bf3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SonmezERP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SonmezERP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
