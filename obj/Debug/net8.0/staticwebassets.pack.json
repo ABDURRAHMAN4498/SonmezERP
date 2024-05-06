@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\Uploads\\Logo\\UnitsOfMeasurement.png"
     },
     {
+      "Id": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\User.png",
+      "PackagePath": "staticwebassets\\Uploads\\Logo\\User.png"
+    },
+    {
       "Id": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\brands.png",
       "PackagePath": "staticwebassets\\Uploads\\Logo\\brands.png"
     },

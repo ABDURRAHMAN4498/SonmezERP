@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yMJTrj6fuQdCpkywTl+5MFeBUw0tcMgeeEIoXXLap6s=",
+  "Hash": "xz6QQwAsQ3q+HhfVb9+OboKOrh6CeFaXOAmE1UpOXpk=",
   "Source": "SonmezERP",
   "BasePath": "_content/SonmezERP",
   "Mode": "Default",
@@ -8755,6 +8755,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Logo\\UnitsOfMeasurement.png"
+    },
+    {
+      "Identity": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\Uploads\\Logo\\User.png",
+      "SourceId": "SonmezERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\asus\\Desktop\\SonmezERP\\wwwroot\\",
+      "BasePath": "_content/SonmezERP",
+      "RelativePath": "Uploads/Logo/User.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Logo\\User.png"
     }
   ]
 }

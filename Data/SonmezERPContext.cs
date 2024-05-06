@@ -8,7 +8,7 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Data
 {
-    public class SonmezERPContext : DbContext
+    public class SonmezERPContext : IdentityDbContext<AppUser,AppRole,int>
     {
       
         public SonmezERPContext (DbContextOptions<SonmezERPContext> options)
@@ -32,9 +32,6 @@ namespace SonmezERP.Data
         //public DbSet<SonmezERP.Models.RawMaterialsActions> HammaddeActions { get; set; }
         //public DbSet<SonmezERP.Models.Customer> Customers { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ProductInputLog>().HasNoKey();
-        }
+        
     }
 }
