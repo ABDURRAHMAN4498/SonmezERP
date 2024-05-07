@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SonmezERP.Models.AppUser>
+﻿@model List<SonmezERP.Models.AppUser>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @* @Html.DisplayNameFor(model => model.Name) *@ name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Surname)
+                @* @Html.DisplayNameFor(model => model.Surname) *@Surname
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserName)
+                @* @Html.DisplayNameFor(model => model.UserName) *@User Name
             </th>
             
             <th></th>

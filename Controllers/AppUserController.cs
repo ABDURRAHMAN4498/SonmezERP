@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SonmezERP.Data;
+using SonmezERP.Dtos;
 using SonmezERP.Models;
 using SonmezERP.ViewModels;
 
@@ -10,22 +12,28 @@ namespace SonmezERP.Controllers
 {
     public class AppUserController : Controller
     {
-        private readonly SonmezERPContext _context;
+        private readonly UserManager<AppUser> _UserManager;
 
-        public AppUserController(SonmezERPContext context)
+        public AppUserController(UserManager<AppUser> userManager)
         {
-            _context = context;
+            _UserManager = userManager;
         }
+
+
 
         // GET: AppUserController
         public async Task<ActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            var users = await _UserManager.Users.ToListAsync();
+            
+            return View(users);
         }
 
         // GET: AppUserController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
+            //var user = await _UserManager.Users.FirstOrDefault(x=>x.Id==id);
+
             return View();
         }
 
@@ -38,19 +46,24 @@ namespace SonmezERP.Controllers
         // POST: AppUserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(AppUser appUser)
+        public async Task<ActionResult> Create(CreateUserDto createUserDto)
         {
-            bool name = appUser.Name != string.Empty;
-            bool userName = appUser.UserName != string.Empty;
-            bool password = appUser.PasswordHash != string.Empty;
 
+            bool name = createUserDto.Name != string.Empty;
+            bool userName = createUserDto.UserName != string.Empty;
+            bool password = createUserDto.Password != string.Empty;
 
-            if (name&&userName&&password)
+            AppUser appUser = new AppUser()
             {
-                 _context.Users.Add(appUser);
-                await _context.SaveChangesAsync();
+                Name = createUserDto.Name,
+                Surname = createUserDto.Surname,
+                UserName = createUserDto.UserName
+
+            };
+            var result = await _UserManager.CreateAsync(appUser, createUserDto.Password);
+            if (result.Succeeded)
+            {
                 return RedirectToAction(nameof(Index));
-                
             }
             return View(appUser);
         }
@@ -58,11 +71,7 @@ namespace SonmezERP.Controllers
         // GET: AppUserController/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
-            if (id<=0)
-            {
-                return NotFound();
-            }
-            var user = await _context.Users.FindAsync(id);
+            var user = await _UserManager.FindByIdAsync(id.ToString());
 
             return View(user);
         }
@@ -72,24 +81,12 @@ namespace SonmezERP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(EditUserViewModel editUserViewModel)
         {
-            var user =await _context.Users.FindAsync(editUserViewModel.Id);
+            var user = await _UserManager.FindByIdAsync(editUserViewModel.Id.ToString());
 
-            try
+            var result = await _UserManager.UpdateAsync(user);
+            if (result.Succeeded)
             {
-                _context.Update(editUserViewModel);
-                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (AppUserExists(editUserViewModel.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
             }
             return View();
 
@@ -98,31 +95,26 @@ namespace SonmezERP.Controllers
         // GET: AppUserController/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user==null)
-            {
-                return NotFound();
-            }
+            var user = await _UserManager.FindByIdAsync(id.ToString());
             return View(user);
         }
 
         // POST: AppUserController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task< ActionResult> Delete(int id, EditUserViewModel editUserViewModel)
         {
-            try
+            var user = await _UserManager.FindByIdAsync(id.ToString());
+            var result =await _UserManager.DeleteAsync(user);
+            if (result.Succeeded)
             {
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(user);
         }
         private bool AppUserExists(int id)
         {
-            return _context.Users.Any(e => e.Id == id);
+            return _UserManager.Users.Any(e => e.Id == id);
         }
     }
 }
