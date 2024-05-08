@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SonmezERP.Models;
 
 namespace SonmezERP.Data
 {
-    public class SonmezERPContext : IdentityDbContext<AppUser,AppRole,int>
+    public class SonmezERPContext : IdentityDbContext<AppUser>
     {
       
         public SonmezERPContext (DbContextOptions<SonmezERPContext> options)

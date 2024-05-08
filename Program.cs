@@ -7,10 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SonmezERPContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'SonmezERPContext' not found.")));
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<SonmezERPContext>();
+
+builder.Services.AddIdentity<AppUser, AppRole>(options =>
+{
+    options.Password.RequiredUniqueChars = 0;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireLowercase = false;
+}).AddEntityFrameworkStores<SonmezERPContext>().AddDefaultTokenProviders();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -32,5 +41,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+    app.MapRazorPages();
 
 app.Run();

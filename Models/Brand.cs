@@ -9,7 +9,7 @@ namespace SonmezERP.Models
         [Display(Name ="Marka")]
         public string BrandName { get; set; }
         public string Descraption { get; set; }
-        public ICollection<Product> Products { get; set; }
+        
 
     }
 }

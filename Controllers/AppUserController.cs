@@ -114,7 +114,8 @@ namespace SonmezERP.Controllers
         }
         private bool AppUserExists(int id)
         {
-            return _UserManager.Users.Any(e => e.Id == id);
+            //return _UserManager.Users.Any(e => e.Id == id);
+            return true;
         }
     }
 }
