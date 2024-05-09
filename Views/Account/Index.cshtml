@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SonmezERP.Models.AppUser>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="my-3">
+    <table class="table table-danger border rounded">
+        <thead>
+            <tr class="justify-content-center">
+                <th class="col-auto">@Html.DisplayNameFor(model => model.Name) @Html.DisplayNameFor(model => model.Surname)</th>
+                <th class="col-auto">@Html.DisplayNameFor(model => model.UserName)</th>
+                <th class="col-auto">Şifre</th>
+                <th class="col-auto">
+                    <a class="btn btn-info" asp-route-id=""><i class="fa-solid fa-circle-info"></i></a> |
+                    <a class="btn btn-warning" asp-route-id=""><i class="fa-solid fa-pen-to-square"></i></a> | 
+                    <a class="btn btn-danger" asp-route-id=""><i class="fa-solid fa-trash"></i></a>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelitem => item.Name) @Html.DisplayFor(modelitem => item.Surname)</td>
+                    <td>@Html.DisplayFor(modelitem => item.UserName)</td>
+                    <td>@Html.DisplayFor(mdoelitem => item.PasswordHash)</td>
+                    <td class="row">
+                        <a class="btn btn-info" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                        <a class="btn btn-warning" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
