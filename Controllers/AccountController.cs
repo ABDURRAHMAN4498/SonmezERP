@@ -27,7 +27,7 @@ namespace SonmezERP.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            return View("/Account/Login.cshtml");
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM model)
@@ -39,7 +39,7 @@ namespace SonmezERP.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                //ModelState.AddModelError("", "Invalid Login Attempt");
+                ModelState.AddModelError("", "Invalid Login Attempt");
             }
             return View();
         }
@@ -51,27 +51,36 @@ namespace SonmezERP.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
+            AppUser user = new AppUser()
+            {
+                Name = registerVM.Name,
+                Surname = registerVM.Surname,
+                UserName = registerVM.UserName,
+            };
             bool password = registerVM.Password == registerVM.ConfirmPassword;
             if (ModelState.IsValid)
             {
-                AppUser user = new AppUser()
-                {
-                    Name = registerVM.Name,
-                    Surname = registerVM.Surname,
-                    UserName = registerVM.UserName,
-                };
-                var result = await _userManager.CreateAsync(user,registerVM.Password);
+                
+
+                this.Viewer(user);
+                IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password!);
                 if (result.Succeeded)
                 {
-                    await _signInManager.SignInAsync(user,false);
+                    await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
+
             }
-            return View();
+            return Viewer(user);
+        }
+        public IActionResult Viewer(AppUser user)
+        {
+            var model = user;
+            return View(model);
         }
         public async Task<IActionResult> Logout()
         {

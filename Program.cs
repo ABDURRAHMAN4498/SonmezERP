@@ -16,8 +16,15 @@ builder.Services.AddIdentity<AppUser, AppRole>(options =>
     options.Password.RequiredLength = 8;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireLowercase = false;
+    //USerName settinkgs
+    //options.
+
 
 }).AddEntityFrameworkStores<SonmezERPContext>().AddDefaultTokenProviders();
+builder.Services.ConfigureApplicationCookie(config =>
+{
+    config.LoginPath = "/Login";
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -17,239 +17,239 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SonmezERP
 build_property.RootNamespace = SonmezERP
-build_property.ProjectDir = C:\Users\User\Desktop\SonmezERP\
+build_property.ProjectDir = C:\Users\asus\Desktop\SonmezERP\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\SonmezERP
+build_property.MSBuildProjectDirectory = C:\Users\asus\Desktop\SonmezERP
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Account/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Account/Login.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Account/Register.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Brands/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Account/Viewer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWaWV3ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/Desktop/SonmezERP/Views/Brands/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Brands/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Brands/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Brands/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Brands/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Brands/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Brands/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Brands/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Brands/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Categories/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Categories/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Categories/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Categories/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Categories/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Colors/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Colors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Colors/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Colors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Colors/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Colors/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Colors/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Colors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Colors/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Colors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/DashboardSettings/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/DashboardSettings/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkU2V0dGluZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/DashboardSettings/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/DashboardSettings/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkU2V0dGluZ3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/DashboardSettings/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/DashboardSettings/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkU2V0dGluZ3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/DashboardSettings/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/DashboardSettings/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkU2V0dGluZ3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/DashboardSettings/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/DashboardSettings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkU2V0dGluZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/DashboardSettings/_DepartmentCard.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/DashboardSettings/_DepartmentCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkU2V0dGluZ3NcX0RlcGFydG1lbnRDYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Home/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Home/Privacy.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Kdvs/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Kdvs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2R2c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Kdvs/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Kdvs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2R2c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Kdvs/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Kdvs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2R2c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Kdvs/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Kdvs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2R2c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Kdvs/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Kdvs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2R2c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/User/Desktop/SonmezERP/Views/ProductDetails/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/ProductDetails/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/ProductDetails/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/ProductDetails/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/ProductDetails/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/ProductInputLog/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductInputLog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdElucHV0TG9nXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/ProductInputLog/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductInputLog/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdElucHV0TG9nXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/ProductInputLog/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/ProductInputLog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdElucHV0TG9nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Products/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Products/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Products/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Products/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Products/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Products/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Products/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Products/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Shared/Error.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Shared/_Navbar.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/UnitsOfMeasurements/Create.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/UnitsOfMeasurements/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNPZk1lYXN1cmVtZW50c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/UnitsOfMeasurements/Delete.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/UnitsOfMeasurements/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNPZk1lYXN1cmVtZW50c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/UnitsOfMeasurements/Details.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/UnitsOfMeasurements/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNPZk1lYXN1cmVtZW50c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/UnitsOfMeasurements/Edit.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/UnitsOfMeasurements/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNPZk1lYXN1cmVtZW50c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/UnitsOfMeasurements/Index.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/UnitsOfMeasurements/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNPZk1lYXN1cmVtZW50c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/_ViewImports.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/_ViewStart.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/SonmezERP/Views/Shared/_Layout.cshtml]
+[C:/Users/asus/Desktop/SonmezERP/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ijdzntp6vs
