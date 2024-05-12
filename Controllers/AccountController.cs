@@ -27,7 +27,7 @@ namespace SonmezERP.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View("/Account/Login.cshtml");
+            return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM model)
@@ -60,10 +60,7 @@ namespace SonmezERP.Controllers
             bool password = registerVM.Password == registerVM.ConfirmPassword;
             if (ModelState.IsValid)
             {
-                
-
-                this.Viewer(user);
-                IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password!);
+                var result = await _userManager.CreateAsync(user, registerVM.Password);
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
@@ -75,7 +72,7 @@ namespace SonmezERP.Controllers
                 }
 
             }
-            return Viewer(user);
+            return View(registerVM);
         }
         public IActionResult Viewer(AppUser user)
         {

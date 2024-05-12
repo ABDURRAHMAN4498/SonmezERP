@@ -21,10 +21,10 @@ builder.Services.AddIdentity<AppUser, AppRole>(options =>
 
 
 }).AddEntityFrameworkStores<SonmezERPContext>().AddDefaultTokenProviders();
-builder.Services.ConfigureApplicationCookie(config =>
-{
-    config.LoginPath = "/Login";
-});
+//builder.Services.ConfigureApplicationCookie(config =>
+//{
+//    config.LoginPath = "/Account";
+//});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

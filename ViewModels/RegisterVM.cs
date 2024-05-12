@@ -14,7 +14,7 @@ namespace SonmezERP.ViewModels
         public string  Surname { get; set; }
 
         [Required(ErrorMessage = "Bu Alan Boş Geçilemez")]
-        //[Display(Name ="Kullanıcı Adı")]
+        [Display(Name ="Kullanıcı Adı")]
         public string UserName { get; set; }
 
 
