@@ -1537,3 +1537,6 @@ C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\Microsoft.Extensions.Identity.C
 C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\User\Desktop\SonmezERP\obj\Debug\net8.0\SonmezERP.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

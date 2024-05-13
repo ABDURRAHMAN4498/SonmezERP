@@ -16,6 +16,20 @@ namespace SonmezERP.ViewModels
 
         [Display(Name ="Beni Hatırla")]
         public bool RememberMe { get; set; }
+        private string? _returnurl;
+        public string Returnurl { get
+            {
+                if (_returnurl is null)
+                {
+                    return "/";
+                }
+                else
+                    return _returnurl;
+            }
+            set
+            {
+                _returnurl = value;
+            } }
 
     }
 }

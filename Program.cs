@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SonmezERP.Data;
+using SonmezERP.Extensions;
 using SonmezERP.Models;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SonmezERPContext>(options => options.UseSqlServer(
@@ -50,6 +51,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    app.MapRazorPages();
-
+app.MapRazorPages();
+//app.ConfigureDefaultAdminUser();
 app.Run();
