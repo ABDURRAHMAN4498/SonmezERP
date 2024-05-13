@@ -23,7 +23,6 @@ namespace SonmezERP.ViewModels
 
         [Display(Name ="Şifre Tekrarı")]
         [Compare("Password", ErrorMessage = "Şifreler eşleşmedi!")]
-        [Required(ErrorMessage = "Bu Alan Boş Geçilemez")]
         public string ConfirmPassword { get; set; }
 
     }

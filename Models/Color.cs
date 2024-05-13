@@ -7,6 +7,7 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         [Display(Name ="Renk")]
+        [Required(ErrorMessage = "Renk Alanı boş geçilemez!")]
         public string ColorName { get; set; }
         [Display(Name ="Açıklama")]
         public string Note { get; set; }

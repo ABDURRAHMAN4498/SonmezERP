@@ -34,7 +34,7 @@ namespace SonmezERP.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.UserName!, model.Password!, model.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
@@ -74,11 +74,7 @@ namespace SonmezERP.Controllers
             }
             return View(registerVM);
         }
-        public IActionResult Viewer(AppUser user)
-        {
-            var model = user;
-            return View(model);
-        }
+        
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
