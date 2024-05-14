@@ -6,6 +6,7 @@ namespace SonmezERP.Models
 {
     public class AppUser:IdentityUser
     {
+        
         [Display(Name ="Ad")]
         [Required(ErrorMessage ="Ad Alanı Boş Geçilemez")]
         public string Name { get; set; }

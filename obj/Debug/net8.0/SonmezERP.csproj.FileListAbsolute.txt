@@ -1540,3 +1540,6 @@ C:\Users\User\Desktop\SonmezERP\obj\Debug\net8.0\SonmezERP.MvcApplicationPartsAs
 C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

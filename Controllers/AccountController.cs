@@ -30,16 +30,27 @@ namespace SonmezERP.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(LoginVM model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login([FromForm] LoginVM model)
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
-                if (result.Succeeded)
+
+                IdentityUser user = await _userManager.FindByNameAsync(model.UserName);
+                if (user is not null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    await _signInManager.SignOutAsync();
+                    if ((await _signInManager.PasswordSignInAsync(user, model.Password, false, false)))
+                    {
+                        
+                    }
                 }
-                ModelState.AddModelError("", "Invalid Login Attempt");
+                //var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
+                //if (result.Succeeded)
+                //{
+                //    return RedirectToAction("Index", "Home");
+                //}
+                //ModelState.AddModelError("", "Invalid Login Attempt");
             }
             return View();
         }

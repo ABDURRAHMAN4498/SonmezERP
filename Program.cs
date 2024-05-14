@@ -5,23 +5,8 @@ using SonmezERP.Data;
 using SonmezERP.Extensions;
 using SonmezERP.Models;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<SonmezERPContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? throw new InvalidOperationException("Connection string 'SonmezERPContext' not found.")));
-
-builder.Services.AddIdentity<AppUser, AppRole>(options =>
-{
-    //password settings
-    options.Password.RequiredUniqueChars = 0;
-    options.Password.RequireUppercase = false;
-    options.Password.RequiredLength = 8;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireLowercase = false;
-    //USerName settinkgs
-    //options.
-
-
-}).AddEntityFrameworkStores<SonmezERPContext>().AddDefaultTokenProviders();
+builder.Services.ConfigureDbContext(builder.Configuration);
+builder.Services.ConfigureIdentity();
 //builder.Services.ConfigureApplicationCookie(config =>
 //{
 //    config.LoginPath = "/Account";
