@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonmezERP.Models;
@@ -6,6 +7,7 @@ using SonmezERP.ViewModels;
 
 namespace SonmezERP.Controllers
 {
+
     public class AccountController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
@@ -36,15 +38,16 @@ namespace SonmezERP.Controllers
             if (ModelState.IsValid)
             {
 
-                IdentityUser user = await _userManager.FindByNameAsync(model.UserName);
+                AppUser? user = await _userManager.FindByNameAsync(model.UserName);
                 if (user is not null)
                 {
                     await _signInManager.SignOutAsync();
-                    if ((await _signInManager.PasswordSignInAsync(user, model.Password, false, false)))
+                    if ((await _signInManager.PasswordSignInAsync(user, model.Password,false,false)).Succeeded)
                     {
-                        
+                        return Redirect(model?.Returnurl ?? "/");
                     }
                 }
+                ModelState.AddModelError("Error", "Invalid username or password");
                 //var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
                 //if (result.Succeeded)
                 //{
@@ -54,11 +57,13 @@ namespace SonmezERP.Controllers
             }
             return View();
         }
+        [Authorize]
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
@@ -86,10 +91,10 @@ namespace SonmezERP.Controllers
             return View(registerVM);
         }
         
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout(/*[FromQuery(Name = "ReturnUrl")] string ReturnUrl="/"*/)
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction(nameof(HomeController.Index));
+            return RedirectToAction(nameof(Login));
         }
         
     }

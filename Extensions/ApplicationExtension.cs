@@ -36,6 +36,8 @@ namespace SonmezERP.Extensions
         {
             const string adminUser = "Admin";
             const string adminPassword = "Admin+123456";
+            const string adminName = "Abdurrahman";
+            const string adminSurname = "Hac Said";
 
 
 
@@ -58,7 +60,10 @@ namespace SonmezERP.Extensions
             {
                 user = new AppUser()
                 {
-                    UserName = adminUser
+                    UserName = adminUser,
+                    Name = adminName,
+                    Surname = adminSurname
+                    
                 };
                 var result = await userManager.CreateAsync(user, adminPassword);
 
@@ -68,14 +73,14 @@ namespace SonmezERP.Extensions
                     throw new Exception("Admin kullanıcı oluşturulamadı");
                 }
 
-                //List<string?> roles = roleManager.Roles.Select(x => x.Name).ToList();
-                IdentityResult roleResult = await userManager.AddToRolesAsync(user,
-                    new List<string>()
-                    {
-                        "Editor",
-                        "Admin",
-                        "User"
-                    });
+                
+                var roleResult = await userManager.AddToRolesAsync(user,
+
+                    roleManager
+                    .Roles
+                    .Select(r => r.Name)
+                    .ToList()!);
+                                    
                 if (!roleResult.Succeeded)
                 {
                     throw new Exception("System have problems with role defination for admin.");

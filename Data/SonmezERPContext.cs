@@ -10,7 +10,7 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Data
 {
-    public class SonmezERPContext : IdentityDbContext<AppUser>
+    public class SonmezERPContext : IdentityDbContext<AppUser,AppRole,string>
     {
       
         public SonmezERPContext (DbContextOptions<SonmezERPContext> options)
