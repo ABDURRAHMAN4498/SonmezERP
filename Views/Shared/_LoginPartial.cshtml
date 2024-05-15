@@ -1,7 +1,7 @@
 ﻿@inject SignInManager<AppUser> SignInManager
 
 <ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
+    @if (User.Identity.IsAuthenticated )
     {
         <li class="nav-item">
             <a class="nav-link fw-bold" asp-action="Logout" asp-controller="Account">Logout</a>

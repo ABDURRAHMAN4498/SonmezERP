@@ -65,6 +65,7 @@ namespace SonmezERP.Controllers
         }
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
             AppUser user = new AppUser()
@@ -79,8 +80,12 @@ namespace SonmezERP.Controllers
                 var result = await _userManager.CreateAsync(user, registerVM.Password);
                 if (result.Succeeded)
                 {
-                    await _signInManager.SignInAsync(user, false);
-                    return RedirectToAction("Index", "Home");
+                    var roleResult = await _userManager.AddToRoleAsync(user, "User");
+                    if (roleResult.Succeeded)
+                    {
+                        
+                    }
+
                 }
                 foreach (var error in result.Errors)
                 {
