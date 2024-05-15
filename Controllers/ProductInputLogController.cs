@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Controllers
 {
+    [Authorize]
     public class ProductInputLogController : Controller
     {
         private readonly SonmezERPContext _context;
