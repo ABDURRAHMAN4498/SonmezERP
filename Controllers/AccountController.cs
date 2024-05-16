@@ -42,7 +42,7 @@ namespace SonmezERP.Controllers
                 if (user is not null)
                 {
                     await _signInManager.SignOutAsync();
-                    if ((await _signInManager.PasswordSignInAsync(user, model.Password,false,false)).Succeeded)
+                    if ((await _signInManager.PasswordSignInAsync(user, model.Password, false, false)).Succeeded)
                     {
                         return Redirect(model?.Returnurl ?? "/");
                     }
@@ -77,30 +77,40 @@ namespace SonmezERP.Controllers
             bool password = registerVM.Password == registerVM.ConfirmPassword;
             if (ModelState.IsValid)
             {
-                var result = await _userManager.CreateAsync(user, registerVM.Password);
-                if (result.Succeeded)
+                if (password)
                 {
-                    var roleResult = await _userManager.AddToRoleAsync(user, "User");
-                    if (roleResult.Succeeded)
+                    var result = await _userManager.CreateAsync(user, registerVM.Password);
+                    if (result.Succeeded)
                     {
-                        
+                        var roleResult = await _userManager.AddToRoleAsync(user, "User");
+                        if (roleResult.Succeeded)
+                        {
+                            return RedirectToAction("Index");
+                        }
                     }
+                    else
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError("", error.Description);
+                        }
 
+                    }
                 }
-                foreach (var error in result.Errors)
+                else
                 {
-                    ModelState.AddModelError("", error.Description);
+                    ModelState.AddModelError("Error","Şifreler eşleşmedi");
                 }
 
             }
             return View(registerVM);
         }
-        
+
         public async Task<IActionResult> Logout(/*[FromQuery(Name = "ReturnUrl")] string ReturnUrl="/"*/)
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction(nameof(Login));
         }
-        
+
     }
 }
