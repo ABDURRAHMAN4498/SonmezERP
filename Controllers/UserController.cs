@@ -20,17 +20,23 @@ namespace SonmezERP.Controllers
         {
             return View(await _userManager.Users.ToListAsync());
         }
+        [HttpGet]
         public IActionResult Create()
         {
-            return View(new UserDtoForCreation()
-            {
-                Roles = new HashSet<string>(_roleManager.Roles.Select(r => r.Name).ToList()!)
-            });
+            return View(
+                new UserDtoForCreation()
+                {
+                    Roles = new HashSet<string>(_roleManager.Roles.Select(r => r.Name).ToList()!)
+                }
+                );
         }
+        [HttpPost]
         public async Task<IActionResult> Create(UserDtoForCreation userDto)
         {
             var user = new AppUser()
             {
+                Name=userDto.Name,
+                Surname = userDto.Surname,
                 UserName = userDto.UserName,
                 Email = userDto.Email,
                 PhoneNumber = userDto.PhoneNumber,
@@ -48,7 +54,9 @@ namespace SonmezERP.Controllers
                     throw new Exception("Sistemin Rollerle İlgili sorunları var!!");
                 }
             }
-            return View();
+            return result.Succeeded
+                ? RedirectToAction("Index")
+                : View();
         }
 
     }
