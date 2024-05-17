@@ -39,7 +39,7 @@ namespace SonmezERP.Controllers
                 Surname = userDto.Surname,
                 UserName = userDto.UserName,
                 Email = userDto.Email,
-                PhoneNumber = userDto.PhoneNumber,
+                PhoneNumber = userDto.PhoneNumber
             };
             var result = await _userManager.CreateAsync(user,userDto.Password!);
             if (!result.Succeeded)
