@@ -1543,3 +1543,4 @@ C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.DependencyInje
 C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\User\Desktop\SonmezERP\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\asus\Desktop\SonmezERP\bin\Debug\net8.0\AutoMapper.dll
