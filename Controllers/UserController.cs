@@ -1,8 +1,10 @@
-﻿using AutoMapper;
+﻿using System.Runtime.CompilerServices;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using SonmezERP.Dtos;
 using SonmezERP.Models;
 using SonmezERP.ViewModels;
@@ -67,13 +69,10 @@ namespace SonmezERP.Controllers
         [HttpGet]
         public async Task<IActionResult> Update([FromRoute(Name ="id")] string id)
         {
-            var user = await GetOneUser(id);
-            var userDto = _mapper.Map<UserDtoForUpdate>(user);
-            userDto.Roles = new HashSet<string>(await _userManager.GetRolesAsync(user));
-
-            return View(userDto);
+            var user = await GetOneUserForUpdate(id);
+           
+            return View(user);
         }
-
 
 
         [HttpPost]
@@ -100,8 +99,7 @@ namespace SonmezERP.Controllers
                 }
                 else
                 {
-
-                throw new Exception("System has problem with user update");
+                    throw new Exception("System has problem with user update");
                 }
                 return RedirectToAction("Index");
             }
@@ -112,12 +110,7 @@ namespace SonmezERP.Controllers
         {
             return await _userManager.FindByNameAsync(userName);
         }
-        //User gücelleme Action
-        //public async Task Update(UserDtoForUpdate userDto)
-        //{
-            
-            
-        //}
+        
         public async Task<UserDtoForUpdate> GetOneUserForUpdate(string userName)
         {
             var user = await GetOneUser(userName);
@@ -130,6 +123,32 @@ namespace SonmezERP.Controllers
                 return userDto;
             }
             throw new Exception("An error occured.");
+        }
+        [HttpGet]
+        public async Task<IActionResult> ResetPassword([FromRoute(Name ="id")] string id )
+        {
+            
+            return View(new ResetPasswordDto(){
+                UserName = id
+            });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordDto model){
+            var result = await this.ResetPasswordRuselt(model);
+            return result.Succeeded
+                ? RedirectToAction("Index")
+                : View();
+        }
+        public async Task<IdentityResult> ResetPasswordRuselt(ResetPasswordDto model ){
+            AppUser user = await GetOneUser(model.UserName!);
+            if (user is not null)
+            {
+                await _userManager.RemovePasswordAsync(user);
+                var result = await _userManager.AddPasswordAsync(user,model.Password!);
+                return result;
+            }
+            throw new Exception("Kullanıcı bulunamadı!");
         }
 
     }
