@@ -43,7 +43,7 @@
                 @Html.DisplayNameFor(model => model.Coordinate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descreption)
+                #
             </th>
             
         </tr>
@@ -79,7 +79,9 @@
                 @Html.DisplayFor(modelItem => item.Coordinate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descreption)
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
             </td>
             
         </tr>

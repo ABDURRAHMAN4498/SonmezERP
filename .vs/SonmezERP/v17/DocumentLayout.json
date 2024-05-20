@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\SonmezERP\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\SonmezERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\productdetails\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\productdetails\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\views\\unitsofmeasurements\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\unitsofmeasurements\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\user\\desktop\\sonmezerp\\views\\productdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\productdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,36 +22,36 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\Products\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\Products\\Index.cshtml",
-              "RelativeToolTip": "Views\\Products\\Index.cshtml",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAAAHMAAABeAAAA",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductDetails\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProductDetails\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductDetails\\Edit.cshtml",
+              "RelativeToolTip": "Views\\ProductDetails\\Edit.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T18:57:33.775Z",
+              "WhenOpened": "2024-05-20T06:57:01.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\UnitsOfMeasurements\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\UnitsOfMeasurements\\Index.cshtml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\UnitsOfMeasurements\\Index.cshtml",
-              "RelativeToolTip": "Views\\UnitsOfMeasurements\\Index.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAARAAAA",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductDetails\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProductDetails\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SonmezERP\\Views\\ProductDetails\\Index.cshtml",
+              "RelativeToolTip": "Views\\ProductDetails\\Index.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAEkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T18:50:41.841Z",
+              "WhenOpened": "2024-05-20T06:56:28.368Z",
               "EditorCaption": ""
             }
           ]
