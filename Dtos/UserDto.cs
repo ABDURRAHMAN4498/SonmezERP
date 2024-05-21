@@ -6,11 +6,11 @@ namespace SonmezERP.Dtos
     {
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "İsim alanı boş geçilemez!.")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         
         [DataType(DataType.Text)]
         [Required(ErrorMessage ="Soyadı alanı boş geçilemez")]
-        public string Surname { get; set; }
+        public string? Surname { get; set; }
        
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "Kullanıcı Adı alanı boş geçilemez.")]

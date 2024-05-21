@@ -7,7 +7,7 @@ namespace SonmezERP.Models
         [Key]
         public int Id { get; set; }
         [Display(Name ="Kod")]
-        public string ProductCode { get; set; }
+        public string? ProductCode { get; set; }
         [Display(Name ="En")]
         public int ProductWidth { get; set; }
         [Display(Name ="Boy")]
@@ -33,7 +33,7 @@ namespace SonmezERP.Models
         [Display(Name ="Koordinat")]
         public string? Coordinate { get; set; }
         [Display(Name ="Açıklama")]
-        public string Descreption { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public string? Descreption { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
 }

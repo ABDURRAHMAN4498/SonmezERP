@@ -37,13 +37,13 @@
                         @Html.DisplayFor(modelItem => item.dateTime)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Product.ProductNameTr)
+                        @Html.DisplayFor(modelItem => item.Product!.ProductNameTr)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Product.Color.ColorName)
+                        @Html.DisplayFor(modelItem => item.Product!.Color!.ColorName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.InputQuantity) @Html.DisplayFor(modelItem=>item.Product.UnitsOfMeasurement.UnitsOfMeasurementName)
+                        @Html.DisplayFor(modelItem => item.InputQuantity) @Html.DisplayFor(modelItem=>item.Product!.UnitsOfMeasurement!.UnitsOfMeasurementName)
                     </td>
                     
                     <td>

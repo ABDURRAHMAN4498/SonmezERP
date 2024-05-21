@@ -38,11 +38,11 @@ namespace SonmezERP.Controllers
             if (ModelState.IsValid)
             {
 
-                AppUser? user = await _userManager.FindByNameAsync(model.UserName);
+                AppUser? user = await _userManager.FindByNameAsync(model.UserName!);
                 if (user is not null)
                 {
                     await _signInManager.SignOutAsync();
-                    if ((await _signInManager.PasswordSignInAsync(user, model.Password, false, false)).Succeeded)
+                    if ((await _signInManager.PasswordSignInAsync(user, model.Password!, false, false)).Succeeded)
                     {
                         return Redirect(model?.Returnurl ?? "/");
                     }
@@ -79,7 +79,7 @@ namespace SonmezERP.Controllers
             {
                 if (password)
                 {
-                    var result = await _userManager.CreateAsync(user, registerVM.Password);
+                    var result = await _userManager.CreateAsync(user, registerVM.Password!);
                     if (result.Succeeded)
                     {
                         var roleResult = await _userManager.AddToRoleAsync(user, "User");

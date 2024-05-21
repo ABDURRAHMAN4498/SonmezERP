@@ -10,12 +10,12 @@ namespace SonmezERP.Models
         public int Id { get; set; }
         [ForeignKey("Customers")]
         public int CustomerId { get; set; }
-        public Customer Customers { get; set; }
-        public string Address { get; set; }
-        public string Phone{ get; set; }
+        public Customer? Customers { get; set; }
+        public string? Address { get; set; }
+        public string? Phone{ get; set; }
         [DataType(DataType.DateTime)]
         public DateTime CreateDate{ get; set; }
-        public string Seris { get; set; }
+        public string? Seris { get; set; }
         //kdv hariç toplam
         public float TotalWithoutTax { get; set; }
         //kdv toplamı
@@ -26,7 +26,7 @@ namespace SonmezERP.Models
         public float TotalWithDiscount { get; set; }
         //Metreküp toplamı
         public float TotalCubicMeters { get; set; }
-        public List<InviceBody> InviceBodyList { get; set; }
+        public List<InviceBody>? InviceBodyList { get; set; }
 
 
     }

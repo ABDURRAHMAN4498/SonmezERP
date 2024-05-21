@@ -10,8 +10,8 @@ namespace SonmezERP.Models
         public int Id { get; set; }
         public bool Visiblity { get; set; }
         [Display(Name ="Kod")]
-        public string ProductCode { get; set; }
-        public string Barcode { get; set; }
+        public string? ProductCode { get; set; }
+        public string? Barcode { get; set; }
         public string? ımagePath { get; set; }
         [Display(Name ="Marka")]
         public int BrandId { get; set; }
@@ -20,9 +20,9 @@ namespace SonmezERP.Models
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
         [Display(Name ="Ürün Adı")]
-        public string ProductNameTr { get; set; }
+        public string? ProductNameTr { get; set; }
         [Display(Name ="Product Name")]
-        public string ProductNameEn { get; set; }
+        public string? ProductNameEn { get; set; }
         public int ColorId { get; set; }
         public Color? Color { get; set; }
         [Display(Name ="Fiyat ₺")]

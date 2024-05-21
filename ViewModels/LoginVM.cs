@@ -7,12 +7,12 @@ namespace SonmezERP.ViewModels
     {
         [Display(Name ="Kullanıcı Adı")]
         [Required(ErrorMessage ="Kullanıcı Adı Alanı Boş Geçilemez!")]
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage ="Şifre Alanı Boş Geçilemez!")]
         [Display(Name ="Şifre")]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         [Display(Name ="Beni Hatırla")]
         public bool RememberMe { get; set; }

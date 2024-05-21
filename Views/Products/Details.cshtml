@@ -22,16 +22,16 @@
             @Html.DisplayFor(model => model.Barcode)
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.Brand.BrandName)
+            @Html.DisplayNameFor(model => model.Brand!.BrandName)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.Brand.BrandName)
+            @Html.DisplayFor(model => model.Brand!.BrandName)
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
+            @Html.DisplayNameFor(model => model.Category!.CategoryName)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.Category.CategoryName)
+            @Html.DisplayFor(model => model.Category!.CategoryName)
         </dd>
         <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.ProductNameTr)
@@ -46,10 +46,10 @@
             @Html.DisplayFor(model => model.ProductNameEn)
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.Color.ColorName)
+            @Html.DisplayNameFor(model => model.Color!.ColorName)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.Color.ColorName)
+            @Html.DisplayFor(model => model.Color!.ColorName)
         </dd>
         <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.PriceTl)
@@ -67,13 +67,13 @@
             @Html.DisplayNameFor(model => model.Kdv)
         </dt>
         <dd class="col-sm-8">
-            %@Html.DisplayFor(model => model.Kdv.KdvName)
+            %@Html.DisplayFor(model => model.Kdv!.KdvName)
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.UnitsOfMeasurement.UnitsOfMeasurementName)
+            @Html.DisplayNameFor(model => model.UnitsOfMeasurement!.UnitsOfMeasurementName)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.UnitsOfMeasurement.UnitsOfMeasurementName)
+            @Html.DisplayFor(model => model.UnitsOfMeasurement!.UnitsOfMeasurementName)
         </dd>
 
         <dt class="col-sm-4">
@@ -85,58 +85,58 @@
     </dl>
     <dl class="row col-md-6">
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.ProductDetails.ProductWidth)
+            @Html.DisplayNameFor(model => model.ProductDetails!.ProductWidth)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.ProductWidth) m.m
+            @Html.DisplayFor(model => model.ProductDetails!.ProductWidth) m.m
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.ProductDetails.ProductHight)
+            @Html.DisplayNameFor(model => model.ProductDetails!.ProductHight)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.ProductHight) m.m
+            @Html.DisplayFor(model => model.ProductDetails!.ProductHight) m.m
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.ProductDetails.ProductSize)
+            @Html.DisplayNameFor(model => model.ProductDetails!.ProductSize)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.ProductSize) m.m
+            @Html.DisplayFor(model => model.ProductDetails!.ProductSize) m.m
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.ProductDetails.ProductWeight)
+            @Html.DisplayNameFor(model => model.ProductDetails!.ProductWeight)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.ProductWeight) K.G
+            @Html.DisplayFor(model => model.ProductDetails!.ProductWeight) K.G
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.ProductDetails.PackagePices)
+            @Html.DisplayNameFor(model => model.ProductDetails!.PackagePices)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.PackagePices) @Html.DisplayFor(model => model.UnitsOfMeasurement.UnitsOfMeasurementName)
+            @Html.DisplayFor(model => model.ProductDetails!.PackagePices) @Html.DisplayFor(model => model.UnitsOfMeasurement!.UnitsOfMeasurementName)
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.ProductDetails.CubicMeter)
+            @Html.DisplayNameFor(model => model.ProductDetails!.CubicMeter)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.CubicMeter) m³
+            @Html.DisplayFor(model => model.ProductDetails!.CubicMeter) m³
         </dd>
         <dt class="col-sm-4">
             <h6 class="fw-bold">Paket Ağırlığı</h6>
         </dt>
         <dd class="col-sm-8">
-            <h6>@($"{Convert.ToDouble(((Convert.ToDouble(Model.ProductDetails.ProductWeight) * Convert.ToDouble(Model.ProductDetails.PackagePices)))).ToString("0.## K.G")}")</h6>
+            <h6>@($"{Convert.ToDouble(((Convert.ToDouble(Model.ProductDetails!.ProductWeight) * Convert.ToDouble(Model.ProductDetails.PackagePices)))).ToString("0.## K.G")}")</h6>
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model=>model.ProductDetails.Tir)
+            @Html.DisplayNameFor(model=>model.ProductDetails!.Tir)
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.Tir) @Html.DisplayFor(model => model.UnitsOfMeasurement.UnitsOfMeasurementName)
+            @Html.DisplayFor(model => model.ProductDetails!.Tir) @Html.DisplayFor(model => model.UnitsOfMeasurement!.UnitsOfMeasurementName)
         </dd>
         <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.ProductDetails.Container) 
+            @Html.DisplayNameFor(model => model.ProductDetails!.Container) 
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.ProductDetails.Container) @Html.DisplayFor(model => model.UnitsOfMeasurement.UnitsOfMeasurementName)
+            @Html.DisplayFor(model => model.ProductDetails!.Container) @Html.DisplayFor(model => model.UnitsOfMeasurement!.UnitsOfMeasurementName)
         </dd>
     </dl>
 </div>

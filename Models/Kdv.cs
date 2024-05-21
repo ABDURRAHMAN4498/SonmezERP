@@ -9,6 +9,6 @@ namespace SonmezERP.Models
         [Display(Name ="Vergi")]
         public float KdvName { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
 }

@@ -7,31 +7,39 @@
 <h1 class="text-center">Ürünler Sayfası</h1>
 
 <div class="row d-flex justify-content-center">
-    <a class="btn btn-success col-4 my-3" asp-action="Create">Create New</a>
+    <a class="btn btn-success col-4 my-3" asp-action="Create">Yeni Ürün Oluştur</a>
     <div class="col-2"></div>
     <a class="btn btn-info col-4 my-3" asp-controller="home" asp-action="index">Ana Sayfaya Dön</a>
 </div>
 <hr />
 <div class="row d-flex justify-content-evenly">
     <h6 class="text-center">MARKALARIMIZ</h6>
-   @*  <div class="row justify-content-center ">
-       <div class="col-auto">
-            <form class="col-auto" asp-action="Index">
-                @foreach (var item in (List<Brand>)ViewBag.Brands)
-                {
-
-                    <input asp-rout-id="@item.Id" value="@item.BrandName" type="submit" class="btn btn-primary col-2 my-3 flex-fill" asp-action="index">
-
+    <div class="row justify-content-center ">
+        <div class="row text-center">
+            <form asp-action="Index" method="post">
+                @{
+                    List<Brand> marka = (List<Brand>)ViewBag.Brands;
                 }
-            </form>
-       </div>
+                <div class="btn-group">
+                    @foreach (var item in marka)
+                    {
+                        <button asp-rout-id="@item.Id" type="submit" class="btn btn-primary my-3"
+                            asp-action="index">@item.BrandName</button>
+                    }
+                </div>
 
-    </div> *@
-    <a class="btn btn-primary col-2 my-3" asp-action="">MANDELLA</a>
-    <a class="btn btn-secondary col-2 my-3" asp-action="">LUCAS</a>
-    <a class="btn btn-success col-2 my-3" asp-action="">SAĞLAM EV GEREÇLERİ</a>
-    <a class="btn btn-info col-2 my-3" asp-action="">SAĞLAM ENDÜSTRİYEL</a>
-    <a class="btn btn-dark col-2 my-3" asp-action="">DELLA</a>
+            </form>
+        </div>
+
+    </div>
+    <h6 class="">MARKALARIMIZ</h6>
+    <div class="btn-group">
+        <a class="btn btn-primary col-2 my-3" asp-action="">MANDELLA</a>
+        <a class="btn btn-secondary col-2 my-3" asp-action="">LUCAS</a>
+        <a class="btn btn-success col-2 my-3" asp-action="">SAĞLAM EV GEREÇLERİ</a>
+        <a class="btn btn-info col-2 my-3" asp-action="">SAĞLAM ENDÜSTRİYEL</a>
+        <a class="btn btn-dark col-2 my-3" asp-action="">DELLA</a>
+    </div>
 </div>
 <hr />
 <span class="badge text-bg-warning my-3">Tanımlı Ürün Sayısı : @Model.Count()</span>
@@ -39,19 +47,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model=>model.ProductCode)
+                @Html.DisplayNameFor(model => model.ProductCode)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Brand.BrandName)
+                @Html.DisplayNameFor(model => model.Brand!.BrandName)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.Category.CategoryName)
+                @Html.DisplayNameFor(model => model.Category!.CategoryName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ProductNameTr)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.Color.ColorName)
+                @Html.DisplayNameFor(model => model.Color!.ColorName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PriceTl)
@@ -60,10 +68,10 @@
                 @Html.DisplayNameFor(model => model.PriceUSD)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.Kdv.KdvName)
+                @Html.DisplayNameFor(model => model.Kdv!.KdvName)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.UnitsOfMeasurement.UnitsOfMeasurementName)
+                Koli/Adet
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Stock)
@@ -82,17 +90,17 @@
                         @Html.DisplayFor(modelItem => item.ProductCode)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Brand.BrandName)
+                        @Html.DisplayFor(modelItem => item.Brand!.BrandName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                        @Html.DisplayFor(modelItem => item.Category!.CategoryName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ProductNameTr)
 
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Color.ColorName)
+                        @Html.DisplayFor(modelItem => item.Color!.ColorName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.PriceTl) ₺
@@ -102,20 +110,23 @@
                         @Html.DisplayFor(modelItem => item.PriceUSD) $
                     </td>
                     <td>
-                        %@Html.DisplayFor(modelItem => item.Kdv.KdvName)
+                        %@Html.DisplayFor(modelItem => item.Kdv!.KdvName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem=>item.ProductDetails.PackagePices)
-                        @Html.DisplayFor(modelItem => item.UnitsOfMeasurement.UnitsOfMeasurementName)
+                        @Html.DisplayFor(modelItem => item.ProductDetails!.PackagePices)
+                        @Html.DisplayFor(modelItem => item.UnitsOfMeasurement!.UnitsOfMeasurementName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Stock) 
-                        @Html.DisplayFor(modelItem=>item.UnitsOfMeasurement.UnitsOfMeasurementName)
+                        @Html.DisplayFor(modelItem => item.Stock)
+                        @Html.DisplayFor(modelItem => item.UnitsOfMeasurement!.UnitsOfMeasurementName)
                     </td>
                     <td>
-                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
-                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-pen-to-square"></i></a> |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-circle-info"></i></a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             }

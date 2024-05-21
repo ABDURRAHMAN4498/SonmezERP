@@ -22,7 +22,7 @@ namespace SonmezERP.Controllers
         public async Task<ActionResult> Index()
         {
             
-            var sonmezERPContext = _context.ProductInputLogList.Include(p=>p.Product).Include(p=>p.Product.Color).Include(p=>p.Product.UnitsOfMeasurement).Take(1500);
+            var sonmezERPContext = _context.ProductInputLogList.Include(p=>p.Product).Include(p=>p.Product!.Color).Include(p=>p.Product!.UnitsOfMeasurement).Take(1500);
             return View(await sonmezERPContext.ToListAsync());
         }
 
@@ -43,7 +43,7 @@ namespace SonmezERP.Controllers
                                                        select new
                                                        {
                                                            Id = m.Id,
-                                                           PorductAndColor = m.ProductNameTr + " - " + m.Color.ColorName
+                                                           PorductAndColor = m.ProductNameTr + " - " + m.Color!.ColorName
                                                        }), "Id", "PorductAndColor");
             return View(ProductInputLog);
         }
@@ -59,13 +59,13 @@ namespace SonmezERP.Controllers
             
                 foreach (var item in productInput.Inputs)
                 {
-                    if (item.ProductId !=null && item.ProductId>0 && item.InputQuantity != null)
+                    if (item.ProductId >0  && item.InputQuantity >0)
                     {
                         Product? product = await _context.Products.FindAsync(item.ProductId);
-                        product.Stock =product.Stock+ item.InputQuantity;
+                        product!.Stock =product.Stock+ item.InputQuantity;
                         _context.Products.Update(product);
                         item.dateTime = DateTime.Now;
-                        _context.ProductInputLogList.AddAsync(item);
+                        _context.ProductInputLogList?.AddAsync(item);
                     }
                 }
                 await _context.SaveChangesAsync();
@@ -101,8 +101,8 @@ namespace SonmezERP.Controllers
                 return NotFound();
             }
             var ProductLog = await _context.ProductInputLogList.Include(p=>p.Product).FirstOrDefaultAsync(p=>p.Id==id);
-            var product = await _context.Products.Include(p => p.Color).FirstOrDefaultAsync(p => p.Id == ProductLog.ProductId);
-            ProductLog.Product.Color.ColorName = product.Color.ColorName;
+            Product? product = await _context.Products.Include(p => p.Color).FirstOrDefaultAsync(p => p.Id == ProductLog!.ProductId);
+            ProductLog!.Product!.Color!.ColorName = product!.Color!.ColorName;
             return View(ProductLog);
         }
 
@@ -128,7 +128,7 @@ namespace SonmezERP.Controllers
            
             if (productInputLogList.InputQuantity>0)
             {
-                product.Stock-=productInputLogList.InputQuantity;
+                product!.Stock-=productInputLogList.InputQuantity;
                 _context.Remove(productLog);
                 _context.Update(product);
                 await _context.SaveChangesAsync();

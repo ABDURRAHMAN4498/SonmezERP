@@ -3,7 +3,7 @@
     public class Items
     {
         public int Id { get; set; }
-        public string Item { get; set; }
-        public string Note { get; set; }
+        public string? Item { get; set; }
+        public string? Note { get; set; }
     }
 }

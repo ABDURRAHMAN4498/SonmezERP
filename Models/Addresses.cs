@@ -7,7 +7,7 @@ namespace SonmezERP.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Address { get; set; }
-        public Customer Customers { get; set; }
+        public string? Address { get; set; }
+        public Customer? Customers { get; set; }
     }
 }

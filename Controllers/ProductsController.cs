@@ -145,6 +145,7 @@ namespace SonmezERP.Controllers
             //[Bind("Id,Visiblity,ProductCode,Barcode,BrandId,CategoryId,ProductNameTr,ProductNameEn,ColorId,PriceTl,PriceUSD,KdvId,UnitsOfMeasurementId,ProductDetailsId,CeateDate")]
         Product product)
         {
+            Product? prd = _context.Products.Find(id);
             if (id != product.Id)
             {
                 return NotFound();
@@ -155,6 +156,7 @@ namespace SonmezERP.Controllers
                 try
                 {
                     product.ımagePath = "ABDSOFT";
+                    product.Stock = prd!.Stock;
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }

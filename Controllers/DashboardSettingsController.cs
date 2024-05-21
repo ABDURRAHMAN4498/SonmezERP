@@ -22,7 +22,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: DashboardSettings
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             List<DashboardSettings> Items = new();
             Items.AddRange(_context.DashboardSettingsItems);

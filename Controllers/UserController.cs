@@ -41,8 +41,8 @@ namespace SonmezERP.Controllers
         {
             var user = new AppUser()
             {
-                Name=userDto.Name,
-                Surname = userDto.Surname,
+                Name=userDto.Name!,
+                Surname = userDto.Surname!,
                 UserName = userDto.UserName,
                 Email = userDto.Email,
                 PhoneNumber = userDto.PhoneNumber
@@ -81,10 +81,10 @@ namespace SonmezERP.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await GetOneUser(userDto.UserName);
+                var user = await GetOneUser(userDto.UserName!);
 
-                user.Name = userDto.Name;
-                user.Surname = userDto.Surname;
+                user.Name = userDto.Name!;
+                user.Surname = userDto.Surname!;
                 user.PhoneNumber = userDto.PhoneNumber;
                 user.Email = userDto.Email;
                 if (user is not null)
@@ -108,7 +108,8 @@ namespace SonmezERP.Controllers
         //User okuma Action
         public async Task<AppUser> GetOneUser(string userName)
         {
-            return await _userManager.FindByNameAsync(userName);
+            AppUser? user = await _userManager.FindByNameAsync(userName);
+            return user!;
         }
         
         public async Task<UserDtoForUpdate> GetOneUserForUpdate(string userName)
@@ -118,14 +119,14 @@ namespace SonmezERP.Controllers
             {
                 var userDto = _mapper.Map<UserDtoForUpdate>(user);
 
-                userDto.Roles = new HashSet<string>(_roleManager.Roles.Select(r => r.Name).ToList());
+                userDto.Roles = new HashSet<string>(_roleManager.Roles.Select(r => r.Name).ToList()!);
                 userDto.UserRoles = new HashSet<string>(await _userManager.GetRolesAsync(user));
                 return userDto;
             }
             throw new Exception("An error occured.");
         }
         [HttpGet]
-        public async Task<IActionResult> ResetPassword([FromRoute(Name ="id")] string id )
+        public IActionResult ResetPassword([FromRoute(Name ="id")] string id )
         {
             
             return View(new ResetPasswordDto(){
