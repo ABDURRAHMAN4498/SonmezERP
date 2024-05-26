@@ -5,7 +5,11 @@ using SonmezERP.Data;
 using SonmezERP.Extensions;
 using SonmezERP.Models;
 var builder = WebApplication.CreateBuilder(args);
+
+//EntityFrameWorkCore Configuration Settings(for database )
 builder.Services.ConfigureDbContext(builder.Configuration);
+
+//Identity configuration
 builder.Services.ConfigureIdentity();
 //builder.Services.ConfigureApplicationCookie(config =>
 //{
@@ -32,8 +36,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-app.UseAuthorization();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

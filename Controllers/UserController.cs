@@ -22,10 +22,12 @@ namespace SonmezERP.Controllers
             _roleManager = roleManager;
             _mapper = mapper;
         }
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _userManager.Users.ToListAsync());
         }
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -36,41 +38,44 @@ namespace SonmezERP.Controllers
                 }
                 );
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(UserDtoForCreation userDto)
         {
-            var user = new AppUser()
+            if (ModelState.IsValid)
             {
-                Name=userDto.Name!,
-                Surname = userDto.Surname!,
-                UserName = userDto.UserName,
-                Email = userDto.Email,
-                PhoneNumber = userDto.PhoneNumber
-            };
-            var result = await _userManager.CreateAsync(user,userDto.Password!);
-            if (!result.Succeeded)
-            {
-                throw new Exception("Kullanıcı Oluşturulamadı.");
-            }
-            if (userDto.Roles.Count>0)
-            {
-                var roleResult = await _userManager.AddToRolesAsync(user, userDto.Roles);
-                if (!roleResult.Succeeded)
+                var user = new AppUser()
                 {
-                    throw new Exception("Sistemin Rollerle İlgili sorunları var!!");
+                    Name = userDto.Name!,
+                    Surname = userDto.Surname!,
+                    UserName = userDto.UserName,
+                    Email = userDto.Email,
+                    PhoneNumber = userDto.PhoneNumber
+                };
+                var result = await _userManager.CreateAsync(user, userDto.Password!);
+                if (!result.Succeeded)
+                {
+                    throw new Exception("Kullanıcı Oluşturulamadı.");
+                }
+                if (userDto.Roles.Count > 0)
+                {
+                    var roleResult = await _userManager.AddToRolesAsync(user, userDto.Roles);
+                    if (roleResult.Succeeded)
+                    {
+                        return RedirectToAction("Index");
+                    }
                 }
             }
-            return result.Succeeded
-                ? RedirectToAction("Index")
-                : View();
+
+            return View(User);
         }
-       
-        
+
+
         [HttpGet]
-        public async Task<IActionResult> Update([FromRoute(Name ="id")] string id)
+        public async Task<IActionResult> Update([FromRoute(Name = "id")] string id)
         {
             var user = await GetOneUserForUpdate(id);
-           
+
             return View(user);
         }
 
@@ -109,9 +114,16 @@ namespace SonmezERP.Controllers
         public async Task<AppUser> GetOneUser(string userName)
         {
             AppUser? user = await _userManager.FindByNameAsync(userName);
-            return user!;
+            if (user is not null)
+            {
+                return user;
+            }
+            else
+            {
+                throw new Exception("Kullanıcı bulunamadı!");
+            }
         }
-        
+
         public async Task<UserDtoForUpdate> GetOneUserForUpdate(string userName)
         {
             var user = await GetOneUser(userName);
@@ -126,31 +138,56 @@ namespace SonmezERP.Controllers
             throw new Exception("An error occured.");
         }
         [HttpGet]
-        public IActionResult ResetPassword([FromRoute(Name ="id")] string id )
+        public IActionResult ResetPassword([FromRoute(Name = "id")] string id)
         {
-            
-            return View(new ResetPasswordDto(){
+
+            return View(new ResetPasswordDto()
+            {
                 UserName = id
             });
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordDto model){
-            var result = await this.ResetPasswordRuselt(model);
+        public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordDto model)
+        {
+            var result = await ResetPasswordRuselt(model);
             return result.Succeeded
                 ? RedirectToAction("Index")
                 : View();
         }
-        public async Task<IdentityResult> ResetPasswordRuselt(ResetPasswordDto model ){
+        public async Task<IdentityResult> ResetPasswordRuselt(ResetPasswordDto model)
+        {
             AppUser user = await GetOneUser(model.UserName!);
             if (user is not null)
             {
                 await _userManager.RemovePasswordAsync(user);
-                var result = await _userManager.AddPasswordAsync(user,model.Password!);
-                return result;
+                var result = await _userManager.AddPasswordAsync(user, model.Password!);
+                if (result.Succeeded)
+                {
+                    return result;
+                }
+                else
+                {
+                    throw new Exception("Şifre Güncellemede bir hata oluştu!");
+                }
             }
             throw new Exception("Kullanıcı bulunamadı!");
         }
 
+
+        public async Task<IdentityResult> DeleteOneUserResult(string userName)
+        {
+            var user = await GetOneUser(userName);
+
+            return await _userManager.DeleteAsync(user);
+        }
+
+        public async Task<IActionResult> DeleteOneUser([FromForm] UserDto userDto)
+        {
+            var result = await DeleteOneUserResult(userDto.UserName!);
+            return result.Succeeded
+            ? RedirectToAction("Index")
+            : throw new Exception("Kullanıcı Silinemedi!!!");
+        }
     }
 }

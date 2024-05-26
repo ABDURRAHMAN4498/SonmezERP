@@ -1,8 +1,8 @@
-﻿@model IEnumerable<SonmezERP.Models.AppUser>
+﻿@model IEnumerable<AppUser>
 
-    @{
-        ViewData["Title"] = "Index";
-    }
+@{
+    ViewData["Title"] = "Index";
+}
 <div class="text-center my-3">
     <div class="display-6">Users</div>
 </div>
@@ -10,28 +10,35 @@
 <table class="table table-dark">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Full Name</th>
             <th>UserName</th>
             <th>Roles</th>
-            <th>Operations</th>
+            <th><a class="btn btn-success" asp-action="Create"><i class="fa-solid fa-user-plus"></i> User</a></th>
         </tr>
     </thead>
     <tbody>
-        @foreach(AppUser user in Model)
+        @foreach (AppUser user in Model)
         {
             <tr>
-                
+                <td>@user.Id</td>
                 <td>@user.Name - @user.Surname</td>
                 <td>@user.UserName</td>
                 <td>-</td>
                 <td>
                     <div class="btn-group">
-                        <a class="btn btn-sm btn-warning" asp-action="Update" asp-route-id="@user.UserName">Edit</a>
-                        <a class="btn btn-sm btn-info" asp-action="ResetPassword" asp-route-id="@user.UserName">Reset Password</a>
-                        <a class="btn btn-sm btn-danger">Delete</a>
+                        <a class="btn btn-warning  rounded-0" asp-action="Update" asp-route-id="@user.UserName">Edit</a> |
+                        <a class="btn btn-info rounded-0" asp-action="ResetPassword" asp-route-id="@user.UserName">Reset
+                            Password</a> |
+                        <form method="post" asp-controller="User" asp-action="DeleteOneUser">
+                            <input type="hidden" name="UserName" value="@user.UserName">
+                            <button type="submit" class="btn btn-danger rounded-0">
+                                <i class="fa fa-solid fa-trash"></i>
+                                Delete </button>
+                        </form>
                     </div>
                 </td>
-                
+
             </tr>
         }
     </tbody>

@@ -18,5 +18,29 @@ namespace SonmezERP.Controllers
         {
             return View(await _roleManager.Roles.ToListAsync());
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] AppRole appRole)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _roleManager.CreateAsync(appRole);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    throw new Exception("Yetki Oluşturulamadı!");
+                }
+            }
+            return View(appRole);
+        }
     }
 }

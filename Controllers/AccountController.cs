@@ -94,7 +94,6 @@ namespace SonmezERP.Controllers
                         {
                             ModelState.AddModelError("", error.Description);
                         }
-
                     }
                 }
                 else

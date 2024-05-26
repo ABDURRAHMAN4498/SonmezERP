@@ -1,12 +1,51 @@
 ﻿@model IEnumerable<SonmezERP.Models.AppRole>
 
-@{
-    ViewData["Title"] = "Index";
+@* @{
+ViewData["Title"] = "Index";
 }<div class="text-center">
-    <div class="display-6">Roles</div>
+<div class="display-6">Roles</div>
 </div>
 <ul class="list-group">
-    @foreach(var role in Model){
-        <li class="list-group-item">@role.Name</li>
-    }
-</ul>
+@foreach(var role in Model){
+<li class="list-group-item">@role.Name</li>
+}
+</ul> *@
+
+<p>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                <a class="btn btn-success btn-sm" asp-action="Create">Create New Role</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-pen-to-square"></i></a> |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-circle-info"></i></a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

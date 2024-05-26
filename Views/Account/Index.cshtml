@@ -21,7 +21,7 @@
                 <tr>
                     <td>@item.Name @item.Surname</td>
                     <td>@item.UserName</td>
-                    <td>@item.PasswordHash!.GetHashCode()</td>
+                    <td>@item.PasswordHash</td>
                     <td>
                         <a class="btn btn-info" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
                         <a class="btn btn-warning" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>

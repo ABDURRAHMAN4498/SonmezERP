@@ -22,12 +22,14 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Brands
+        
         public async Task<IActionResult> Index()
         {
             return View(await _context.Brands.ToListAsync());
         }
 
         // GET: Brands/Details/5
+        [Authorize(Roles ="")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
