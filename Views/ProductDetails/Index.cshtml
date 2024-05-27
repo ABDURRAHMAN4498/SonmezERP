@@ -11,7 +11,9 @@
     <div class="col-2"></div>
     <a class="btn btn-info col-4 my-3" asp-controller="home" asp-action="index">Ana Sayfaya Dön</a>
 </div>
-<span class="badge text-bg-warning my-3">Tanımlı Ürün Sayısı : @Model.Count()</span>
+<hr>
+<span class="badge text-bg-info my-3">Tanımlı Ürün Sayısı : @Model.Count()</span>
+<div class="table-responsive">
 <table class="table table-dark">
     <thead>
         <tr>
@@ -88,3 +90,4 @@
 }
     </tbody>
 </table>
+</div>

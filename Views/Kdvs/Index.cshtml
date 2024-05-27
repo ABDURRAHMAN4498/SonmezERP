@@ -5,9 +5,14 @@
 }
 
 <h1>Index</h1>
-
+<div class="row d-flex justify-content-evenly">
+    <a class="btn btn-success col-4 my-3" asp-action="Create">Create New</a>
+    <div class="col-2"></div>
+    <a class="btn btn-info col-4 my-3" asp-controller="home" asp-action="index">Ana Sayfaya Dön</a>
+</div>
+<hr>
 <p>
-    <a class="btn btn-success" asp-action="Create">Create New</a>
+    <a class="btn btn-success d-flex justify-content-center" asp-action="Create">Create New</a>
 </p>
 <table class="table table-dark table-hover">
     <thead>

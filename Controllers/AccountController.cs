@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SonmezERP.Models;
 using SonmezERP.ViewModels;
 
@@ -98,7 +99,7 @@ namespace SonmezERP.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("Error","Şifreler eşleşmedi");
+                    ModelState.AddModelError("Error", "Şifreler eşleşmedi");
                 }
 
             }
@@ -111,7 +112,9 @@ namespace SonmezERP.Controllers
             return RedirectToAction(nameof(Login));
         }
 
-        
-
+        public IActionResult AccessDenied([FromQuery(Name = "ReturnUrl")] string returnUrl)
+        {
+            return View();
+        }
     }
 }
