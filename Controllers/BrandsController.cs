@@ -11,7 +11,7 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Controllers
 {
-    [Authorize]
+
     public class BrandsController : Controller
     {
         private readonly SonmezERPContext _context;
@@ -22,14 +22,14 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Brands
-        
+        [Authorize(Roles = "Brands,Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Brands.ToListAsync());
         }
 
         // GET: Brands/Details/5
-        [Authorize(Roles ="")]
+        [Authorize(Roles = "Brand_Detail,Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,6 +47,7 @@ namespace SonmezERP.Controllers
             return View(brand);
         }
 
+        [Authorize(Roles = "Brand_Create,Admin")]
         // GET: Brands/Create
         public IActionResult Create()
         {
@@ -58,9 +59,10 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Brand_Create,Admin")]
         public async Task<IActionResult> Create([Bind("Id,BrandName,Descraption")] Brand brand)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(brand);
                 await _context.SaveChangesAsync();
@@ -70,6 +72,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Brands/Edit/5
+        [Authorize(Roles = "Brand_Edit,Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,6 +93,7 @@ namespace SonmezERP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Brand_Edit,Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,BrandName,Descraption")] Brand brand)
         {
             if (id != brand.Id)
@@ -121,6 +125,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Brands/Delete/5
+        [Authorize(Roles = "Brand_Delete,Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +144,7 @@ namespace SonmezERP.Controllers
         }
 
         // POST: Brands/Delete/5
+        [Authorize(Roles = "Brand_Delete,Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

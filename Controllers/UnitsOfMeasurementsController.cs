@@ -11,7 +11,6 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Controllers
 {
-    [Authorize]
     public class UnitsOfMeasurementsController : Controller
     {
         private readonly SonmezERPContext _context;
@@ -20,7 +19,8 @@ namespace SonmezERP.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles ="UnitsOfMeasurements,Admin")]
+        [HttpGet]
         // GET: UnitsOfMeasurements
         public async Task<IActionResult> Index()
         {
@@ -28,6 +28,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: UnitsOfMeasurements/Details/5
+        [Authorize(Roles ="UnitsOfMeasurements_Details,Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,6 +55,7 @@ namespace SonmezERP.Controllers
         // POST: UnitsOfMeasurements/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="UnitsOfMeasurements_Create,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UnitsOfMeasurementName")] UnitsOfMeasurement unitsOfMeasurement)
@@ -68,6 +70,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: UnitsOfMeasurements/Edit/5
+        [Authorize(Roles ="UnitsOfMeasurements_Edit,Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +89,7 @@ namespace SonmezERP.Controllers
         // POST: UnitsOfMeasurements/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="UnitsOfMeasurements_Edit,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,UnitsOfMeasurementName")] UnitsOfMeasurement unitsOfMeasurement)
@@ -119,6 +123,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: UnitsOfMeasurements/Delete/5
+        [Authorize(Roles ="UnitsOfMeasurements_Delete,Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +142,7 @@ namespace SonmezERP.Controllers
         }
 
         // POST: UnitsOfMeasurements/Delete/5
+        [Authorize(Roles ="UnitsOfMeasurements_Delete,Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

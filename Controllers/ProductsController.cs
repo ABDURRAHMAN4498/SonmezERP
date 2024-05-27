@@ -22,7 +22,8 @@ namespace SonmezERP.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles ="Products,Admin")]
+        [HttpGet]
         // GET: Products
         public async Task<IActionResult> Index(int id=0)
         {
@@ -51,6 +52,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Products/Details/5
+        [Authorize(Roles ="Products_Details,Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -75,6 +77,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Products/Create
+        [Authorize(Roles ="Products_Create,Admin")]
+        [HttpGet]
         public IActionResult Create()
         {
             ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "BrandName");
@@ -89,6 +93,7 @@ namespace SonmezERP.Controllers
         // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="Products_Create,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm]
@@ -114,6 +119,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize(Roles ="Products_Edit,Admin")]
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -139,6 +146,7 @@ namespace SonmezERP.Controllers
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="Products_Edit,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id,
@@ -182,6 +190,7 @@ namespace SonmezERP.Controllers
             return View(product);
         }
         // GET: Products/Delete/5
+        [Authorize(Roles ="Products_Delete,Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -206,6 +215,7 @@ namespace SonmezERP.Controllers
         }
 
         // POST: Products/Delete/5
+        [Authorize(Roles ="Products_Delete,Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -219,11 +229,7 @@ namespace SonmezERP.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 		}
-        [HttpGet]
-        public IActionResult Stock()
-        {
-            return View();
-        }
+        
         private bool ProductExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);

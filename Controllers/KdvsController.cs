@@ -11,7 +11,6 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Controllers
 {
-    [Authorize]
     public class KdvsController : Controller
     {
         private readonly SonmezERPContext _context;
@@ -20,7 +19,8 @@ namespace SonmezERP.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles ="Kdvs,Admin")]
+        [HttpGet]
         // GET: Kdvs
         public async Task<IActionResult> Index()
         {
@@ -28,6 +28,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Kdvs/Details/5
+        [Authorize(Roles ="Kdvs_Details,Admin")]
+        [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
            var kdv = await _context.Kdv
@@ -41,6 +43,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Kdvs/Create
+        [Authorize(Roles ="Kdvs_Create,Admin")]
         public IActionResult Create()
         {
             return View();
@@ -49,6 +52,7 @@ namespace SonmezERP.Controllers
         // POST: Kdvs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="Kdvs_Create,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,KdvName")] Kdv kdv)
@@ -63,6 +67,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Kdvs/Edit/5
+        [Authorize(Roles ="Kdvs_Edit,Admin")]
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,6 +87,7 @@ namespace SonmezERP.Controllers
         // POST: Kdvs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="Kdvs_Edit,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,KdvName")] Kdv kdv)
@@ -114,6 +121,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Kdvs/Delete/5
+        [Authorize(Roles ="Kdvs_Delete,Admin")]
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             
@@ -129,6 +138,7 @@ namespace SonmezERP.Controllers
         }
 
         // POST: Kdvs/Delete/5
+        [Authorize(Roles ="Kdvs_Delete,Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

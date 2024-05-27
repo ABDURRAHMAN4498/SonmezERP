@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -22,23 +23,25 @@ namespace SonmezERP.Controllers
             _roleManager = roleManager;
             _mapper = mapper;
         }
+        [Authorize(Roles = "Users,Admin")]
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _userManager.Users.ToListAsync());
         }
-
+        [Authorize(Roles = "Users_Create,Admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View(
                 new UserDtoForCreation()
                 {
-                    Roles = new HashSet<string>(_roleManager.Roles.Select(r => r.Name).ToList()!)
+                    Roles = new HashSet<string>(_roleManager.Roles.OrderBy(r => r.Name).Select(r => r.Name).ToList()!)
                 }
                 );
         }
-
+        [Authorize(Roles = "Users_Create,Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(UserDtoForCreation userDto)
         {
@@ -70,7 +73,7 @@ namespace SonmezERP.Controllers
             return View(User);
         }
 
-
+        [Authorize(Roles = "Users_Edit,Admin")]
         [HttpGet]
         public async Task<IActionResult> Update([FromRoute(Name = "id")] string id)
         {
@@ -79,7 +82,7 @@ namespace SonmezERP.Controllers
             return View(user);
         }
 
-
+        [Authorize(Roles ="Users_Edit,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update([FromForm] UserDtoForUpdate userDto)
@@ -131,12 +134,13 @@ namespace SonmezERP.Controllers
             {
                 var userDto = _mapper.Map<UserDtoForUpdate>(user);
 
-                userDto.Roles = new HashSet<string>(_roleManager.Roles.Select(r => r.Name).ToList()!);
+                userDto.Roles = new HashSet<string>(_roleManager.Roles.OrderBy(r => r.Name).Select(r => r.Name).ToList()!);
                 userDto.UserRoles = new HashSet<string>(await _userManager.GetRolesAsync(user));
                 return userDto;
             }
             throw new Exception("An error occured.");
         }
+        [Authorize(Roles ="Users_ResetPassword,Admin")]
         [HttpGet]
         public IActionResult ResetPassword([FromRoute(Name = "id")] string id)
         {
@@ -146,6 +150,7 @@ namespace SonmezERP.Controllers
                 UserName = id
             });
         }
+        [Authorize(Roles ="Users_ResetPassword,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordDto model)
@@ -181,7 +186,7 @@ namespace SonmezERP.Controllers
 
             return await _userManager.DeleteAsync(user);
         }
-
+        [Authorize(Roles ="Users_DeleteOneUser,Admin")]
         public async Task<IActionResult> DeleteOneUser([FromForm] UserDto userDto)
         {
             var result = await DeleteOneUserResult(userDto.UserName!);

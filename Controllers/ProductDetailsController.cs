@@ -11,7 +11,6 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Controllers
 {
-    [Authorize]
     public class ProductDetailsController : Controller
     {
         private readonly SonmezERPContext _context;
@@ -20,7 +19,8 @@ namespace SonmezERP.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles ="ProductDetails,Admin")]
+        [HttpGet]
         // GET: ProductDetails
         public async Task<IActionResult> Index()
         {
@@ -28,6 +28,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductDetails/Details/5
+        [Authorize(Roles ="ProductDetails_Details,Admin")]
+        [HttpGet]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +48,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductDetails/Create
+        [Authorize(Roles ="ProductDetails_Create,Admin")]
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +58,7 @@ namespace SonmezERP.Controllers
         // POST: ProductDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="ProductDetails_Create,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm]
@@ -88,6 +93,7 @@ namespace SonmezERP.Controllers
         // POST: ProductDetails/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="ProductDetails_Edit,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,ProductCode,ProductWidth,ProductHight,ProductSize,ProductWeight,PackageWidth,PackageSize,PackageHight,PackagePices,CubicMeter,Tir,Container,Coordinate,Descreption")] ProductDetails productDetails)
@@ -121,6 +127,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductDetails/Delete/5
+        [Authorize(Roles ="ProductDetails_Delete,Admin")]
+        [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +147,8 @@ namespace SonmezERP.Controllers
         }
 
         // POST: ProductDetails/Delete/5
+        [Authorize(Roles ="ProductDetails_Delete,Admin")]
+        [HttpGet]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

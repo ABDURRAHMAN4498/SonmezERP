@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonmezERP.Models;
@@ -13,17 +14,20 @@ namespace SonmezERP.Controllers
         {
             _roleManager = roleManager;
         }
-
+        [Authorize(Roles ="Roles,Admin")]
         public async Task<IActionResult> Index()
         {
-            return View(await _roleManager.Roles.ToListAsync());
+            var Roles = await _roleManager.Roles.OrderBy(item => item.Name).ToListAsync();
+            
+            return View(Roles);
         }
-
+        [Authorize(Roles ="Roles_Create,Admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
+        [Authorize(Roles ="Roles_Create,Admin")]
 
         [HttpPost]
         public async Task<IActionResult> Create([FromForm] AppRole appRole)

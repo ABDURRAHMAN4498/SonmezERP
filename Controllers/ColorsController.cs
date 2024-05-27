@@ -20,7 +20,7 @@ namespace SonmezERP.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles ="Colors,Admin")]
         // GET: Colors
         public async Task<IActionResult> Index()
         {
@@ -28,6 +28,7 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Colors/Details/5
+        [Authorize(Roles ="Colors_Details,Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +47,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: Colors/Create
+        [Authorize(Roles ="Colors_Create,Admin")]
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -54,11 +57,12 @@ namespace SonmezERP.Controllers
         // POST: Colors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles ="Colors_Create,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ColorName,Note")] Color color)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Colors.Add(color);
                 await _context.SaveChangesAsync();
@@ -67,7 +71,7 @@ namespace SonmezERP.Controllers
             return View(color);
 
         }
-
+        [Authorize(Roles = "Colors_Edit,Admin")]
         // GET: Colors/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -87,6 +91,7 @@ namespace SonmezERP.Controllers
         // POST: Colors/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Colors_Edit,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,ColorName,Note")] Color color)
@@ -117,7 +122,7 @@ namespace SonmezERP.Controllers
             }
             return View(color);
         }
-
+        [Authorize(Roles ="Colors_Delete,Admin")]
         // GET: Colors/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -137,6 +142,7 @@ namespace SonmezERP.Controllers
         }
 
         // POST: Colors/Delete/5
+        [Authorize(Roles ="Colors_Delete,Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
