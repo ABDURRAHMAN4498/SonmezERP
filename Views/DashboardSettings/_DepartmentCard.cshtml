@@ -1,14 +1,17 @@
 @model DashboardSettings
 
- </a>
+ 
+ 
  <a class="btn" asp-controller="@Model.ControllerName" asp-action="index">
- <div class="card" style="width: 11rem;">
-        <img src="~/Uploads/Logo/@Model.IconePath" class="card-img-top" alt="...">
-     <div class="card-body">
-         <h5 class="card-title text-center">@Model.DepartmentName</h5>
-         <p class=" text-center">
-             @Model.Description
-         </p>
-     </div>
- </div>
- </a>
+            <div class="border-0 row text-center" style="background-color:rgb(0,0,0,0)">
+                <div width="50px">
+                    <img src="~/Uploads/Logo/@Model.IconePath" width="40px" height="">
+                </div>
+                <div class="">
+                    <h3 class="card-title text-center mb-0">@Model.DepartmentName</h3>
+                    <p class=" text-center">
+                        @Model.Description
+                    </p>
+                </div>
+            </div>
+        </a>
