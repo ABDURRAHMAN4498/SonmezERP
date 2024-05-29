@@ -23,7 +23,7 @@
                 <div class="btn-group">
                     @foreach (var item in marka)
                     {
-                        <button asp-rout-id="@item.Id" type="submit" class="btn btn-primary my-3"
+                        <button asp-rout-id="@item.Id" type="submit" class="btn btn-primary d-xl-block my-3"
                             asp-action="index">@item.BrandName</button>
                     }
                 </div>
@@ -134,3 +134,8 @@
         }
     </tbody>
 </table>
+<div class="text-center">
+    <button class="btn btn-primary " id="back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back</button>
+</div>

@@ -11,14 +11,14 @@
 
     <link rel="shortcut icon" type="image/png" href="~/Uploads/Logo/" />
 </head>
-<body>
+<body class="bodyGradiant">
     <header>
-        <div class="container-sm my-3 rounded Gradiant align-middle ">
+        <div class="container-sm my-3 rounded Gradiant align-middle shadow-lg ">
         <partial name="_Navbar"/>
         @RenderSection("Header",false)
         </div>
     </header>
-    <div class="container rounded Gradiant border">
+    <div class="container rounded Gradiant  shadow-lg">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

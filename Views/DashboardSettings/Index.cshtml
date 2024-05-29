@@ -4,13 +4,12 @@
     ViewData["Title"] = "Index";
 }
 <div class="text-center">
-    <h1>Settings Control Panel</h1>
+    <h2 class="my-3">Settings Control Panel</h2>
 </div>
 
 <p>
-    <a class="btn btn-success d-xl-block" asp-action="Create">Create New</a>
 </p>
-
+<hr>
 
 <div class="text-center">
     @foreach (var item in Model)
@@ -18,67 +17,71 @@
         <partial name="_DepartmentCard" model="@item" />
     }
 </div>
-<div class="table-responsive">
+<div class="table-responsive my-3">
     <table class="table table-hover table-dark table-striped-columns text-md-center">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DepartmentName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ControllerName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActionName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IconePath)
-            </th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DepartmentName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ControllerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActionName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IconePath)
-                </td>
-                <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                </td>
-                <td>
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                </td>
-                <td>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartmentName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ControllerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActionName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IconePath)
+                </th>
+                <th>
+                    <a class="btn btn-success d-xl-block" asp-action="Create">Create New</a>
+                </th>
 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ControllerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActionName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IconePath)
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-pen-to-square"></i></a> |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-circle-info"></i></a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="text-center">
+    <button class="btn btn-primary " id="back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back</button>
 </div>

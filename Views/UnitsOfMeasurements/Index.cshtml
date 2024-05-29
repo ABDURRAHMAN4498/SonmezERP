@@ -15,7 +15,7 @@
     <a class="btn btn-success d-flex justify-content-center" asp-action="Create">Create New</a>
 </p>
 <div class="table-responsive">
-    <table class="table table-dark table-hover table-">
+    <table class="table table-hover table-dark table-striped-columns text-md-center">
         <thead>
             <tr>
                 <th>
@@ -24,7 +24,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.UnitsOfMeasurementName)
                 </th>
-                <th></th>
+                <th>#</th>
             </tr>
         </thead>
         <tbody>
@@ -49,4 +49,9 @@
             }
         </tbody>
     </table>
+    <div class="text-center">
+        <button class="btn btn-primary justify-content-center " id="back">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back</button>
+    </div>
 </div>

@@ -11,33 +11,40 @@
     <div class="col-2"></div>
     <a class="btn btn-info col-4 my-3" asp-controller="home" asp-action="index">Ana Sayfaya Dön</a>
 </div>
-<table class="table table-hover table-dark table-striped-columns text-center">
-    <thead>
-        <tr>
-            <th class="col-8 text-xl-start">
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>#</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <table class="table table-hover table-dark table-striped-columns text-center">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
-                            class="fa-solid fa-pen-to-square"></i></a> |
-                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
-                            class="fa-solid fa-circle-info"></i></a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
-                            class="fa-solid fa-trash"></i></a>
-                    
-                </td>
+                <th class="col-8 text-xl-start">
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>#</th>
+
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-pen-to-square"></i></a> |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-circle-info"></i></a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-trash"></i></a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-center">
+        <button class="btn btn-primary justify-content-center " id="back">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back</button>
+    </div>
+</div>

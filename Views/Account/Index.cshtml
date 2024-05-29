@@ -3,34 +3,41 @@
     ViewData["Title"] = "Index";
 }
 <div class="table-responsive my-3">
-    <table class="table table-dark rounded">
-        <thead>
-            <tr class="justify-content-center">
-                <th class="col-auto">@Html.DisplayNameFor(model => model.Name) @Html.DisplayNameFor(model => model.Surname)</th>
-                <th class="col-auto">@Html.DisplayNameFor(model => model.UserName)</th>
-                <th class="col-auto">Şifre</th>
-                <th class="col-auto">
-                    <a class="btn btn-success" asp-action="Register" asp-controller="Account">Create User <i class="fa-solid fa-user-plus"></i></a>
+    <div class="table-responsive my-3">
+        <table class="table table-dark rounded">
+            <thead>
+                <tr class="justify-content-center">
+                    <th class="col-auto">@Html.DisplayNameFor(model => model.Name) @Html.DisplayNameFor(model => model.Surname)</th>
+                    <th class="col-auto">@Html.DisplayNameFor(model => model.UserName)</th>
+                    <th class="col-auto">Şifre</th>
+                    <th class="col-auto">
+                        <a class="btn btn-success" asp-action="Register" asp-controller="Account">Create User <i class="fa-solid fa-user-plus"></i></a>
 
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Name @item.Surname</td>
-                    <td>@item.UserName</td>
-                    <td>@item.PasswordHash</td>
-                    <td>
-                        <a class="btn btn-info" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
-                        <a class="btn btn-warning" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
-
-                    </td>
+                    </th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name @item.Surname</td>
+                        <td>@item.UserName</td>
+                        <td>@item.PasswordHash</td>
+                        <td>
+                            <a class="btn btn-info" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                            <a class="btn btn-warning" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary justify-content-center " id="back">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back</button>
+    </div>
 </div>
 
 

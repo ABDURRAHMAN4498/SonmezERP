@@ -5,16 +5,15 @@
 }
 
 <div class="my-3">
-    <a class="btn btn-primary d-xl-block my-3" asp-action="Create">Stok Girişi Yap</a>
+    <a class="btn btn-success d-xl-block my-3" asp-action="Create">Stok Girişi Yap</a>
 
 </div>
 <hr />
-<div class="border rounded ">
-    <div class="text-center my-3">
-    <h4  class="bold">Stok Giriş Kayıtları</h4>
-
-    </div>
-    <table class="table table-hover table-dark rounded">
+<div class="text-center my-3">
+    <h4 class="bold">Stok Giriş Kayıtları</h4>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-dark table-striped-columns text-md-center">
         <thead>
             <tr>
                 <th>
@@ -29,7 +28,6 @@
             </tr>
         </thead>
         <tbody>
-           
             @foreach (var item in Model.Reverse())
             {
                 <tr>
@@ -43,17 +41,23 @@
                         @Html.DisplayFor(modelItem => item.Product!.Color!.ColorName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.InputQuantity) @Html.DisplayFor(modelItem=>item.Product!.UnitsOfMeasurement!.UnitsOfMeasurementName)
+                        @Html.DisplayFor(modelItem => item.InputQuantity)
+                        @Html.DisplayFor(modelItem => item.Product!.UnitsOfMeasurement!.UnitsOfMeasurementName)
                     </td>
-                    
+
                     <td>
-                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                       
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-trash"></i></a>
                     </td>
-                    
+
                 </tr>
             }
         </tbody>
     </table>
+</div>
+<div class="text-center">
+    <button class="btn btn-primary " id="back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back</button>
 </div>

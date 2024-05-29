@@ -24,9 +24,11 @@ html {
 body {
   margin-bottom: 60px;
 }
-.tansparent{
+
+.tansparent {
   background: transparent;
 }
+
 .Gradiant {
   /* background: rgb(251,160,29);
 background: linear-gradient(90deg, rgba(251,160,29,1) 0%, rgba(178,148,118,1) 51%, rgba(31,92,112,1) 100%); */
@@ -35,7 +37,12 @@ background: linear-gradient(90deg, rgba(251,160,29,1) 0%, rgba(178,148,118,1) 51
   background: linear-gradient(90deg, rgba(251, 160, 29, 1) 0%, rgba(235, 243, 249, 0.9837184873949579) 0%, rgba(30, 98, 120, 1) 100%);
 }
 
-
+.bodyGradiant {
+  /* background: rgb(204, 219, 230);
+  background: linear-gradient(90deg, rgba(204, 219, 230, 0.9837184873949579) 0%, rgba(114, 161, 195, 1) 100%); */
+  background: rgb(204, 219, 230);
+  background: linear-gradient(90deg, rgba(204, 219, 230, 0.9837184873949579) 0%, rgba(126, 166, 195, 1) 100%);
+}
 
 /* .card {
   width: 190px;
@@ -70,5 +77,3 @@ background: linear-gradient(90deg, rgba(251,160,29,1) 0%, rgba(178,148,118,1) 51
   margin-top: 25px;
   text-align: center;
  } */
- 
- 

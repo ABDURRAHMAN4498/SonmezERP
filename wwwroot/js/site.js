@@ -48,3 +48,9 @@
 // }
 
 
+const backButton = document.getElementById('back');
+
+backButton.onclick = () => {
+  history.back();
+};
+

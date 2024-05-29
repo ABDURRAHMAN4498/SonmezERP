@@ -15,7 +15,6 @@ builder.Services.ConfigureIdentity();
 //{
 //    config.LoginPath = "/Account";
 //});
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
