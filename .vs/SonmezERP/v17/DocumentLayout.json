@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\SonmezERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\views\\brands\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\brands\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\views\\dashboardsettings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\dashboardsettings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,13 +28,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\Brands\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Brands\\Index.cshtml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\Brands\\Index.cshtml",
-              "RelativeToolTip": "Views\\Brands\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAdAAAA",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\DashboardSettings\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\DashboardSettings\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\DashboardSettings\\Index.cshtml",
+              "RelativeToolTip": "Views\\DashboardSettings\\Index.cshtml",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAACAAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-29T18:56:26.768Z",
+              "WhenOpened": "2024-05-30T18:46:14.836Z",
               "EditorCaption": ""
             }
           ]

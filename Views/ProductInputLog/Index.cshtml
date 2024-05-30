@@ -1,13 +1,14 @@
-﻿@model IEnumerable<SonmezERP.Models.ProductInputLogList>
+﻿@model IEnumerable<ProductInputLogList>
 
 @{
     ViewData["Title"] = "Index";
 }
-
-<div class="my-3">
-    <a class="btn btn-success d-xl-block my-3" asp-action="Create">Stok Girişi Yap</a>
-
-</div>
+@if (User.IsInRole("ProductInputLog_Create"))
+{
+    <div class="my-3">
+        <a class="btn btn-success d-xl-block my-3" asp-action="Create">Stok Girişi Yap</a>
+    </div>
+}
 <hr />
 <div class="text-center my-3">
     <h4 class="bold">Stok Giriş Kayıtları</h4>
@@ -46,9 +47,11 @@
                     </td>
 
                     <td>
-                       
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
-                                class="fa-solid fa-trash"></i></a>
+                        @if (User.IsInRole("ProductInputLog_Delete"))
+                        {
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                    class="fa-solid fa-trash"></i></a>
+                        }
                     </td>
 
                 </tr>

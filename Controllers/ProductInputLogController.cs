@@ -8,7 +8,6 @@ using SonmezERP.Models;
 
 namespace SonmezERP.Controllers
 {
-    [Authorize]
     public class ProductInputLogController : Controller
     {
         private readonly SonmezERPContext _context;
@@ -19,6 +18,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductInputLogController
+        [Authorize(Roles ="ProductInputLog")]
+        [HttpGet]
         public async Task<ActionResult> Index()
         {
 
@@ -27,6 +28,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductInputLogController/Details/5
+        [Authorize(Roles ="ProductInputLog_Details")]
+        [HttpGet]
         public ActionResult Details(int id)
         {
 
@@ -34,6 +37,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductInputLogController/Create
+        [Authorize(Roles ="ProductInputLog_Create")]
+        [HttpGet]
         public ActionResult Create()
         {
             var ProductInputLog = new ProductInputLog();
@@ -49,6 +54,7 @@ namespace SonmezERP.Controllers
         }
 
         // POST: ProductInputLogController/Create
+        [Authorize(Roles ="ProductInputLog_Create")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(
@@ -73,12 +79,15 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductInputLogController/Edit/5
+        [Authorize(Roles ="ProductInputLog_Edit")]
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             return View();
         }
 
         // POST: ProductInputLogController/Edit/5
+        [Authorize(Roles ="ProductInputLog_Edit")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -94,6 +103,8 @@ namespace SonmezERP.Controllers
         }
 
         // GET: ProductInputLogController/Delete/5
+        [Authorize(Roles ="ProductInputLog_Delete")]
+        [HttpGet]
         public async Task<ActionResult> Delete(int id)
         {
             if (id <= 0)
@@ -107,6 +118,7 @@ namespace SonmezERP.Controllers
         }
 
         // POST: ProductInputLogController/Delete/5
+        [Authorize(Roles ="ProductInputLog_Delete")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int id, [FromForm] ProductInputLogList productInputLogList)

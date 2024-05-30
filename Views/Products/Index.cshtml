@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<SonmezERP.Models.Product>
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,7 +6,11 @@
 <h1 class="text-center">Ürünler Sayfası</h1>
 
 <div class="row d-flex justify-content-center">
-    <a class="btn btn-success col-4 my-3" asp-action="Create">Yeni Ürün Oluştur</a>
+    @if (User.IsInRole("Products_Create") || User.IsInRole("Admin"))
+    {
+        <a class="btn btn-success col-4 my-3" asp-action="Create">Yeni Ürün Oluştur</a>
+    }
+
     <div class="col-2"></div>
     <a class="btn btn-info col-4 my-3" asp-controller="home" asp-action="index">Ana Sayfaya Dön</a>
 </div>
@@ -121,12 +124,21 @@
                         @Html.DisplayFor(modelItem => item.UnitsOfMeasurement!.UnitsOfMeasurementName)
                     </td>
                     <td>
-                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
-                                class="fa-solid fa-pen-to-square"></i></a> |
-                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
-                                class="fa-solid fa-circle-info"></i></a> |
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
-                                class="fa-solid fa-trash"></i></a>
+                        @if (User.IsInRole("Products_Edit") || User.IsInRole("Admin"))
+                        {
+                            <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-pen-to-square"></i> </a>
+                        }
+                        @if (User.IsInRole("Products_Details") || User.IsInRole("Admin"))
+                        {
+                            <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
+                                    class="fa-solid fa-circle-info"></i></a>
+                        }
+                        @if (User.IsInRole("Products_Delete") || User.IsInRole("Admin"))
+                        {
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                    class="fa-solid fa-trash"></i></a>
+                        }
                     </td>
                 </tr>
             }
