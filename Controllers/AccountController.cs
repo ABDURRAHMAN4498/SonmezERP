@@ -39,6 +39,13 @@ namespace SonmezERP.Controllers
             if (ModelState.IsValid)
             {
 
+
+                // var userWithRoles = await _userManager
+                //     .Users
+                //     .Include(u => u.UserRoles)
+                //     .FirstOrDefaultAsync(u => u.UserName == model.UserName);
+
+
                 AppUser? user = await _userManager.FindByNameAsync(model.UserName!);
                 if (user is not null)
                 {
@@ -49,6 +56,8 @@ namespace SonmezERP.Controllers
                     }
                 }
                 ModelState.AddModelError("Error", "Invalid username or password");
+
+
                 //var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
                 //if (result.Succeeded)
                 //{
@@ -58,6 +67,26 @@ namespace SonmezERP.Controllers
             }
             return View();
         }
+
+        // public async Task<IList<string>> GetUserRolesAsync(AppUser user)
+        // {
+        //     var cacheKey = $"UserRoles-{user.Id}";
+        //     if (!_cache.TryGetValue(cacheKey, out IList<string> roles))
+        //     {
+        //         roles = await _userManager.GetRolesAsync(user);
+        //         _cache.Set(cacheKey, roles, TimeSpan.FromMinutes(30)); // 30 dakika boyunca önbellekte tut
+        //     }
+        //     return roles;
+        // }
+
+
+
+
+
+
+
+
+
         [Authorize]
         [HttpGet]
         public IActionResult Register()

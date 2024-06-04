@@ -19,7 +19,7 @@ namespace SonmezERP.Controllers
         {
             _context = context;
         }
-        [Authorize(Roles ="UnitsOfMeasurements,Admin")]
+        [Authorize(Roles ="UOM,Admin")]
         [HttpGet]
         // GET: UnitsOfMeasurements
         public async Task<IActionResult> Index()

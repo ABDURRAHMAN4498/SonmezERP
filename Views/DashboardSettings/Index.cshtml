@@ -16,11 +16,7 @@
     {
         if (User.IsInRole("Admin")
         ||User.IsInRole(@item.DepartmentName!)
-        @* ||User.IsInRole("Categories")
-        ||User.IsInRole("Colors")
-        ||User.IsInRole("Kdvs")
-        ||User.IsInRole("UnitsOfMeasurements")
-        ||User.IsInRole("Brands") *@
+        
         )
         {
             <partial name="_DepartmentCard" model="@item" />

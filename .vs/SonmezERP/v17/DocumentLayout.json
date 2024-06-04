@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\SonmezERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\views\\dashboardsettings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:views\\dashboardsettings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\models\\rawmaterialsactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:models\\rawmaterialsactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|c:\\users\\asus\\desktop\\sonmezerp\\models\\rawmaterials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26E3741C-1E3A-40D2-9C61-5DB865A54DAA}|SonmezERP.csproj|solutionrelative:models\\rawmaterials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\DashboardSettings\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\DashboardSettings\\Index.cshtml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Views\\DashboardSettings\\Index.cshtml",
-              "RelativeToolTip": "Views\\DashboardSettings\\Index.cshtml",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAACAAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-30T18:46:14.836Z",
+              "Title": "RawMaterialsActions.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Models\\RawMaterialsActions.cs",
+              "RelativeDocumentMoniker": "Models\\RawMaterialsActions.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Models\\RawMaterialsActions.cs",
+              "RelativeToolTip": "Models\\RawMaterialsActions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T09:55:14.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RawMaterials.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\SonmezERP\\Models\\RawMaterials.cs",
+              "RelativeDocumentMoniker": "Models\\RawMaterials.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\SonmezERP\\Models\\RawMaterials.cs",
+              "RelativeToolTip": "Models\\RawMaterials.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T09:55:03.151Z",
               "EditorCaption": ""
             }
           ]
